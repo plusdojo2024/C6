@@ -22,7 +22,7 @@ public class GachaServlet extends HttpServlet {
 			return;
 		}
 		// ガチャページにフォワードする
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/set.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/gacha.jsp");
 		dispatcher.forward(req, res);
 	}
 
