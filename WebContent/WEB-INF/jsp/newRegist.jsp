@@ -9,20 +9,22 @@
 <link rel="stylesheet" href="/C6/css/newRegist.css">
 </head>
 <body>
-<main>
-nickname<br>
-	<input type = "text" ><br>
-password<br>
-	<input type = "password" ><br>
-	<input type = "password" ><br>
-birthday<br>
-	<input type = "text" ><br>
-secret question<br>
-母親の旧姓は？<br>
-	<input type = "text" ><br>
-	<input type = "submit" value="registration"><br>
-<a href = "/C6/login.jsp">ログイン画面に戻る</a>
-</main>
-<script src= "newRegist.js"></script>
+	<main>
+	<form  method="post" action="/C6/newRegistServlet">
+		nickname<br>
+		<input type = "text" ><br>
+		password<br>
+		<input type = "password" ><br>
+		<input type = "password" ><br>
+		birthday<br>
+		<input type = "text" ><br>
+		secret question<br>
+		母親の旧姓は？<br>
+		<input type = "text" ><br>
+		<input type = "submit" value="registration"><br>
+		<a href = "/C6/login.jsp">ログイン画面に戻る</a>
+	</form>
+	</main>
+	<script src= "newRegist.js"></script>
 </body>
 </html>

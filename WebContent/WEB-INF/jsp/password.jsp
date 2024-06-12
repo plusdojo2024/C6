@@ -9,16 +9,18 @@
 </head>
 <body>
 	<h1>new password</h1>
-	<div>password</div>
-	<div>
-		<input type="text" name="passwordUp" >
-	</div>
-	<div>
-		<input type="text" name="passwordDown" >
-	</div>
-	<div>
-		<input type="submit" name="change" value="registration">
-	</div>
+	<form  method="post" action="/C6/PasswordServlet">
+		<div>password</div>
+		<div>
+			<input type="text" name="passwordUp" >
+		</div>
+		<div>
+			<input type="text" name="passwordDown" >
+		</div>
+		<div>
+			<input type="submit" name="change" value="registration">
+		</div>
+	</form>
 	<div>
 		<a href="/C6/LoginServlet"  >ログイン画面に戻る</a>
 	</div>

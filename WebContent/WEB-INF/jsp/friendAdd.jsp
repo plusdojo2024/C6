@@ -8,15 +8,17 @@
 </head>
 <body>
 	<h1>friend</h1>
-	<div>add friend</div>
-	<div>nickname
-		<input type = "text" >
-	</div>
-	<div>4number
-		<input type = "text" >
-	</div>
-	<div>
-		<input type="submit" name="change" value="registration">
-	</div>
+	<form method="post" action="/C6/FriendAddServlet">
+		<div>add friend</div>
+		<div>nickname
+			<input type = "text" >
+		</div>
+		<div>4number
+			<input type = "text" >
+		</div>
+		<div>
+			<input type="submit" name="change" value="registration">
+		</div>
+	</form>
 </body>
 </html>
