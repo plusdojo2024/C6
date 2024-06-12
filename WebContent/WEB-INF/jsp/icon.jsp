@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>icon</h1>
-<form method="post" enctype="multipart/form-data">
+<form method="post" action="/c6/IconServlet">
   <div>
     <label for="file">写真をアップロードしてください。</label>
     <input type="file" id="file" name="file" multiple />

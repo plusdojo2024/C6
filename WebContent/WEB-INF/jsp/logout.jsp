@@ -11,7 +11,9 @@
 <body>
 <h1>logout</h1>
 <h2>ログアウトしますか？</h2>
+<form method="post" action="/c6/LogoutServlet">
 <a href="/c6/LogoutServlet" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a>
+</form>
 <script src= "logout.js"></script>
 </body>
 </html>

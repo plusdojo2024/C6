@@ -10,7 +10,9 @@
 </head>
 <body>
 <h1>account deletion</h1>
-<input type = "button" value ="delete">
+<form method="post" action="/c6/DeleteServlet">
+<input type = "button" value ="delete" onclick="return confirm('本当に削除しますか？');">
+</form>
 <script src= "delete.js"></script>
 </body>
 </html>
