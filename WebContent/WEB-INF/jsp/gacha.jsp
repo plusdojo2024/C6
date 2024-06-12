@@ -10,7 +10,8 @@
 </head>
 <body>
 <main>
-
+<form method="post" action="/C6/gachaServlet">
+</form>
 </main>
 <script src= "gacha.js"></script>
 </body>
