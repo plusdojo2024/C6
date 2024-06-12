@@ -22,7 +22,7 @@ public class SetServlet extends HttpServlet {
 			return;
 		}
 
-		// メニューページにフォワードする
+		// 設定ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/set.jsp");
 		dispatcher.forward(req, res);
 	}
