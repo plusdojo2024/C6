@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>サウンド</title>
+<link rel="stylesheet" href="/c6/css/common.css">
 </head>
 <body>
-
+<h1>sound</h1>
+<input type="range" min="0" max="100" step="10" style="width: 259px; ">
 </body>
 </html>
