@@ -11,7 +11,7 @@
 <body>
 <main>
 <form method="post" action="/C6/SetServlet">
-	<input type = "button" value="my page"><br>
+	<input type = "button" value="my page" onclick="location.href='/C6/user.jsp'" ><br>
 	<input type = "button" value="icon"><br>
 	<input type = "button" value="fourNumber"><br>
 	<input type = "button" value="sound"><br>

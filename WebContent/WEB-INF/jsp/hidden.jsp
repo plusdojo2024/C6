@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<form method="post" action="/c6/HiddenServlet">
 </head>
 <body>
 <h1>hidden</h1>
