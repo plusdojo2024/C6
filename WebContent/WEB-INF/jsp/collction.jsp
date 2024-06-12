@@ -10,6 +10,8 @@
 </head>
 <body>
 <main>
+<form method="post" action="/C6/collectionServlet">
+</form>
 </main>
 <script src= "collection.js"></script>
 </body>
