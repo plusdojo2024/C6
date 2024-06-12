@@ -10,6 +10,7 @@
 </head>
 <body>
 <main>
+<form method="post" action="/C6/SetServlet">
 	<input type = "button" value="my page"><br>
 	<input type = "button" value="icon"><br>
 	<input type = "button" value="fourNumber"><br>
@@ -17,7 +18,7 @@
 	<input type = "button" value="favorite"><br>
 	<input type = "button" value="hidden"><br>
 	<input type = "button" value="delete">
-
+</form>
 </main>
 </body>
 </html>
