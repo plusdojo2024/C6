@@ -11,6 +11,9 @@
     <span>
         <img src="画像のURL" alt="管理">
         <p>ニックネーム</p>
+        <button type="submit">cansellation</button>
+         <button type="submit">delete</button>
+
     </span>
 </body>
 </html>
