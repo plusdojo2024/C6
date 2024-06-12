@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>secret</title>
+<link rel="stylesheet" href="/C6/css/common.css">
+<link rel="stylesheet" href="/C6/css/newsecret.css">
 </head>
 <body>
-
+<main>
+nickname<br>
+	<input type = "text" ><br>
+母親の旧姓は？<br>
+	<input type = "text" ><br>
+	<input type = "submit" value="registration"><br>
+<a href = "/C6/login.jsp">ログイン画面に戻る</a>
+</main>
 </body>
+<script src= "secret.js"></script>
 </html>
