@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>friend list</h1>
-
+  <form class="friend_form" method="post" action="/c6/FriendServlet">
 <input type="submit" value="friend add">
 
 <p>my stats</p>
@@ -19,11 +19,7 @@
 場所<br>
 <p>東京</p>
 時間帯<br>
-<form action="your_server_endpoint" method="post">
-        <input type="time" id="start-time" name="start-time" required>
-        ～
-        <input type="time" id="end-time" name="end-time" required>
-</form>
+
 メモ<br>
 <input type="text" name="subject" placeholder="メモ">
 
@@ -34,5 +30,6 @@
 <a>メモあり！</a>
 <input type="date" name="birthday" placeholder="誕生日">
 <a>open</a>
+</form>
 </body>
 </html>
