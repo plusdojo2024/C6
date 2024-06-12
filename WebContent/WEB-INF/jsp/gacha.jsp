@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>gacha</title>
+<link rel="stylesheet" href="/C6/css/common.css">
+<link rel="stylesheet" href="/C6/css/gacha.css">
 </head>
 <body>
+<main>
 
+</main>
+<script src= "gacha.js"></script>
 </body>
 </html>
