@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <title>番号管理</title>
 </head>
+
 <body>
 <h1>4ナンバー</h1>
-
+<form class="number_form" method="post" action="/c6/NumberServlet">
 <p>
 現在の4number<br>
 <input type="text" name="subject">
@@ -22,6 +23,6 @@
 <p class="submit">
 	<input type="submit" value="registration">
 </p>
-
+</form>
 </body>
 </html>

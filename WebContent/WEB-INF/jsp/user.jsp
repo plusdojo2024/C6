@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>user</title>
+ <form method="post" action="/c6/UserServlet">
 
 <link rel="common.css" href="/c6/css/common.css">
 </head>
@@ -88,7 +89,7 @@
             <br>
               <button type="submit">registration</button>
     </form>
-
+</form>
 </main>
 </body>
 </html>

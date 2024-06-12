@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/C6/css/login.css">
 </head>
 <body>
+  <form id="login_form" method="post" action="/c6/LoginServlet">
 <main>
 nickname<br>
 	<input type = "text" ><br>
@@ -19,5 +20,6 @@ password<br>
 <a href = "/C6/secret.jsp">パスワードをお忘れの方</a>
 </main>
 <script src= "login.js"></script>
+</form>
 </body>
 </html>
