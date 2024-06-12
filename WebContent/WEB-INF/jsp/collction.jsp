@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>collection</title>
+<link rel="stylesheet" href="/C6/css/common.css">
+<link rel="stylesheet" href="/C6/css/collection.css">
 </head>
 <body>
-
+<main>
+</main>
+<script src= "collection.js"></script>
 </body>
 </html>

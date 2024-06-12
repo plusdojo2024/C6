@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>フレンド追加</title>
 </head>
 <body>
-
+	<h1>friend</h1>
+	<div>add friend</div>
+	<div>nickname
+		<input type = "text" >
+	</div>
+	<div>4number
+		<input type = "text" >
+	</div>
+	<div>
+		<input type="submit" name="change" value="registration">
+	</div>
 </body>
 </html>

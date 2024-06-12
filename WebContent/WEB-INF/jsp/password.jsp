@@ -17,7 +17,7 @@
 		<input type="text" name="passwordDown" >
 	</div>
 	<div>
-		<input type="button" name="change" value="registration">
+		<input type="submit" name="change" value="registration">
 	</div>
 	<div>
 		<a href="/C6/LoginServlet"  >ログイン画面に戻る</a>
