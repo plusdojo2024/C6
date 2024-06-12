@@ -14,7 +14,7 @@ nickname<br>
 	<input type = "text" ><br>
 password<br>
 	<input type = "password" ><br>
-	<input type = "button" value="login"><br>
+	<input type = "submit" value="login"><br>
 <a href = "/C6/newRegist.jsp">初めてご利用の方</a><br>
 <a href = "/C6/secret.jsp">パスワードをお忘れの方</a>
 </main>
