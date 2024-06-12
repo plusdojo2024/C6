@@ -17,7 +17,7 @@
          <button type="submit">delete</button>
 
     </span>
-</from>
+</form>
 </main>
 </body>
 </html>

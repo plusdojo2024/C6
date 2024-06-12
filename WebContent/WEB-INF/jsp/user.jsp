@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>user</title>
 <link rel="stylesheet" href="/c6/css/common.css">
-<form method="post" action="/c6/UserServlet">
 </head>
 <body>
 <h1>mypage</h1>
@@ -21,7 +20,6 @@
   </ul>
 </div>
 <h2>place</h2>
-<form action="your_server_endpoint" method="post">
         <select id="prefecture" name="prefecture" required>
             <option value="">-- 選択してください --</option>
             <option value="hokkaido">北海道</option>
@@ -73,8 +71,7 @@
             <option value="okinawa">沖縄県</option>
         </select>
                 <button type="submit">リセット</button>
-                </form>
-<form action="/C6/UserServlet" method="post">
+
         <input type="time" id="start-time" name="start-time" required>
         ～
         <input type="time" id="end-time" name="end-time" required>
@@ -86,7 +83,6 @@
             <br>
             <br>
               <button type="submit">registration</button>
-    </form>
     </form>
 </body>
 </html>
