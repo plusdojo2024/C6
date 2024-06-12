@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>user</title>
 </head>
-<body>
+<h1>mypage</h1>
 
+<body>
+<h2>status</h2>
+<p>&lt;自動更新：　AM6:00&gt;</p>
 </body>
 </html>
