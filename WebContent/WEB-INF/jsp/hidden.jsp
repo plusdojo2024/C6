@@ -5,17 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<form method="post" action="/c6/HiddenServlet">
 </head>
 <body>
-<h1>hidden</h1>
+<main>
+<form method="post" action="/c6/HiddenServlet">
+  <h1>hidden</h1>
     <span>
         <img src="画像のURL" alt="管理">
-        <p>ニックネーム</p>
+        <a>ニックネーム</a>
         <button type="submit">cansellation</button>
          <button type="submit">delete</button>
 
     </span>
-    </from>
+</from>
+</main>
 </body>
 </html>

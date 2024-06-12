@@ -5,17 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>user</title>
- <form method="post" action="/c6/UserServlet">
-
-<link rel="common.css" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/common.css">
+<form method="post" action="/c6/UserServlet">
 </head>
-<h1>mypage</h1>
-
 <body>
-<main>
-<h2>status</h2>
-<p>&lt;自動更新：　AM6:00&gt;</p>
-
+<h1>mypage</h1>
+<form method="post" action="/c6/UserServlet">
+  <h2>status</h2>
+  <p>&lt;自動更新：　AM6:00&gt;</p>
 <div>
   <ul>
     <li>open</li>
@@ -76,7 +73,8 @@
             <option value="okinawa">沖縄県</option>
         </select>
                 <button type="submit">リセット</button>
-<form action="your_server_endpoint" method="post">
+                </form>
+<form action="/C6/UserServlet" method="post">
         <input type="time" id="start-time" name="start-time" required>
         ～
         <input type="time" id="end-time" name="end-time" required>
@@ -89,7 +87,6 @@
             <br>
               <button type="submit">registration</button>
     </form>
-</form>
-</main>
+    </form>
 </body>
 </html>
