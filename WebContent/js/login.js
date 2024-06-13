@@ -1,5 +1,5 @@
 /**
- * let formObj = document.getElementById('regist_form');
+ *
  */
 
 
