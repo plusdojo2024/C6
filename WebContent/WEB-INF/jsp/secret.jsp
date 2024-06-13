@@ -14,8 +14,8 @@
 		nickname<br>
 		<input type = "text" ><br>
 		母親の旧姓は？<br>
-		<input type = "text" ><br>
-		<input type = "submit" value="registration"><br>
+		<input type = "text"  required><br>
+		<input type = "submit" value="registration" ><br>
 		<a href = "/c6/LoginServlrt">ログイン画面に戻る</a>
 	</form>
 	</main>
