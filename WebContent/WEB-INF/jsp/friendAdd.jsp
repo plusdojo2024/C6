@@ -12,10 +12,10 @@
 	<form method="post" action="/c6/FriendAddServlet">
 		<div>add friend</div>
 		<div>nickname
-			<input type = "text" >
+			<input type = "text"  required >
 		</div>
 		<div>4number
-			<input type = "text" >
+			<input type = "text" required >
 		</div>
 		<div>
 			<input type="submit" name="change" value="registration">
