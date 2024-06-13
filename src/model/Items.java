@@ -7,14 +7,14 @@ public class Items implements Serializable {
 	private int types_id;
 	private String label; /*BLOBを変換できなかった..*/
 	private String name;
-	private String remarks;
-	public Items(int id, int types_id, String label, String name, String remarks) {
+	private String memo;
+	public Items(int id, int types_id, String label, String name, String memo) {
 		super();
 		this.id = id;
 		this.types_id = types_id;
 		this.label = label;
 		this.name = name;
-		this.remarks = remarks;
+		this.memo = memo;
 	}
 	public int getId() {
 		return id;
@@ -40,11 +40,11 @@ public class Items implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRemarks() {
-		return remarks;
+	public String getMemo() {
+		return memo;
 	}
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
 
 

@@ -8,6 +8,7 @@ public class Friends implements Serializable {
 	private int friends_id;
 	private int hidden;
 	private int favorite; /*bitを型に変換できなかった...*/
+	
 	public Friends(int id, int users_id, int friends_id, int hidden, int favorite) {
 		super();
 		this.id = id;

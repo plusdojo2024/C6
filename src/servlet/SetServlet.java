@@ -14,11 +14,16 @@ import javax.servlet.http.HttpSession;
 public class SetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/set.jsp");
+		dispatcher.forward(req, res);
+	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
 		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/C6/LoginServlet");
+			res.sendRedirect("/c6/LoginServlet");
 			return;
 		}
 
