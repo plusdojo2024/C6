@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>user</title>
 <link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/user.css">
 </head>
 <body>
 <h1>mypage</h1>
@@ -71,13 +72,18 @@
             <option value="okinawa">沖縄県</option>
         </select>
                 <button type="submit">リセット</button>
+                <br>
+                <br>
+        <h2>time</h2>
 
         <input type="time" id="start-time" name="start-time" required>
         ～
         <input type="time" id="end-time" name="end-time" required>
 
         <button type="submit">リセット</button>
-        <br><br>
+        <br>
+        <br>
+        <h2>remarks</h2>
             <label for="remarks">備考:</label>
             <input type="text" id="remarks" name="remarks">
             <br>
