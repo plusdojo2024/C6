@@ -20,6 +20,11 @@ public class HiddenServlet extends HttpServlet {
 		dispatcher.forward(req, res);
 
 	}
+	protected void doget(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
+	dispatcher.forward(req, res);
+	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
