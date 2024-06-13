@@ -9,7 +9,7 @@ public class Users implements Serializable {
 	private String password;
 	private int number;
 	private String secret;
-	private int birthday; 		/*ここどうすればいいんだっけ*/
+	private String birthday; 		/*ここどうすればいいんだっけ*/
 	private String  location;	/*プルダウンの変換*/
 	private int	 motivation;
 	private String icon;
@@ -17,7 +17,11 @@ public class Users implements Serializable {
 	private int finish;
 	private String remarks;
 
+<<<<<<< HEAD
 	public Users(int id, String name, String password, int number, String secret, int birthday, String location,
+=======
+	public Users(int id, String name, int password, int number, String secret, String birthday, String location,
+>>>>>>> cfcdbf03975e56c621213742bf7b69987d32c52f
 			int motivation, String icon, int start, int finish, String remarks) {
 		super();
 		this.id = id;
@@ -34,6 +38,7 @@ public class Users implements Serializable {
 		this.remarks = remarks;
 	}
 
+	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;
 	}
@@ -74,11 +79,11 @@ public class Users implements Serializable {
 		this.secret = secret;
 	}
 
-	public int getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(int birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
@@ -129,6 +134,8 @@ public class Users implements Serializable {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+
+
 
 
 }

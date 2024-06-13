@@ -13,8 +13,9 @@
 <main>
 <form method="post" action="/c6/GachaServlet">
 </form>
+<input type = "button"  id="gacha" value = "ガチャを引く">
 </main>
-<script src= "gacha.js"></script>
+<script src= "./js/gacha.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 </body>
 </html>
