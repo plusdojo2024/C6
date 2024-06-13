@@ -6,7 +6,7 @@ public class Users implements Serializable {
 
 	private int id;
 	private String name;
-	private int password;
+	private String password;
 	private int number;
 	private String secret;
 	private String birthday; 		/*ここどうすればいいんだっけ*/
@@ -17,7 +17,11 @@ public class Users implements Serializable {
 	private int finish;
 	private String remarks;
 
+<<<<<<< HEAD
+	public Users(int id, String name, String password, int number, String secret, int birthday, String location,
+=======
 	public Users(int id, String name, int password, int number, String secret, String birthday, String location,
+>>>>>>> cfcdbf03975e56c621213742bf7b69987d32c52f
 			int motivation, String icon, int start, int finish, String remarks) {
 		super();
 		this.id = id;
@@ -51,11 +55,11 @@ public class Users implements Serializable {
 		this.name = name;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
