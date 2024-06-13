@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>newRegist</title>
-<link rel="stylesheet" href="/C6/css/common.css">
-<link rel="stylesheet" href="/C6/css/newRegist.css">
+<link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/newRegist.css">
 </head>
 <body>
 	<main>
-	<form  method="post" action="/C6/newRegistServlet">
+	<form  method="post" action="/c6/newRegistServlet">
 		nickname<br>
 		<input type = "text" ><br>
 		password<br>
@@ -22,7 +22,7 @@
 		母親の旧姓は？<br>
 		<input type = "text" ><br>
 		<input type = "submit" value="registration"><br>
-		<a href = "/C6/login.jsp">ログイン画面に戻る</a>
+		<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 	</form>
 	</main>
 	<script src= "newRegist.js"></script>

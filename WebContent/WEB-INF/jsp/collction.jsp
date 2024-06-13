@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>collection</title>
-<link rel="stylesheet" href="/C6/css/common.css">
-<link rel="stylesheet" href="/C6/css/collection.css">
+<link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/collection.css">
 </head>
 <body>
 <main>
-<form method="post" action="/C6/CollectionServlet">
+<form method="post" action="/c6/CollectionServlet">
 </form>
 </main>
 <script src= "collection.js"></script>
