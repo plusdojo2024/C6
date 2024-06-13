@@ -17,7 +17,7 @@
 			<input type = "password" ><br>
 			<input type = "submit" value="login"><br>
 			<a href = "/c6/NewRegistServlet">初めてご利用の方</a><br>
-			<a href = "/c6/PasswordServlet">パスワードをお忘れの方</a>
+			<a href = "/c6/SecretServlet">パスワードをお忘れの方</a>
 		</main>
 	</form>
 <script src= "login.js"></script>
