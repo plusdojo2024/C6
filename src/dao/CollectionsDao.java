@@ -2,14 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Collections;
 
-public class CollectionsDAO {
+public class CollectionsDao {
 
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
@@ -21,19 +18,29 @@ public class CollectionsDAO {
 			//Connctionする
 			 conn = BaseDAO.conn();
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
-			String sql = "INSERT INTO Bc VALUES (NULL, ?, ?)";
+			String sql = "INSERT INTO Collections VALUES (NULL, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+
 			// SQL文を完成させる
-			if (card.getUsers_id() != null && !card.getUsers_id().equals("")) {
+
+
+			if (card.getUsers_id() != 0 && card.getUsers_id()!=0) {
 				pStmt.setInt(1, card.getUsers_id());
 			} else {
-				pStmt.setInt(1, "（未設定）");
+				pStmt.setInt(1,0);
 			}
-			if (card.getItem_id() != null && !card.getItem_id().equals("")) {
-				pStmt.setInt(2, card.getItem_id());
+
+			//!card.getItem_id().equals("") →  true  or  false
+
+			//card.getUsers_id() != 0 →　左右の値がちがっていたらtrue 　あっていたら　false
+			//card.getUsers_id() == 0 →　左右の値があっていたらtrue 　ちがっていたら　false
+
+
+			if (card.getItems_id() != 0&& card.getItems_id()!=0) {
+				pStmt.setInt(2, card.getItems_id());
 			} else {
-				pStmt.setInt(2, "（未設定）");
+				pStmt.setInt(2,0);
 			}
 
 			// SQL文を実行する
@@ -69,19 +76,19 @@ public class CollectionsDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Bc SET company=?, address=?, name=?, nameHiragana=?, remarks=? WHERE number=?";
+			String sql = "UPDATE Collections SET users_id=?, items_id=?,WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getUsers_id() != null && !card.getUsers_id().equals("")) {
+			if (card.getUsers_id() != 0 && card.getUsers_id()!=0) {
 				pStmt.setInt(1, card.getUsers_id());
 			} else {
-				pStmt.setString(1, null);
+				pStmt.setInt(1, 0);
 			}
-			if (card.getItems_id() != null && !card.getItems_id().equals("")) {
-				pStmt.setInt(2, card.getAddress());
+			if (card.getItems_id() != 0 && card.getItems_id()!=0) {
+				pStmt.setInt(2, card.getItems_id());
 			} else {
-				pStmt.setInt(2, null);
+				pStmt.setInt(2,0);
 
 
 			pStmt.setInt(6, card.getId());
@@ -90,7 +97,8 @@ public class CollectionsDAO {
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
 			}
-			} catch (SQLException e) {
+			}
+			}catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -119,7 +127,7 @@ public class CollectionsDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "DELETE FROM Bc WHERE number=?";
+			String sql = "DELETE FROM Collections WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
