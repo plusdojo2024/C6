@@ -10,15 +10,13 @@
 </head>
 <body>
 <main>
-<form method="post" action="/c6/SetServlet">
-	<input type="button" value="my page" onclick="location.href='/c6/user.jsp'"><br>
-	<input type="button" value="icon" onclick="location.href='/c6/icon.jsp'"><br>
-	<input type="button" value="fourNumber" onclick="location.href='/c6/number.jsp'"><br>
-	<input type="button" value="sound" onclick="location.href='/c6/sound.jsp'"><br>
-	<input type="button" value="favorite" onclick="location.href='/c6/favorite.jsp'"><br>
-	<input type="button" value="hidden" onclick="location.href='/c6/hidden.jsp'"><br>
-	<input type="button" value="delete" onclick="location.href='/c6/delete.jsp'">
-</form>
+	<input type="button" value="my page" onclick="location.href='http://localhost:8080/c6/userServlet'"><br>
+	<input type="button" value="icon" onclick="location.href='http://localhost:8080/c6/iconServlet'"><br>
+	<input type="button" value="fourNumber" onclick="location.href='http://localhost:8080/c6/numberServlet'"><br>
+	<input type="button" value="sound" onclick="location.href='http://localhost:8080/c6/soundServlet'"><br>
+	<input type="button" value="favorite" onclick="location.href='http://localhost:8080/c6/favoriteServlet'"><br>
+	<input type="button" value="hidden" onclick="location.href='http://localhost:8080/c6/hiddenServlet'"><br>
+	<input type="button" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'">
 </main>
 </body>
 </html>
