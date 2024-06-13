@@ -16,6 +16,10 @@
 			password<br>
 			<input type = "password"  id="password"><br>
 			<input type = "submit" value="login" onsubmit="return checkSubmit()"><br>
+			<input type = "text" name="nickname"  required><br>
+			password<br>
+			<input type = "password" required><br>
+			<input type = "submit" value="login"><br>
 			<a href = "/c6/NewRegistServlet">初めてご利用の方</a><br>
 			<a href = "/c6/SecretServlet">パスワードをお忘れの方</a>
 		</main>
