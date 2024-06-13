@@ -21,7 +21,7 @@
   </ul>
 </div>
 <h2>place</h2>
-        <select id="prefecture" name="prefecture" required>
+        <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
             <option value="hokkaido">北海道</option>
             <option value="aomori">青森県</option>
@@ -77,10 +77,10 @@
         <h2>time</h2>
 
         <!--  input type="time" id="start-time" name="start-time" min="00:00" max="23:59" required>-->
-        <input type="time" >
+        <input type="time" required>
         ～
         <!-- input type="time" id="end-time" name="end-time" min="00:00" max="23:59" required-->
-        <input type="time" >
+        <input type="time" required>
         <button type="reset">リセット</button>
         <br>
         <br>
