@@ -76,10 +76,11 @@
                 <br>
         <h2>time</h2>
 
-        <input type="time" id="start-time" name="start-time" required>
+        <!--  input type="time" id="start-time" name="start-time" min="00:00" max="23:59" required>-->
+        <input type="time" >
         ～
-        <input type="time" id="end-time" name="end-time" required>
-
+        <!-- input type="time" id="end-time" name="end-time" min="00:00" max="23:59" required-->
+        <input type="time" >
         <button type="submit">リセット</button>
         <br>
         <br>

@@ -14,9 +14,13 @@ import javax.servlet.http.HttpSession;
 public class HiddenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-	}
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
+		dispatcher.forward(req, res);
+
+	}
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
 		if (session.getAttribute("id") == null) {
@@ -25,8 +29,8 @@ public class HiddenServlet extends HttpServlet {
 		}
 
 
-	// フレンドページにフォワードする
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
+	// 非表示ページにフォワードする
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
 	dispatcher.forward(req, res);
 }
 }
