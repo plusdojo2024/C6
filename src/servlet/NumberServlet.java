@@ -21,9 +21,10 @@ public class NumberServlet extends HttpServlet {
 			res.sendRedirect("/c6/LoginServlet");
 			return;
 		}
-
-		// 登録ページにフォワードする
+		// ユーザーページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/number.jsp");
 		dispatcher.forward(req, res);
 	}
+
 }
+
