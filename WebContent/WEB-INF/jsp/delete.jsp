@@ -11,7 +11,7 @@
 <body>
 <h1>account deletion</h1>
 <form method="post" action="/c6/DeleteServlet">
-<input type = "button" value ="delete" onclick="return confirm('本当に削除しますか？');">
+<input type = "submit" value ="delete" onclick="return confirm('本当に削除しますか？');">
 </form>
 <script src= "delete.js"></script>
 </body>
