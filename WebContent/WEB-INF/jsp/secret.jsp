@@ -16,7 +16,7 @@
 		母親の旧姓は？<br>
 		<input type = "text"  required><br>
 		<input type = "submit" value="registration" ><br>
-		<a href = "/c6/LoginServlrt">ログイン画面に戻る</a>
+		<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 	</form>
 	</main>
 </body>
