@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/hidden.css">
 </head>
 <body>
 <main>
+
 <form method="post" action="/c6/HiddenServlet">
   <h1>hidden</h1>
     <span>
