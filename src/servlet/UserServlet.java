@@ -22,6 +22,7 @@ public class UserServlet extends HttpServlet {
 	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 	dispatcher.forward(req, res);
 	}
+
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
@@ -30,10 +31,10 @@ public class UserServlet extends HttpServlet {
 			return;
 		}
 
-
 	// ユーザーページにフォワードする
 	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
 	dispatcher.forward(req, res);
 }
 }
+
 

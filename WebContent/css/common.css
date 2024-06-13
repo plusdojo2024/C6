@@ -4,3 +4,10 @@ html {
 	 background-color: #020430;
 	 color: white;
 }
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

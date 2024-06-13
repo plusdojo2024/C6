@@ -5,12 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/c6/css/common.css">
 </head>
 <body>
-      	<a href = "/c6/UserServlet">mypage</a><br>
-      	<a href = "/c6/FriendServlet">friend</a><br>
-        <a href = "/c6/GachaServlet">gacha</a><br>
-        <a href = "/c6/GachaServlet">collection</a><br>
+<nav class="nav">
+  <ul>
+      	<li><a href = "/c6/UserServlet"><img src="img/myicon.png" alt="マイページ" width="100" height="90"></a></li><br>
+      	<li><a href = "/c6/FriendServlet"><img src="img/friendicon.png" alt="フレンド" width="70" height="70"></a></li><br>
+  		<li><a href = "/c6/GachaServlet"><img src="img/gachaicon.png" alt="ガチャ" width="70" height="70"></a></li><br>
+  		<li><a href = "/c6/GachaServlet"><img src="img/collectionicon.png" alt="コレクション" width="70" height="70"></a></li><br>
+  </ul>
+</nav>
 
 </body>
 </html>
