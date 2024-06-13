@@ -1,11 +1,22 @@
 /* ニックネームチェック */
 /* 文字数チェック(21字以上はfalse) */
-
-
-
+function checkNickname(nickname) {
+	if (nickname.length <= 20) {
+		return true;
+	}
+	return false;
+}
 
 /* パスワードチェック */
 /* 半角英数字チェック */
+function checkPassword(password) {
+	if (password.match(/^[A-Za-z0-9]*$/)) {
+		return true;
+	}
+	return false;
+}
+
+
 /* 10文字以上15文字以下 */
 
 /* パスワード一致チェック(パスワードjsかも) */
