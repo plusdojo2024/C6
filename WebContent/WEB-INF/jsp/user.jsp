@@ -71,7 +71,7 @@
             <option value="kagoshima">鹿児島県</option>
             <option value="okinawa">沖縄県</option>
         </select>
-                <button type="submit">リセット</button>
+                <button type="reset">リセット</button>
                 <br>
                 <br>
         <h2>time</h2>
@@ -81,7 +81,7 @@
         ～
         <!-- input type="time" id="end-time" name="end-time" min="00:00" max="23:59" required-->
         <input type="time" >
-        <button type="submit">リセット</button>
+        <button type="reset">リセット</button>
         <br>
         <br>
         <h2>remarks</h2>
