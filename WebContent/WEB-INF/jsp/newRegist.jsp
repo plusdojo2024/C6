@@ -10,7 +10,7 @@
 </head>
 <body>
 	<main>
-	<form  method="post" action="/c6/newRegistServlet">
+	<form  method="post" action="/c6/NewRegistServlet">
 		nickname<br>
 		<input type = "text" ><br>
 		password<br>
