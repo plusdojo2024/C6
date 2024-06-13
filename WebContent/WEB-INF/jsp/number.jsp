@@ -11,7 +11,7 @@
 
 <body>
 <h1>4ナンバー</h1>
-<form method="post" action="/c6/NumberServlet">
+<form name="numberForm" method="post" action="/c6/NumberServlet"  onsubmit="return validateForm()">
 <p>
 現在の4number<br>
 <input type="text" name="subject" required>
@@ -19,12 +19,13 @@
 
 <p>
 新しい4number<br>
-<input type="text" name="subject" required>
+<input type="text" name="newsubject" required>
 </p>
 
 <p class="submit">
 	<input type="submit" value="registration">
 </p>
 </form>
+<script src= "./js/number.js"></script>
 </body>
 </html>
