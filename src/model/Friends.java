@@ -6,10 +6,11 @@ public class Friends implements Serializable {
 	private int id;
 	private int users_id;
 	private int friends_id;
-	private int hidden;
-	private int favorite; /*bitを型に変換できなかった...*/
-	
-	public Friends(int id, int users_id, int friends_id, int hidden, int favorite) {
+	private boolean hidden;/* bitをboolean型に変換 */
+	private boolean favorite; /* bitをboolean型に変換 */
+
+
+	public Friends(int id, int users_id, int friends_id, boolean hidden, boolean favorite) {
 		super();
 		this.id = id;
 		this.users_id = users_id;
@@ -17,36 +18,59 @@ public class Friends implements Serializable {
 		this.hidden = hidden;
 		this.favorite = favorite;
 	}
+
+
+
+
+
+	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 	public int getUsers_id() {
 		return users_id;
 	}
+
+
 	public void setUsers_id(int users_id) {
 		this.users_id = users_id;
 	}
+
+
 	public int getFriends_id() {
 		return friends_id;
 	}
+
+
 	public void setFriends_id(int friends_id) {
 		this.friends_id = friends_id;
 	}
-	public int getHidden() {
+
+
+	public boolean isHidden() {
 		return hidden;
 	}
-	public void setHidden(int hidden) {
+
+
+	public void setHidden(boolean hidden) {
 		this.hidden = hidden;
 	}
-	public int getFavorite() {
+
+
+	public boolean isFavorite() {
 		return favorite;
 	}
-	public void setFavorite(int favorite) {
+
+
+	public void setFavorite(boolean favorite) {
 		this.favorite = favorite;
 	}
-
 
 }
