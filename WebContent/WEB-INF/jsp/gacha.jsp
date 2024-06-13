@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>gacha</title>
-<link rel="stylesheet" href="/C6/css/common.css">
-<link rel="stylesheet" href="/C6/css/gacha.css">
+<link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/gacha.css">
 </head>
 <body>
 <main>
-<form method="post" action="/C6/GachaServlet">
+<form method="post" action="/c6/GachaServlet">
 </form>
 </main>
 <script src= "gacha.js"></script>
