@@ -18,6 +18,7 @@ public class FriendAddServlet extends HttpServlet {
 		dispatcher.forward(req, res);
 
 	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
