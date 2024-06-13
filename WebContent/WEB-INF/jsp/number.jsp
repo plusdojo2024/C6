@@ -14,12 +14,12 @@
 <form method="post" action="/c6/NumberServlet">
 <p>
 現在の4number<br>
-<input type="text" name="subject">
+<input type="text" name="subject" required>
 </p>
 
 <p>
 新しい4number<br>
-<input type="text" name="subject">
+<input type="text" name="subject" required>
 </p>
 
 <p class="submit">
