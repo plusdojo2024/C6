@@ -22,4 +22,5 @@
 		</div>
 	</form>
 </body>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 </html>

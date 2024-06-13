@@ -30,4 +30,5 @@
 	<input type="date" name="birthday" placeholder="誕生日">
 	<a>open</a>
 </body>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 </html>

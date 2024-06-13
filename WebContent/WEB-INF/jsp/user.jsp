@@ -92,4 +92,5 @@
               <button type="submit">registration</button>
     </form>
 </body>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 </html>

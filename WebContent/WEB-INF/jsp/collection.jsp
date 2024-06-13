@@ -14,5 +14,6 @@
 </form>
 </main>
 <script src= "collection.js"></script>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 </body>
 </html>
