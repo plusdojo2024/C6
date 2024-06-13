@@ -12,9 +12,8 @@
   <div>---</div>
   <div>---</div>
 </div>
- <ul id="nav">
-    <div>
-    <ul>
+<div>
+ <ul>
       <li>my page</li>
       <li>icon</li>
       <li>4number</li>
