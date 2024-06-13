@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>フレンド追加</title>
+<link rel="stylesheet" href="/c6/css/common.css">
 </head>
 <body>
 	<h1>friend</h1>
-	<form method="post" action="/C6/FriendAddServlet">
+	<form method="post" action="/c6/FriendAddServlet">
 		<div>add friend</div>
 		<div>nickname
 			<input type = "text" >

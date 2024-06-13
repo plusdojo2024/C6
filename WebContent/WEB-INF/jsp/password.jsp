@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード変更</title>
-<link rel="stylesheet" href="/C6/css/common.css">
+<link rel="stylesheet" href="/c6/css/common.css">
 </head>
 <body>
 	<h1>new password</h1>
-	<form  method="post" action="/C6/PasswordServlet">
+	<form  method="post" action="/c6/PasswordServlet">
 		<div>password</div>
 		<div>
 			<input type="text" name="passwordUp" >
@@ -22,7 +22,7 @@
 		</div>
 	</form>
 	<div>
-		<a href="/C6/LoginServlet"  >ログイン画面に戻る</a>
+		<a href="/c6/LoginServlet"  >ログイン画面に戻る</a>
 	</div>
 </body>
 </html>
