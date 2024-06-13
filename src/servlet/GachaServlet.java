@@ -18,7 +18,7 @@ public class GachaServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
 		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/C6/LoginServlet");
+			res.sendRedirect("/c6/LoginServlet");
 			return;
 		}
 		// ガチャページにフォワードする
