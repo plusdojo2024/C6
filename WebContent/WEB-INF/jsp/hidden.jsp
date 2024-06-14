@@ -12,12 +12,12 @@
 <main>
 
 <form method="post" action="/c6/HiddenServlet">
-  <h1>hidden</h1>
+  <div ><img src ="/c6/img/hiddenlogo.png" ></div>
     <span>
-        <img src="画像のURL" alt="管理">
+        <img src="画像のURL" >
         <a>ニックネーム</a>
-        <button type="submit">cansellation</button>
-         <button type="submit">delete</button>
+        <button type="submit" class="submitbutton">cansellation</button>
+         <button type="submit" class="submitbutton">delete</button>
 
     </span>
 </form>
