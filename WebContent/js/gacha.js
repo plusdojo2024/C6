@@ -1,4 +1,4 @@
-   'use strict'
+'use strict'
 
 // <js>ガチャを引くボタンを検知
 // <js>ガチャエラー
@@ -12,12 +12,12 @@
 
 
 
-    //const omikujiResults = SQLのコレクションにする;
-    const button = document.getElementById('gacha');
+const omikujiResults = ['大吉', '吉', '吉', '中吉', '中吉', '中吉', '小吉', '小吉', '小吉', '小吉', '末吉', '末吉', '末吉', '凶', '凶', '大凶'];
+const button = document.getElementById('gacha');
 
-    button.addEventListener('click', function() {
-        const randomIndex = Math.floor(Math.random() * omikujiResults.length);
-        const result = omikujiResults[randomIndex];
+button.addEventListener('click', function() {
+	const randomIndex = Math.floor(Math.random() * omikujiResults.length);
+	const result = omikujiResults[randomIndex];
 
-        window.alert('あなたの運勢は『' + result + '』です！');
-    });
+	window.alert('あなたの運勢は『' + result + '』です！');
+});
