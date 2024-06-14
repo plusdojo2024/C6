@@ -9,14 +9,17 @@
 <link rel="stylesheet" href="/c6/css/user.css">
 </head>
 <body>
-<h1><img src="img/mypagelogo.png" alt="マイページロゴ" width="500" height="90"></h1>
+<h1><img src="img/mypagelogo.png"  width="1000" height="200"></h1>
 <form method="post" action="/c6/UserServlet">
-  <h2>status</h2>
+<h2 class="h2"><img src="img/status.png" width="700" height="100"></h2>
   <p>&lt;自動更新：　AM6:00&gt;</p>
-
-    <input type="image" src="/img/open.png" style="border: double;" height="90" width="480"/>
+<div>
+<ul>
+    <li>open</li>
     <li>close</li>
     <li>now</li>
+</ul>
+</div>
 <h2>place</h2>
         <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
