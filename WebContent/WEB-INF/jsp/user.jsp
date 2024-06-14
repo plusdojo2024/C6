@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="/c6/css/user.css">
 </head>
 <body>
-<h1><img src="img/mypagelogo.png"  width="1000" height="200"></h1>
+<h1><img src="img/mypagelogo.png"></h1>
 <form method="post" action="/c6/UserServlet">
-<h2 class="h2"><img src="img/status.png" width="700" height="100"></h2>
+<h2 class="h2"><img src="img/status.png" width="700" height="" style="height: 91px; "></h2>
   <p>&lt;自動更新：　AM6:00&gt;</p>
 <div>
 <ul>
