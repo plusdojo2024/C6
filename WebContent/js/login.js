@@ -23,6 +23,6 @@ function checkSubmit() {
 		return true;
 	}
 	//ダイアログ表示入れるかも
-
+	alert("ニックネーム、パスワードを正しく入力してください。");
 	return false;
 }
