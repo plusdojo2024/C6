@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/c6/css/newsecret.css">
 </head>
 <body>
+<div class="area" >
 	<main>
 	<form  method="post" action="/c6/SecretServlet">
 		<div><img src="img/sercretquestion.png" width="300px" height="80px" ></div>
@@ -20,6 +21,19 @@
 		<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 	</form>
 	</main>
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
 </body>
 <script src= "secret.js"></script>
 </html>
