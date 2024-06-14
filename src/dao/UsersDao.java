@@ -161,8 +161,8 @@ public class UsersDao {
 				else {
 					pStmt.setString(4, null);
 				}
-			if (card.getBirthday() != 0 && card.getBirthday()!=0) {
-				pStmt.setInt(5, card.getBirthday());
+			if (card.getBirthday() != null && !card.getBirthday().equals("")) {
+				pStmt.setString(5, card.getBirthday());
 			} else {
 				pStmt.setInt(5,0);
 			}
