@@ -17,11 +17,9 @@ public class Users implements Serializable {
 	private int finish;
 	private String remarks;
 
-<<<<<<< HEAD
-	public Users(int id, String name, String password, int number, String secret, int birthday, String location,
-=======
-	public Users(int id, String name, int password, int number, String secret, String birthday, String location,
->>>>>>> cfcdbf03975e56c621213742bf7b69987d32c52f
+
+	public Users(int id, String name, String password, int number, String secret, String birthday, String location,
+
 			int motivation, String icon, int start, int finish, String remarks) {
 		super();
 		this.id = id;
