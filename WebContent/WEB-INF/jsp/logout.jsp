@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/c6/css/logout.css">
 </head>
 <body>
-<img src="/c6/img/logout.png" width="400" height="250">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><img src="/c6/img/logout.png" width="400" height="250"><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h2>ログアウトしますか？</h2>
 <form method="post" action="/c6/LogoutServlet">
 <input type = "submit" class = "submitbutton" value ="logout" onclick="return confirm('本当にログアウトしますか？');">
