@@ -12,12 +12,19 @@
 
 
 
-const omikujiResults = ['大吉', '吉', '吉', '中吉', '中吉', '中吉', '小吉', '小吉', '小吉', '小吉', '末吉', '末吉', '末吉', '凶', '凶', '大凶'];
-const button = document.getElementById('gacha');
+function start(){
+	main.src="/c6/img/gachaafter.gif";
+	document.getElementById("gacha").innerHTML="ガチャを引く";
+	setTimeout(next,5000);
+	}
 
-button.addEventListener('click', function() {
-	const randomIndex = Math.floor(Math.random() * omikujiResults.length);
-	const result = omikujiResults[randomIndex];
+function next(){
 
+var omikuji = ['大吉', '吉', '吉', '中吉', '中吉', '中吉', '小吉', '小吉', '小吉', '小吉', '末吉', '末吉', '末吉', '凶', '凶', '大凶'];
+var randomIndex=Math.floor(Math.random()*omikuji.length);
+const result = omikujiResults[randomIndex];
+
+document.getElementById("gacha").innerHTML = omikuji[random];
 	window.alert('あなたの運勢は『' + result + '』です！');
-});
+
+}
