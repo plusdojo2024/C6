@@ -6,26 +6,30 @@
 <meta charset="UTF-8">
 <title>番号管理</title>
 <link rel="stylesheet" href="/c6/css/common.css">
-<link rel="stylesheet" href="/c6/css/number.css">
+<link rel="stylesheet" href="/c6/css/set.css">
 </head>
 
 <body>
-<h1>4ナンバー</h1>
+<div><img src="/c6/img/number.png" width="500" height="100"></div>
 <form name="numberForm" method="post" action="/c6/NumberServlet"  onsubmit="return validateForm()">
-<p>
-現在の4number<br>
+
+
+<div>現在の4number</div>
+<div>
 <input type="text" name="subject" required>
-</p>
+</div>
 
-<p>
-新しい4number<br>
-<input type="text" name="newsubject" required>
-</p>
 
-<p class="submit">
+<div>新しい4number</div>
+<div><input type="text" name="newsubject" required></div>
+
+
+<div class="submit">
 	<input type="submit" value="registration">
-</p>
+</div>
+
 </form>
 <script src= "./js/number.js"></script>
 </body>
+
 </html>

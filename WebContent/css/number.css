@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+input{
+	 color:#ffffff;
+	 background-color: #020430;
+	 outline:solid 2px #FFFFFF;
+}
+div{
+	text-align:center;
+}
+
+submit{
+	color:#ffffff;
+}
+
+

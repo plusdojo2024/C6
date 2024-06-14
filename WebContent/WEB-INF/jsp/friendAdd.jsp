@@ -18,7 +18,7 @@
 			<input type = "text" required >
 		</div>
 		<div>
-			<input type="submit" name="change" value="registration">
+			<input type="submit" class="submitbuttom" name="change" value="registration">
 		</div>
 	</form>
 </body>

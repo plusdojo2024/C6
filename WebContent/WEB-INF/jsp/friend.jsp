@@ -7,10 +7,12 @@
 <title>フレンド一覧</title>
 </head>
 <body>
-	<h1>friend list</h1>
-	<input type="button" value="friend add" onclick="location.href='http://localhost:8080/c6/FriendAddServlet'">
+	<div>
+	<img src="/c6/img/friend.png" width="500" height="100">
+	<a href = "/c6/FriendAddServlet"><img src="img/friendAddicon.png" width="70" height="70"></a>
+	</div>
 
-	<p>my stats</p>
+	<div><img src="/c6/img/mystatus.png" width="500" height="100"></div>
 	ニックネーム<br>
 	<p><input type="text" name="subject" placeholder="ニックネーム"></p>
 	誕生日<br>
