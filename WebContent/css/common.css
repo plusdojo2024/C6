@@ -3,11 +3,12 @@
 html {
 	 background-color: #020430;
 	 color: white;
+	 padding: 20px;
+    text-align:  center;
 }
 
 .nav ul {
     display: flex;
-    list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: auto;
 }
