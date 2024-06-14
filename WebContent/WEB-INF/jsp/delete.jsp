@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="/c6/css/delete.css">
 </head>
 <body>
-<h1>account deletion</h1>
+<img src="/c6/img/deletion.png" width="650" height="250">
 <form method="post" action="/c6/DeleteServlet">
-<input type = "submit" value ="delete" onclick="return confirm('本当に削除しますか？');">
+<input type = "submit" class = "submitbutton" value ="registration" onclick="return confirm('本当に削除しますか？');">
 </form>
 <script src= "delete.js"></script>
 </body>
