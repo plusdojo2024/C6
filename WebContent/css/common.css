@@ -1,11 +1,20 @@
 @charset "UTF-8";
 
 html {
-	 background-color: #020430;
-	 color: white;
-	 padding: 20px;
-    text-align:  center;
-}
+      background-color: #020430;
+      color: white;
+      padding: 20px;
+      text-align: center;
+        }
+
+ @media (max-width: 767px) {
+   html {
+ /* ここに画面幅767px以下の場合のスタイルを記述します */
+   		 background-color: #004080; /* 例: 背景色を変更 */
+         padding: 10px; /* 例: パディングを変更 */
+         font-size: 14px; /* 例: フォントサイズを変更 */
+        }
+        }
 
 .nav ul {
     display: flex;
