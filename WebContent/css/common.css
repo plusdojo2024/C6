@@ -162,14 +162,12 @@ body {
 	animation-duration: 11s;
 }
 
-@
-keyframes animate { 0%{
+@keyframes animate { 0%{
 	transform: translateY(0) rotate(0deg);
 	opacity: 1;
 	border-radius: 0;
 }
-100
-%
+100%
 {
 transform
 :
