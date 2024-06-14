@@ -43,4 +43,3 @@ function checkPassword(password) {
 /* 「open」「close」「ジョッキマーク」「更新前」「飲み会中」チェック*/
 /* 備考欄チェック */
 /* アイコンチェック */
-/* 4ナンバーチェック*/
