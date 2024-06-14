@@ -22,6 +22,7 @@
 		<li></li>
 	</ul>
 	<main>
+	<div><img src="img/sercretquestion.png" width="400px" height="200px" ></div>
 	<form  method="post" action="/c6/SecretServlet">
 		nickname<br>
 		<input type = "text" ><br>

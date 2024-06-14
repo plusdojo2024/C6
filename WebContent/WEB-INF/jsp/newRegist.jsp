@@ -22,6 +22,7 @@
 		<li></li>
 	</ul>
 	<main>
+		<div><img src="img/signup.png" width="300px" height="200px" ></div>
 		<form  method="post" action="/c6/NewRegistServlet">
 			nickname<br>
 			<input type = "text" ><br>

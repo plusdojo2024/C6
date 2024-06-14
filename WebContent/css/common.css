@@ -24,6 +24,7 @@ input{
     display: flex;
     padding: 0;
     margin: auto;
+    list-style: none;
 }
 
 /* 色が背景色から白色に代わるボタン */
