@@ -18,6 +18,12 @@ function checkPassword(password) {
 
 
 /* 10文字以上15文字以下 */
+function checkPassword(password) {
+	if (password.match(/^{10,15}*$/)) {
+		return true;
+	}
+	return false;
+}
 
 /* パスワード一致チェック(パスワードjsかも) */
 
