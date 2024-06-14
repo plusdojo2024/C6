@@ -57,10 +57,10 @@ public class UsersDao {
 				pStmt.setString(4, "（未設定）");
 			}
 
-			if (card.getBirthday() != 0&& card.getBirthday()!=0) {
-				pStmt.setInt(5, card.getBirthday());
+			if (card.getBirthday() != null&& card.getBirthday().equals("")) {
+				pStmt.setString(5, card.getBirthday());
 			} else {
-				pStmt.setInt(5,0);
+				pStmt.setString(5,"（未設定）");
 			}
 
 			if (card.getLocation() != null && !card.getLocation().equals("")) {
