@@ -13,13 +13,10 @@
 <form method="post" action="/c6/UserServlet">
 <h2 class="h2"><img src="img/status.png" width="700" height="" style="height: 91px; "></h2>
   <p>&lt;自動更新：　AM6:00&gt;</p>
-<div>
-<ul>
-    <li>open</li>
+
+    <input type="submit" value="" class="opensubmit">
     <li>close</li>
     <li>now</li>
-</ul>
-</div>
 <h2>place</h2>
         <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
