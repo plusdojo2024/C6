@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="/c6/css/sound.css">
 </head>
 <body>
-	<img src="/c6/img/sound.png" width="400" height="250">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><img src="/c6/img/sound.png" width="400" height="250">
 	<form method="post" action="/c6/SoundServlet">
-		<input type="range" min="0" max="100" step="10"><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><input type="range" min="0" max="100" step="10"><br>
 		<input type = "submit" class = "submitbutton" value ="registration">
 	</form>
 	<script src= "sound.js"></script>
