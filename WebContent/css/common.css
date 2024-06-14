@@ -15,6 +15,10 @@ html {
          font-size: 14px; /* 例: フォントサイズを変更 */
         }
         }
+input{
+	 background-color: #020430;
+	 outline:solid 2px #FFFFFF
+}
 
 .nav ul {
     display: flex;
