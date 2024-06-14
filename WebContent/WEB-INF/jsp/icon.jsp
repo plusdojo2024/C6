@@ -34,7 +34,7 @@
 			<input type = "submit" class = "submitbutton" value ="registration">
 		</div>
 	</form>
-<script src= "icon.js"></script>
+<script src= "./js/icon.js"></script>
 </body>
 
 /WEB-INF/jsp/common.jsp
