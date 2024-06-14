@@ -19,4 +19,4 @@ function validateForm() {
     }
 
     return true; // フォームを送信する
-}
+    }
