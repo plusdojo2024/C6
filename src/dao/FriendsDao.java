@@ -38,9 +38,13 @@ public class FriendsDao {
 			if (card.getHidden() != false ) {
 				pStmt.setBoolean(4, card.getHidden());
 			} else {
-				pStmt.setBoolean(4, false);
+				pStmt.setBoolean(4,false);
 			}
+<<<<<<< Updated upstream
 			if (card.getFavorite() != false ) {
+=======
+			if (card.getFavorite() != false && !card.getFavorite() .equals("") ) {
+>>>>>>> Stashed changes
 				pStmt.setBoolean(5, card.getFavorite());
 			} else {
 				pStmt.setBoolean(5,false);
