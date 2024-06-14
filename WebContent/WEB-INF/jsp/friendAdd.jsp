@@ -10,7 +10,7 @@
 <body>
 	<h1>friend</h1>
 	<form method="post" action="/c6/FriendAddServlet">
-		<div>add friend</div>
+		<div><img src="img/addfriend.png" width="300px" height="80px" ></div>
 		<div>nickname
 			<input type = "text"  required >
 		</div>
@@ -18,7 +18,7 @@
 			<input type = "text" required >
 		</div>
 		<div>
-			<input type="submit" class="submitbuttom" name="change" value="registration">
+			<input type="submit" class="submitbutton" name="change" value="registration">
 		</div>
 	</form>
 </body>
