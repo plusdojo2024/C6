@@ -7,6 +7,18 @@
 <title>フレンド一覧</title>
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 	<div>
 	<img src="/c6/img/friend.png" width="500" height="100">
 	<a href = "/c6/FriendAddServlet"><img src="img/friendAddicon.png" width="70" height="70"></a>
