@@ -33,7 +33,7 @@
 			secret question<br>
 			母親の旧姓は？<br>
 			<input type = "text" ><br>
-			<input type = "submit" value="registration"><br>
+			<input type = "submit" class="submitbutton" value="registration"><br>
 			<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 		</form>
 	</main>
