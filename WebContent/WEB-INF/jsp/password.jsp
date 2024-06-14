@@ -11,6 +11,7 @@
 <body>
 	<div><img src="img/newpassword.png" width="500px" height="100px" ></div>
 	<form method="post" action="/c6/PasswordServlet">
+		<div>password</div>
 		<div>
 			<input type="text" name="passwordUp" >
 		</div>
