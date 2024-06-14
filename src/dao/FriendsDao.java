@@ -40,11 +40,10 @@ public class FriendsDao {
 			} else {
 				pStmt.setBoolean(4,false);
 			}
-<<<<<<< Updated upstream
 			if (card.getFavorite() != false ) {
-=======
-			if (card.getFavorite() != false && !card.getFavorite() .equals("") ) {
->>>>>>> Stashed changes
+
+			if (card.getFavorite() != false ) {
+
 				pStmt.setBoolean(5, card.getFavorite());
 			} else {
 				pStmt.setBoolean(5,false);
@@ -53,8 +52,8 @@ public class FriendsDao {
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
-			}
-		} catch (SQLException e) {
+			}}}
+			catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

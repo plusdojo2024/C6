@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="/c6/css/collection.css">
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 <main>
 <form method="post" action="/c6/CollectionServlet">
 </form>
