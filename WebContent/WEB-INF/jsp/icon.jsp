@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>
-<img src="/c6/img/icon.png" width="400" height="250"><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><img src="/c6/img/icon.png" width="400" height="250"><br><br><br><br><br>
 </h1>
 <img src="/c6/img/icon2.png" width="250" height="200"><br><br><br><br><br>
 <form method="post" action="/c6/IconServlet">
