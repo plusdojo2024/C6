@@ -9,9 +9,8 @@
 <link rel="stylesheet" href="/c6/css/password.css">
 </head>
 <body>
-	<h1>new password</h1>
+	<div><img src="img/newpassword.png" width="500px" height="100px" ></div>
 	<form method="post" action="/c6/PasswordServlet">
-		<div>password</div>
 		<div>
 			<input type="text" name="passwordUp" >
 		</div>
@@ -19,7 +18,7 @@
 			<input type="text" name="passwordDown" >
 		</div>
 		<div>
-			<input type="submit" name="change" value="registration">
+			<input type="submit" class="submitbutton" name="change" value="registration">
 		</div>
 	</form>
 	<div>
