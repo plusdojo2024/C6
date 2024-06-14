@@ -10,7 +10,6 @@
 </head>
 <body>
 <main>
-<div class = " buttonimage_css ">
 	<input type="image" value="my page" onclick="location.href='http://localhost:8080/c6/UserServlet'" src="/c6/img/set_mypage.png" ><br>
 	<input type="image" value="icon" onclick="location.href='http://localhost:8080/c6/IconServlet'"src="/c6/img/set_icon.png"><br>
 	<input type="image" value="fourNumber" onclick="location.href='http://localhost:8080/c6/NumberServlet'"src="/c6//img/set_fournumber.png"><br>

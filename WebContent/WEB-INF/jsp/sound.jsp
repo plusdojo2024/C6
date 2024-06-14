@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="/c6/css/sound.css">
 </head>
 <body>
-	<h1>sound</h1>
+	<img src="/c6/img/sound.png" width="400" height="250">
 	<form method="post" action="/c6/SoundServlet">
-		<input type="range" min="0" max="100" step="10">
-		<button>登録</button>
+		<input type="range" min="0" max="100" step="10"><br>
+		<input type = "submit" class = "submitbutton" value ="registration">
 	</form>
 	<script src= "sound.js"></script>
 </body>
