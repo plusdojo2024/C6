@@ -13,8 +13,8 @@
 <main>
 <form method="post" action="/c6/GachaServlet">
 </form>
-<div ><img src ="/c6/img/gachamain.png" class ="gachamain"></div>
-<input type = "button"  id="gacha" value = "ガチャを引く">
+<div ><img src ="/c6/img/gacha.gif" class ="gachamain"></div>
+<input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く">
 </main>
 <script src= "./js/gacha.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
