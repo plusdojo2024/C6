@@ -9,13 +9,27 @@
 <link rel="stylesheet" href="/c6/css/login.css">
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div><img src="img/glass.png" width="200px" height="200px" ></div>
 	<form id="login_form" method="post" action="/c6/LoginServlet" onsubmit="return checkSubmit()">
 		<main>
 			nickname<br>
-			<input type = "text"  id="nickname"><br>
-			password<br>
-			<input type = "password" id="password" required><br>
-			<input class="button" type = "submit" value="login" ><br>
+			<!-- ニックネームの文字数を仮に5文字に制限 -->
+			<input type = "text"  id="nickname"  maxlength="5" required><br>
+	<!--		password<br>
+		 	<input type = "password" id="password" required><br>-->
+			<input type = "submit" class="submitbutton" value="login" ><br>
 			<a href = "/c6/NewRegistServlet">初めてご利用の方</a><br>
 			<a href = "/c6/SecretServlet">パスワードをお忘れの方</a>
 		</main>

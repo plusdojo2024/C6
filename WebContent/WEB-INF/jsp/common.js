@@ -1,11 +1,33 @@
 /* ニックネームチェック */
+
 /* 文字数チェック(21字以上はfalse) */
-function checkNickname(nickname) {
+	/* HTML要素をオブジェクトとして取得する */
+	let nickObj = document.getElementById('nickname');
+	let errorMessageObj = document.getElementById('error_message');
+
+	/* [ログイン]ボタンをクリックしたときの処理 */
+     	nickObj.addEventListener('input', function() {
+    if (nickObj.value.length >= 20) {
+        errorMessageObj.textContent = '※２０字以内にしてください！';
+    } else {
+        errorMessageObj.textContent = null;
+    }
+});
+
+
+
+
+
+
+
+
+
+
+/*function checkNickname(nickname) {
 	if (nickname.length <= 20) {
 		return true;
-	}
-	return false;
-}
+	} */
+
 
 /* パスワードチェック */
 /* 半角英数字チェック */

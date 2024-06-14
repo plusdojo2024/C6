@@ -18,7 +18,7 @@ public class UsersDao {
 			//Connctionする
 			 conn = BaseDAO.conn();
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
-			String sql = "INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
@@ -101,6 +101,12 @@ public class UsersDao {
 			else {
 				pStmt.setString(11, "（未設定）");
 			}
+			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
+				pStmt.setString(12, card.getTimestamp());
+			}
+			else {
+				pStmt.setString(12, "currenttimestamp");
+			}
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -134,7 +140,7 @@ public class UsersDao {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=? WHERE id=?";
+			String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=?, timestamp=?, WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -199,7 +205,13 @@ public class UsersDao {
 			else {
 				pStmt.setString(11, null);
 			}
-			pStmt.setInt(12, card.getId());
+			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
+				pStmt.setString(12, card.getTimestamp());
+			}
+			else {
+				pStmt.setString(12,"currenttimestamp");
+			}
+			pStmt.setInt(13, card.getId());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
