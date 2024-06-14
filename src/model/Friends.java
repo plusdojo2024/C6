@@ -20,9 +20,6 @@ public class Friends implements Serializable {
 	}
 
 
-
-
-
 	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;
@@ -54,7 +51,7 @@ public class Friends implements Serializable {
 	}
 
 
-	public boolean isHidden() {
+	public boolean getHidden() {
 		return hidden;
 	}
 
@@ -64,7 +61,7 @@ public class Friends implements Serializable {
 	}
 
 
-	public boolean isFavorite() {
+	public boolean getFavorite() {
 		return favorite;
 	}
 
@@ -72,5 +69,12 @@ public class Friends implements Serializable {
 	public void setFavorite(boolean favorite) {
 		this.favorite = favorite;
 	}
+
+
+
+
+
+
+
 
 }

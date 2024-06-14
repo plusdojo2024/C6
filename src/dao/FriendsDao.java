@@ -35,12 +35,12 @@ public class FriendsDao {
 			} else {
 				pStmt.setInt(3,0);
 			}
-			if (card.getHidden() != false && !card.getHidden() .equals("") ) {
+			if (card.getHidden() != false ) {
 				pStmt.setBoolean(4, card.getHidden());
 			} else {
 				pStmt.setBoolean(4, false);
 			}
-			if (card.getFavorite() != 0 && card.getFavorite() != 0) {
+			if (card.getFavorite() != false ) {
 				pStmt.setBoolean(5, card.getFavorite());
 			} else {
 				pStmt.setBoolean(5,false);
@@ -83,15 +83,15 @@ public class FriendsDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getHidden() != 0 && card.getHidden() != 0) {
-				pStmt.setBoolean(1, card.getHidden());
+			if (card.getHidden() != false  ) {
+				pStmt.setBoolean(4, card.getHidden());
 			} else {
-				pStmt.setBoolean(1,0);
+				pStmt.setBoolean(4, false);
 			}
-			if (card.getFavorite() != 0 && card.getFavorite() != 0) {
-				pStmt.setBoolean(2, card.getFavorite());
+			if (card.getFavorite() != false ) {
+				pStmt.setBoolean(5, card.getFavorite());
 			} else {
-				pStmt.setBoolean(2,0);
+				pStmt.setBoolean(5,false);
 			}
 
 			// SQL文を実行する
