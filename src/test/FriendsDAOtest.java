@@ -1,4 +1,7 @@
 package test;
+
+public class FriendsDAOtest {
+
 import java.util.List;
 
 import dao.FriendsDao;
