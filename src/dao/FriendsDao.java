@@ -35,15 +35,15 @@ public class FriendsDao {
 			} else {
 				pStmt.setInt(3,0);
 			}
-			if (card.getHidden() != 0 && card.getHidden() != 0) {
+			if (card.getHidden() != false && !card.getHidden() .equals("") ) {
 				pStmt.setBoolean(4, card.getHidden());
 			} else {
-				pStmt.setBoolean(4, 0);
+				pStmt.setBoolean(4, false);
 			}
 			if (card.getFavorite() != 0 && card.getFavorite() != 0) {
 				pStmt.setBoolean(5, card.getFavorite());
 			} else {
-				pStmt.setBoolean(5,0);
+				pStmt.setBoolean(5,false);
 			}
 
 			// SQL文を実行する
