@@ -1,12 +1,12 @@
 package test;
 import java.util.List;
 
-import dao.ItemsDao;
+import dao.FriendsDao;
 import model.Items;
 
-public class ItemsDAOtest {
+public class FriendsDAOtest {
 	public static void main(String[] args) {
-		ItemsDao dao = new ItemsDao();
+		FriendsDao dao = new FriendsDao();
 		List<Items> cardList;
 
 		// insertメソッドのテスト
