@@ -8,6 +8,18 @@
 <link rel="stylesheet" href="/c6/css/common.css">
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 	<h1>friend</h1>
 	<form method="post" action="/c6/FriendAddServlet">
 		<div>add friend</div>

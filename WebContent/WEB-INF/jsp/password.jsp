@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="/c6/css/password.css">
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 	<div><img src="img/newpassword.png" width="500px" height="100px" ></div>
 	<form method="post" action="/c6/PasswordServlet">
 		<div>password</div>

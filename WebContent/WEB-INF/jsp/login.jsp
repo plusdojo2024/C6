@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="/c6/css/login.css">
 </head>
 <body>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 	<form id="login_form" method="post" action="/c6/LoginServlet" onsubmit="return checkSubmit()">
 		<main>
 			nickname<br>
