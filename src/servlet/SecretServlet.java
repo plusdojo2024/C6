@@ -28,8 +28,12 @@ protected void doPost(HttpServletRequest req, HttpServletResponse res) throws Se
 	String secret = req.getParameter("secret");
 
 	// 処理を行う
-	UsersDAO uDao = newUsersDAO();
-	if (uDao.isLoginOK(new Users(secret))) {	// ログイン成功
+	UsersDAO uDao = new UsersDAO();
+	//インスタンス生成
+	Users u=new Users();
+	u.setSecret(secret);
+
+	if (uDao.isLoginOK(u)) {	// 処理成功
 
 
 	// 成功したら、パスワードサーブレットにリダイレクトする

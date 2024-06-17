@@ -34,6 +34,9 @@ public class Users implements Serializable {
 		this.remarks = remarks;
 		this.timestamp = timestamp;
 	}
+	public Users() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 	public int getId() {
 		return id;
 	}
