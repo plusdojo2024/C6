@@ -223,4 +223,8 @@ public class CollectionsDAO {
 		// 結果を返す
 		return result;
 	}
+	public void gacha(Collections u) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
 }

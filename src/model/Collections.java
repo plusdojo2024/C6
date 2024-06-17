@@ -60,4 +60,13 @@ public class Collections implements Serializable {
 
 
 
+
+	public void setGacha(Object gacha) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+
+
+
 }
