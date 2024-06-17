@@ -23,14 +23,14 @@
 	</ul>
 	<main>
 		<div><img src="img/signup.png" width="300px" height="200px" ></div>
-		<form  method="post" action="/c6/NewRegistServlet">
+		<form  method="post" action="/c6/NewRegistServlet" onsubmit="return checkBirth()">
 			nickname<br>
 			<input type = "text" ><br>
 			password<br>
 			<input type = "password" ><br>
 			<input type = "password" ><br>
 			birthday<br>
-			<input type = "text" ><br>
+			<input type = "text" id="birthday" ><br>
 			secret question<br>
 			母親の旧姓は？<br>
 			<input type = "text" ><br>
