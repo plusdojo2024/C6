@@ -2,13 +2,79 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Collections;
 
 public class CollectionsDAO {
 
+	// 引数paramで検索項目を指定し、検索結果のリストを返す
+	public List<Collections> select(Collections card) {
+		Connection conn = null;
+		List<Collections> cardList = new ArrayList<Collections>();
 
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Collecitons WHERE users_id LIKE ? AND items_id LIKE ? ORDER BY id";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を完成させる
+
+			if (card.getUsers_id() != 0) {
+				pStmt.setString(1, "%" + card.getUsers_id() + "%");
+			}
+			else {
+				pStmt.setString(1, "%");
+			}
+			if (card.getItems_id() != 0) {
+				pStmt.setString(2, "%" + card.getItems_id() + "%");
+			}
+			else {
+				pStmt.setString(2, "%");
+			}
+
+			// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							Collections record = new Collections(
+							rs.getInt("id"),
+							rs.getInt("uses_id"),
+							rs.getInt("items_id")
+							);
+							cardList.add(record);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								cardList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return cardList;
+				}
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Collections card) throws Exception {
 		Connection conn = null;
