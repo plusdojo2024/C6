@@ -36,6 +36,4 @@
 	</form>
 <script src= "./js/icon.js"></script>
 </body>
-
-/WEB-INF/jsp/common.jsp
 </html>
