@@ -1,3 +1,5 @@
+//Users_id,friends_id トランザクション
+
 package dao;
 
 import java.sql.Connection;
