@@ -29,6 +29,14 @@ public class HiddenServlet extends HttpServlet {
 			return;
 		}
 */
+		// リクエストパラメータを取得する
+		req.setCharacterEncoding("UTF-8");
+		String hidden = req.getParameter("hidden");
+		String name = req.getParameter("name");
+		String icon = req.getParameter("icon");
+
+		//
+
 
 	// 非表示ページにフォワードする
 	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
