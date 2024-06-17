@@ -1,17 +1,16 @@
 package test;
 import java.util.List;
 
-import dao.ItemsDao;
+import dao.ItemsDAO;
 import model.Items;
 
 public class ItemsDAOtest {
 	public static void main(String[] args) {
-		ItemsDao dao = new ItemsDao();
+		ItemsDAO dao = new ItemsDAO();
 		List<Items> cardList = null;
 
 		// selectメソッドのテスト
 		System.out.println("<< selectメソッドのテスト（すべてのレコードを検索します）>>");
-		cardList = dao.select(new Items());
 		for (Items card : cardList) {
 			System.out.println("アイテムID：" + card.getId());
 			System.out.println("タイプID：" + card.getTypes_id());

@@ -1,17 +1,16 @@
 package test;
 import java.util.List;
 
-import dao.FriendsDao;
+import dao.FriendsDAO;
 import model.Friends;
 
 public class FriendsDAOtest {
 	public static void main(String[] args) {
-		FriendsDao dao = new FriendsDao();
+		FriendsDAO dao = new FriendsDAO();
 		List<Friends> cardList = null;
 
 		// selectメソッドのテスト
 		System.out.println("<< selectメソッドのテスト（すべてのレコードを検索します）>>");
-		cardList = dao.select(new Friends());
 		for (Friends card : cardList) {
 			System.out.println("お気に入りID：" + card.getId());
 			System.out.println("ユーザーID：" + card.getUsers_id());
@@ -28,7 +27,6 @@ public class FriendsDAOtest {
 		try {
 			if (dao.insert(insRec)) {
 				System.out.println("登録成功！");
-				cardList = dao.select(insRec);
 				for (Friends card : cardList) {
 					upDelNumber = card.getId();	// 最後のレコードを後で更新および削除する
 				}
@@ -49,7 +47,6 @@ public class FriendsDAOtest {
 		try {
 			if (dao.update(upRec)) {
 				System.out.println("更新成功！");
-				cardList = dao.select(upRec);
 			}
 			else {
 				System.out.println("更新失敗！");
