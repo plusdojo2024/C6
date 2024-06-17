@@ -380,7 +380,7 @@ public class UsersDAO {
 	}
 
 	//4ナンバーとニックネームが一致しているか判断
-	public boolean checkNumber(String name,int subject) throws Exception {
+	public boolean checkNumber(String name, int subject) throws Exception {
 		Connection conn = null;
 		try {
 			//Connctionする
@@ -414,15 +414,13 @@ public class UsersDAO {
 				}
 			}
 		}
-
 		// 結果を返す
 		return false;
 	}
-	// ナンバーを新しい番号に更新する
-	public boolean updateNumber(String name,int newsubject) throws Exception {
-		Connection conn = null;
-		boolean result = false;
 
+	// ナンバーを新しい番号に更新する
+	public void updateNumber(String name, int newsubject) throws Exception {
+		Connection conn = null;
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
@@ -436,9 +434,8 @@ public class UsersDAO {
 			pStmt.setString(2, name);
 
 			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = true;
-			}
+			pStmt.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -453,8 +450,5 @@ public class UsersDAO {
 				}
 			}
 		}
-
-		// 結果を返す
-		return result;
 	}
 }
