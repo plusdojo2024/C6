@@ -70,13 +70,11 @@ body {
 
 /*背景の泡　終わりはコメントで書いてる*/
 .circles {
-	position: absolute;
-	top: 0;
-	left: 0;
+	position: absolute; /* 要素は文書の通常のフローから除外され、ページレイアウト内にこの要素のための空間が作成 */
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-	z-index: -1;
+	overflow: hidden; /* 右のスクロールホイールを生成させない */
+	z-index: -1; /* 奥行き */
 }
 
 .circles li {
@@ -86,7 +84,7 @@ body {
 	width: 20px;
 	height: 20px;
 	background: rgba(255, 255, 255, 0.2);
-	animation: animate 25s linear infinite;
+	animation: animate 25s linear infinite; /* 速さを調整できる */
 	bottom: -150px;
 }
 
@@ -167,8 +165,8 @@ body {
 
 @keyframes animate { 0%{
 	transform: translateY(0) rotate(0deg);
-	opacity: 1;
-	border-radius: 100%;
+	opacity: 1;  /* 不透明度 0が透明 */
+	border-radius: 100%; /* 円の半径 */
 }
 100%
 {
