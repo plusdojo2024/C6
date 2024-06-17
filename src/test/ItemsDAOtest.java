@@ -1,13 +1,25 @@
 package test;
 import java.util.List;
 
-import dao.ItemsDAO;
+import dao.ItemsDao;
 import model.Items;
 
 public class ItemsDAOtest {
 	public static void main(String[] args) {
-		ItemsDAO dao = new ItemsDAO();
+		ItemsDao dao = new ItemsDao();
 		List<Items> cardList = null;
+
+		// selectメソッドのテスト
+		System.out.println("<< selectメソッドのテスト（すべてのレコードを検索します）>>");
+		cardList = dao.select(new Items());
+		for (Items card : cardList) {
+			System.out.println("アイテムID：" + card.getId());
+			System.out.println("タイプID：" + card.getTypes_id());
+			System.out.println("ラベル：" + card.getLabel());
+			System.out.println("名前：" + card.getName());
+			System.out.println("詳細：" + card.getMemo());
+			System.out.println();
+		}
 
 		// insertメソッドのテスト
 		int upDelNumber = 0;		// 後で更新および削除する番号
@@ -16,7 +28,7 @@ public class ItemsDAOtest {
 		try {
 			if (dao.insert(insRec)) {
 				System.out.println("登録成功！");
-
+				cardList = dao.select(insRec);
 				for (Items card : cardList) {
 					upDelNumber = card.getId();	// 最後のレコードを後で更新および削除する
 				}
@@ -37,6 +49,7 @@ public class ItemsDAOtest {
 		try {
 			if (dao.update(upRec)) {
 				System.out.println("更新成功！");
+				cardList = dao.select(upRec);
 			}
 			else {
 				System.out.println("更新失敗！");
