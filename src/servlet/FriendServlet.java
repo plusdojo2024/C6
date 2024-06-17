@@ -27,10 +27,16 @@ public class FriendServlet extends HttpServlet {
 					return;
 				}
 
-				// 登録ページにフォワードする
+				// 一覧ページにフォワードする
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 				dispatcher.forward(req, res);
 
+				//リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				Int users_id=request.getParameter("users_id");
+				Int friends_id=request.getParameter("friends_id");
+				Int hidden=request.getParameter("hidden");
+				Int favorite=request.getParameter("favorite");
 	}
 
 }
