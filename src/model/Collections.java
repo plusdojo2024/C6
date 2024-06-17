@@ -19,6 +19,14 @@ public class Collections implements Serializable {
 
 
 
+	public Collections() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
+
+
+
 	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;

@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CollectionsDAO ;
+import model.Collections;
+
 @WebServlet("/GachaServlet")
 public class GachaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -17,37 +20,32 @@ public class GachaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/gacha.jsp");
 		dispatcher.forward(req, res);
-
 	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = req.getSession();
-		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/c6/GachaServlet");
-			return;
-		}
-
-		// 検索ページにフォワードする
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/gacha.jsp");
-		dispatcher.forward(req, res);
-	}
-
-	/*
-		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		//int number = request.getParameter("number"); 	//主キー
-		String name = request.getParameter("name"); //氏名
-
-		// 検索処理を行う
-		BcDAO bDao = new BcDAO();
-		List<Bc> cardList = bDao.select(new Bc(0, name, address, company, department, position, zipcode, phone, fax,
-				email, remarks, sessonId, timestamp));
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException {
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
+		req.setAttribute("cardList", cardList);
+		//リクエストパラメータを取得する
+		req.setCharacterEncoding("UTF-8");
+		String id = req.getParameter("id");
+		String label = req.getParameter("users_id");
+		String name = req.getParameter("item_id");
 
 
-	}*/
+		//String型をInt型に変換
+		int id = Integer.parseInt(id);
+		int users_id = Integer.parseInt(users_id);
+		int item_id = Integer.parseInt(item_id);
+
+		// 処理を行う
+		CollectionsDAO uDao = new CollectionsDAO();
+		//beanにセット
+		Collections u=new Collections();
+		u.setgacha(id);
+		u.setgacha(users_id);
+		u.setgacha(item_id);
+
+		uDAO.gacha(u);
+
 }
