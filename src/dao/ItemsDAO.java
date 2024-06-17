@@ -1,3 +1,5 @@
+//types_id トランダクション
+
 package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +14,7 @@ public class ItemsDAO {
 	Connection conn = null;
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Items> select(Items card) {
+	public List<Items> select(Items card) throws Exception {
 		Connection conn = null;
 		List<Items> cardList = new ArrayList<Items>();
 

@@ -1,3 +1,5 @@
+//users_id items_id　トランザクション
+
 package dao;
 
 import java.sql.Connection;
@@ -12,7 +14,7 @@ import model.Collections;
 public class CollectionsDAO {
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Collections> select(Collections card) {
+	public List<Collections> select(Collections card) throws Exception {
 		Connection conn = null;
 		List<Collections> cardList = new ArrayList<Collections>();
 
