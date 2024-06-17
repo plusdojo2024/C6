@@ -40,7 +40,7 @@ public class FriendAddServlet extends HttpServlet {
 			u.setName(name);
 			u.setNumber(number);
 
-			//TODO友達追加処理メソッドまだない
+			//TODO 友達追加処理メソッドまだない
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
 			dispatcher.forward(req, res);
