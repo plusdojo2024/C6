@@ -1,15 +1,22 @@
+//Users_id,friends_id トランザクション
+
 package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Friends;
-
 public class FriendsDAO {
 	Connection conn = null;
+	// 引数paramで検索項目を指定し、検索結果のリストを返す
+	public List<Friends> select(Friends card) throws Exception {
+		Connection conn = null;
+		List<Friends> cardList = new ArrayList<Friends>();
 
-<<<<<<< HEAD
 		try {
 			//Connctionする
 			 conn = BaseDAO.conn();
@@ -84,8 +91,6 @@ public class FriendsDAO {
 					// 結果を返す
 					return cardList;
 				}
-=======
->>>>>>> 7dc2ee22e298ed055ba64ee512fa855d934258b9
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Friends card) throws Exception {
 		Connection conn = null;
