@@ -30,7 +30,9 @@ input {
 	margin: 0 auto 0 auto;
 	display: flex;
 	justify-content: center;
-
+	position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* 色が背景色から白色に代わるボタン */

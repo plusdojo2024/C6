@@ -21,14 +21,14 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<h1><img src="img/mypagelogo.png" alt="マイページロゴ" width="500" height="90"></h1>
+	<h1><img src="img/mypagelogo.png"  width="500" height="90"></h1>
 	<form method="post" action="/c6/UserServlet">
-		<h2>status</h2>
+		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
 		<input type="image" src="/img/open.png" style="border: double;" height="90" width="480"/>
 		<li>close</li>
 		<li>now</li>
-		<h2>place</h2>
+		<h2><img src="img/plase.png" width="500" height="90"></h2>
         <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
             <option value="hokkaido">北海道</option>
@@ -82,7 +82,7 @@
                 <button type="reset">リセット</button>
                 <br>
                 <br>
-        <h2>time</h2>
+        <h2><img src="img/time.png" width="300" height="70"></h2>
 
         <!--  input type="time" id="start-time" name="start-time" min="00:00" max="23:59" required>-->
         <input type="time" required>
@@ -92,7 +92,7 @@
         <button type="reset">リセット</button>
         <br>
         <br>
-        <h2>remarks</h2>
+        <h2><img src="img/remarks.png" width="500" height="90"></h2>
             <label for="remarks">備考:</label>
             <input type="text" id="remarks" name="remarks">
             <br>
