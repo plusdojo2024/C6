@@ -173,10 +173,10 @@ body {
 transform
 :
 translateY(
--1000px
+-1000px /* y方向に-1000px移動させて半透明にしている */
 )
 rotate(
-720deg
+0deg /* 0回転させる→ないと動かない */
 );
 opacity
 :
