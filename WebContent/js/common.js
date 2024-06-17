@@ -15,13 +15,6 @@
 });
 
 
-
-
-
-
-
-
-
 /*function checkNickname(nickname) {
 	if (nickname.length <= 20) {
 		return true;
@@ -57,7 +50,7 @@ function checkPassword(password) {
 
 
 /* 秘密の質問チェック */
-/* 文字数チェック(21字以上はfalse) */
+
 
 
 /*サウンド設定*/
