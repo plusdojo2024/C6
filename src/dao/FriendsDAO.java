@@ -38,13 +38,13 @@ public class FriendsDAO {
 			else {
 				pStmt.setString(2, "%");
 			}
-			if (card.getHidden() != false) {
+			if (card.getHidden() != 0) {
 				pStmt.setString(3, "%" + card.getHidden() + "%");
 			}
 			else {
 				pStmt.setString(3, "%");
 			}
-			if (card.getFavorite() != false) {
+			if (card.getFavorite() != 0) {
 				pStmt.setString(4, "%" + card.getFavorite() + "%");
 			}
 			else {
@@ -61,8 +61,8 @@ public class FriendsDAO {
 							rs.getInt("id"),
 							rs.getInt("users_id"),
 							rs.getInt("friends_id"),
-							rs.getBoolean("hidden"),
-							rs.getBoolean("favorite")
+							rs.getInt("hidden"),
+							rs.getInt("favorite")
 							);
 							cardList.add(record);
 						}
@@ -117,18 +117,18 @@ public class FriendsDAO {
 			} else {
 				pStmt.setInt(3,0);
 			}
-			if (card.getHidden() != false ) {
-				pStmt.setBoolean(4, card.getHidden());
+			if (card.getHidden() != 0 && card.getHidden() != 0)  {
+				pStmt.setInt(4, card.getHidden());
 			} else {
-				pStmt.setBoolean(4,false);
+				pStmt.setInt(4,0);
 			}
-			if (card.getFavorite() != false ) {
+			if (card.getFavorite() != 0 && card.getFavorite() != 0) {
 
-			if (card.getFavorite() != false ) {
+			if (card.getFavorite() != 0 ) {
 
-				pStmt.setBoolean(5, card.getFavorite());
+				pStmt.setInt(5, card.getFavorite());
 			} else {
-				pStmt.setBoolean(5,false);
+				pStmt.setInt(5,0);
 			}
 
 			// SQL文を実行する
@@ -168,15 +168,15 @@ public class FriendsDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getHidden() != false  ) {
-				pStmt.setBoolean(4, card.getHidden());
+			if (card.getHidden() != 0 ) {
+				pStmt.setInt(4, card.getHidden());
 			} else {
-				pStmt.setBoolean(4, false);
+				pStmt.setInt(4, 0);
 			}
-			if (card.getFavorite() != false ) {
-				pStmt.setBoolean(5, card.getFavorite());
+			if (card.getFavorite() != 0) {
+				pStmt.setInt(5, card.getFavorite());
 			} else {
-				pStmt.setBoolean(5,false);
+				pStmt.setInt(5,0);
 			}
 
 			// SQL文を実行する

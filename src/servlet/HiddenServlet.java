@@ -35,6 +35,9 @@ public class HiddenServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String icon = req.getParameter("icon");
 
+		//hiddenをStringからintにする
+		int hidden = Integer.parseInt(hidden);
+
 		//
 
 
