@@ -19,6 +19,14 @@ public class Collections implements Serializable {
 
 
 
+	public Collections() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
+
+
+
 	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;
@@ -47,6 +55,15 @@ public class Collections implements Serializable {
 
 	public void setItems_id(int items_id) {
 		this.items_id = items_id;
+	}
+
+
+
+
+
+	public void setGacha(Object gacha) {
+		// TODO 自動生成されたメソッド・スタブ
+
 	}
 
 

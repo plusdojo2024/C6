@@ -1,0 +1,45 @@
+CREATE TABLE COLLECTIONS
+(
+id			INTEGER AUTO_INCREMENT(1)	,
+users_id		INTEGER	NOT NULL		,
+items_id		INTEGER	NOT NULL 		,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE FRIENDS
+(
+id	INTEGER AUTO_INCREMENT(1)		,
+users_id		INTEGER NOT NULL		,
+friends_id	INTEGER NOT NULL		,
+hidden			INTEGER NOT NULL		,
+favorite		INTEGER NOT NULL		,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE ITEMS
+(
+id	INTEGER AUTO_INCREMENT(1)		,
+types_id	INTEGER								,
+label			BLOB									,
+name			VARCHAR(20)						,
+memo			VARCHAR(140)					,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE USERS
+(
+id	INTEGER AUTO_INCREMENT(1)	,
+name				VARCHAR(20)				,
+password		VARCHAR(15)				,
+number			VARCHAR(4)				,
+secret			VARCHAR(20)				,
+birthday		date							,
+location		VARCHAR(10)				,
+motivation	INTEGER(3)				,
+icon				BLOB							,
+start				VARCHAR(2)				,
+finish			VARCHAR(2)				,
+remarks			VARCHAR(140)			,
+timestamp		TIMESTAMP					,
+PRIMARY KEY(id)
+);
