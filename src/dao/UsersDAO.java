@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class UsersDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM Collecitons WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
+			String sql = "SELECT * FROM Collections WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 
@@ -133,7 +134,8 @@ public class UsersDAO {
 	public boolean insert(Users card) throws Exception {
 		Connection conn = null;
 		boolean result = false;
-
+		//現在時刻を取得する
+		 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
@@ -173,9 +175,9 @@ public class UsersDAO {
 			}
 
 			if (card.getBirthday() != null && card.getBirthday().equals("")) {
-				pStmt.setString(5, card.getBirthday());
-			} else {
 				pStmt.setString(5, null);
+			} else {
+				pStmt.setString(5, card.getBirthday());
 			}
 
 			if (card.getLocation() != null && !card.getLocation().equals("")) {
@@ -216,7 +218,7 @@ public class UsersDAO {
 			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
 				pStmt.setString(12, card.getTimestamp());
 			} else {
-				pStmt.setString(12, "currenttimestamp");
+				pStmt.setTimestamp(12,timestamp );
 			}
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
