@@ -157,7 +157,7 @@ public class UsersDAO {
 			if (card.getPassword() != null && !card.getPassword().equals("")) {
 				pStmt.setString(2, card.getPassword());
 			} else {
-				pStmt.setString(2, "（未設定）");
+				pStmt.setString(2, "");
 			}
 
 			if (card.getNumber() != 0 && card.getNumber() != 0) {
@@ -169,19 +169,19 @@ public class UsersDAO {
 			if (card.getSecret() != null && !card.getSecret().equals("")) {
 				pStmt.setString(4, card.getSecret());
 			} else {
-				pStmt.setString(4, "（未設定）");
+				pStmt.setString(4, "");
 			}
 
 			if (card.getBirthday() != null && card.getBirthday().equals("")) {
 				pStmt.setString(5, card.getBirthday());
 			} else {
-				pStmt.setString(5, "（未設定）");
+				pStmt.setString(5, "");
 			}
 
 			if (card.getLocation() != null && !card.getLocation().equals("")) {
 				pStmt.setString(6, card.getLocation());
 			} else {
-				pStmt.setString(6, "（未設定）");
+				pStmt.setString(6, "");
 			}
 
 			if (card.getMotivation() != 0 && card.getMotivation() != 0) {
@@ -193,7 +193,7 @@ public class UsersDAO {
 			if (card.getIcon() != null && !card.getIcon().equals("")) {
 				pStmt.setString(8, card.getIcon());
 			} else {
-				pStmt.setString(8, "（未設定）");
+				pStmt.setString(8, "");
 			}
 
 			if (card.getStart() != 0 && card.getStart() != 0) {
@@ -211,7 +211,7 @@ public class UsersDAO {
 			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
 				pStmt.setString(11, card.getRemarks());
 			} else {
-				pStmt.setString(11, "（未設定）");
+				pStmt.setString(11, "");
 			}
 			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
 				pStmt.setString(12, card.getTimestamp());
