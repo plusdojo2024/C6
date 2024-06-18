@@ -36,6 +36,19 @@
 	メモ<br>
 	<input type="text" name="subject" placeholder="メモ">
 
+
+	<c:forEach var="Users" items="${cardList }">
+	<tr>
+		<td>${Users.icon }</td>
+		<td>${Users.name }</td>
+		<td>${Users. motivation}</td>
+		<td>${Users.birthday }</td>
+		<td>${Users. location}</td>
+		<td>${USers.start }</td>
+		<td>${Users.finish}</td>
+		<td>${Users.remarks}</td>
+	</tr>
+	</c:forEach>
 	<h1>friend list</h1>
 	<p>ニックネーム</p>
 	<a>アイコン</a>
@@ -43,6 +56,16 @@
 	<a>メモあり！</a>
 	<input type="date" name="birthday" placeholder="誕生日">
 	<a>open</a>
+
+	<c:forEach var="Friends" items="${cardList}">
+
+		<a>${Friends.icon}</a>
+		<td>${Friends.favorite}</td>
+		<td><input type="button" name="hidden">
+		<td>${Friends.name }</td>
+		<td>${Friends.motivation }</td>
+
+	</c:forEach>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 </html>

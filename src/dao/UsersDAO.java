@@ -501,6 +501,44 @@ public class UsersDAO {
 		return false;
 	}
 
+	//秘密の質問チェック
+	public boolean checkSecret(Users u) throws Exception {
+		Connection conn = null;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ? AND secret=  ? ";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, u.getName());
+			pStmt.setString(2, u.getSecret());
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			if (rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return false;
+	}
 
 	// パスワード変更
 	public void updatePassword(String name,Users u ) throws Exception {
