@@ -22,9 +22,9 @@ public class UsersDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			//フレンド一覧でお気に入りver.非表示なってない人ver.自分だけver.のセレクト文？←確認
+			//フレンド一覧お気に入りver.非表示なってない人ver.自分だけver.のセレクト文？←確認
 			//３つ作る　テーブル結合をやる
-
+			//
 			//id,pwのも書く
 			String sql = "SELECT * FROM Users WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -458,8 +458,46 @@ public class UsersDAO {
 		}
 	}
 
-	public boolean isLoginOK(Users u) {
-		// TODO 自動生成されたメソッド・スタブ
+	//
+
+
+
+	//ログインチェック
+	public boolean isLoginOK(Users u) throws Exception {
+		Connection conn = null;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ? AND password=  ? ";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, u.getName());
+			pStmt.setString(2, u.getPassword());
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			if (rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
 		return false;
 	}
 }

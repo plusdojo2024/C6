@@ -26,9 +26,9 @@
 		<main>
 			nickname<br>
 			<!-- ニックネームの文字数を仮に20文字に制限 -->
-			<input type = "text"  id="nickname"  maxlength="20" required><br>
+			<input type = "text"  name = "name"  id="nickname"  maxlength="20" required><br>
 			password<br>
-		 	<input type = "password" id="password" required><br>
+		 	<input type = "password" name = "password"  id="password" required><br>
 			<input type = "submit" class="submitbutton" value="login" ><br>
 			<a href = "/c6/NewRegistServlet">初めてご利用の方</a><br>
 			<a href = "/c6/SecretServlet">パスワードをお忘れの方</a>
