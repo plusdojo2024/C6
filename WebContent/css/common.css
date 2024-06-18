@@ -158,7 +158,7 @@ body {
 	animation-delay: 0s;
 	animation-duration: 11s;
 }
-
+/*
 .circles li:after {
   content: '';
   position: absolute;
@@ -169,6 +169,8 @@ body {
   border-radius: 100%;
   background: rgba(255, 255, 255, 0.2);
 }
+*/
+
 @keyframes animate {
 
 	/*アニメーションを開始するときのCSSを記述*/
