@@ -13,6 +13,14 @@ import model.Collections;
 
 public class CollectionsDAO {
 
+	//メモ
+	//　Collectionsとitemsテーブルを結合
+	//　コレクションページを開いたとき、
+	//　　ラベルのみ表示
+	//　ラベル押下時、
+	//　　ラベルlabel、名前name、詳細memoを表示
+	//SELECT items.label,items,name,items,memo FROM Collections INNER JOIN Items ON Collections.items_id = items.id;
+
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Collections> select(Collections card) throws Exception {
 		Connection conn = null;
@@ -77,6 +85,16 @@ public class CollectionsDAO {
 					// 結果を返す
 					return cardList;
 				}
+
+
+	//ガチャを引いた時のメモ
+	//　jsで数字をランダム生成
+	//　jspがサーブレットに数字を送る
+	//　サーブレットがDAOにusers_idと数字を送る
+	//　＊users_idとitems_id(数字)をインサート＊
+
+
+
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Collections card) throws Exception {
 		Connection conn = null;
