@@ -45,14 +45,14 @@ public class FriendServlet extends HttpServlet {
 
 		List<Users> cardList=uDAO.select(new Users());
 
-		request.setAttribute("cardList", cardList);
+		req.setAttribute("cardList", cardList);
 
 	//フレンド一覧を表示させる　要トランザクション
 		FriendsDAO fDAO=new FriendsDAO();
 
-		List<Friends> cardList=fDAO.select(new Friends());
+		List<Friends> friendList=fDAO.select(new Friends());
 
-		request.setAttribute("cardList", cardList);
+		req.setAttribute("friendList", friendList);
 
 	}
 
