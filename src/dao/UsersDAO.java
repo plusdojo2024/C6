@@ -175,7 +175,7 @@ public class UsersDAO {
 			if (card.getBirthday() != null && card.getBirthday().equals("")) {
 				pStmt.setString(5, card.getBirthday());
 			} else {
-				pStmt.setString(5, "");
+				pStmt.setString(5, null);
 			}
 
 			if (card.getLocation() != null && !card.getLocation().equals("")) {
