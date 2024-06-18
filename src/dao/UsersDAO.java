@@ -451,4 +451,9 @@ public class UsersDAO {
 			}
 		}
 	}
+
+	public boolean isLoginOK(Users u) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
 }
