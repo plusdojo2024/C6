@@ -22,7 +22,7 @@ public class FriendsDAO {
 			 conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM Collecitons WHERE users_id LIKE ? AND friends_id LIKE ? AND hidden LIKE ? AND favorite LIKE? ORDER BY id";
+			String sql = "SELECT * FROM Collections WHERE users_id LIKE ? AND friends_id LIKE ? AND hidden LIKE ? AND favorite LIKE? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 

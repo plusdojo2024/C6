@@ -9,7 +9,7 @@ public class BaseDAO {
 		//connectionの作成
 		Class.forName("org.h2.Driver");
 
-		String dbUrl = "jdbc:h2:file:C:/pleiades/workspace/data/simpleBC";
+		String dbUrl = "jdbc:h2:file:C:/pleiades/workspace/data/c6";
 		String dbName = "sa";
 		String dbPw = "";
 		Connection conn;
