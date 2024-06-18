@@ -25,10 +25,10 @@
 	<div><img src="img/sercretquestion.png" width="400px" height="200px" ></div>
 	<form  method="post" action="/c6/SecretServlet">
 		nickname<br>
-		<input type = "text" ><br>
+		<input type = "text"  name="name"><br>
 		母親の旧姓は？<br>
-		<input type = "text"  required><br>
-		<input type = "submit"  class="submitbutton" value="registration" ><br>
+		<input type = "text"  name="secret" required><br>
+		<input type = "submit" class="submitbutton" value="registration" ><br>
 		<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 	</form>
 	</main>
