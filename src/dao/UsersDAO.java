@@ -500,4 +500,40 @@ public class UsersDAO {
 		// 結果を返す
 		return false;
 	}
+
+
+	// パスワード変更
+	public void updatePassword(String name,Users u ) throws Exception {
+		Connection conn = null;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "UPDATE Users SET password=? WHERE name=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, u.getPassword());
+			pStmt.setString(2, name);
+
+			// SQL文を実行する
+			pStmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 }

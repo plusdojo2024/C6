@@ -25,9 +25,9 @@
 	<form method="post" action="/c6/UserServlet">
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
-		<button type='button'>open</button>
-		<button type='button'>close</button>
-		<button type='button'>now</button>
+		<button type='button' class="transparent-button"><img src="img/open.png" alt="open" style="width: 200px; height: 70px;"></button>
+		<button type='button' class="transparent-button"><img src="img/close.png" alt="close" style="width: 200px; height: 70px;"></button>
+		<button type='button' class="transparent-button"><img src="img/now.png" alt="open" style="width: 200px; height: 100px;"></button>
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
         <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
