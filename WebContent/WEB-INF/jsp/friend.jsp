@@ -36,6 +36,7 @@
 	メモ<br>
 	<input type="text" name="subject" placeholder="メモ">
 
+
 	<c:forEach var="Users" items="${cardList }">
 	<tr>
 		<td>${Users.icon }</td>
