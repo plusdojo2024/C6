@@ -23,7 +23,7 @@ public class FriendsDAOtest {
 		// insertメソッドのテスト
 		int upDelNumber = 0;		// 後で更新および削除する番号
 		System.out.println("<< insertメソッドのテスト（1件のレコードを登録します）>>");
-		Friends insRec = new Friends(0, 0, 0, false, false);
+		Friends insRec = new Friends(0, 0, 0, 0, 0);
 		try {
 			if (dao.insert(insRec)) {
 				System.out.println("登録成功！");
@@ -43,7 +43,7 @@ public class FriendsDAOtest {
 
 		// updateメソッドのテスト
 		System.out.println("<< updateメソッドのテスト（1件のレコードを更新します）>>");
-		Friends upRec = new Friends(0, 0, 0, false, false);
+		Friends upRec = new Friends(0, 0, 0, 0, 0);
 		try {
 			if (dao.update(upRec)) {
 				System.out.println("更新成功！");

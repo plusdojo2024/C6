@@ -25,9 +25,9 @@
 	<form method="post" action="/c6/UserServlet">
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
-		<input type="image" src="/img/open.png" style="border: double;" height="90" width="480"/>
-		<li>close</li>
-		<li>now</li>
+		<button type='button'>open</button>
+		<button type='button'>close</button>
+		<button type='button'>now</button>
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
         <select id="prefecture" name="prefecture" >
             <option value="">-- 選択してください --</option>
