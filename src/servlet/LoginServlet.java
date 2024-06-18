@@ -38,12 +38,17 @@ public class LoginServlet extends HttpServlet {
 		Users u=new Users();
 		u.setName(name);
 		u.setPassword(password);
-		uDAO.select(u);
+		try {
+			uDAO.select(u);
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
-		if (uDAO.isLoginOK(u) {
-		// セッションスコープにIDを格納する
+		if (uDAO.isLoginOK(u)) {
+		//セッションオブジェクトを生成し、データを格納
 		HttpSession session = req.getSession();
-		session.setAttribute("name", new LoginUser(name));
+		session.setAttribute(name,u);
 
 		// ログインに成功したら、スマホならマイページのuserサーブレットにリダイレクトする
 		res.sendRedirect("/WEB-INF/jsp/user.jsp");

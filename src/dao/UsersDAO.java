@@ -22,7 +22,11 @@ public class UsersDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM Collections WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
+			//フレンド一覧でお気に入りver.非表示なってない人ver.自分だけver.のセレクト文？←確認
+			//３つ作る　テーブル結合をやる
+
+			//id,pwのも書く
+			String sql = "SELECT * FROM Users WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 
