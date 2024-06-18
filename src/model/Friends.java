@@ -20,6 +20,11 @@ public class Friends implements Serializable {
 	}
 
 
+	public Friends() {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
 	//↓↓getterおよびsetterの生成（自動生成）
 	public int getId() {
 		return id;
@@ -68,6 +73,18 @@ public class Friends implements Serializable {
 
 	public void setFavorite(int favorite) {
 		this.favorite = favorite;
+	}
+
+
+	public void setIcon(String icon) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+
+	public void setName(String name) {
+		// TODO 自動生成されたメソッド・スタブ
+
 	}
 
 

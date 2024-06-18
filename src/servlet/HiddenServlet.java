@@ -34,18 +34,18 @@ public class HiddenServlet extends HttpServlet {
 */
 		// リクエストパラメータを取得する
 		req.setCharacterEncoding("UTF-8");
-		String hide = req.getParameter("hidden");
+		String hidden = req.getParameter("hidden");
         String name = req.getParameter("name");
         String icon = req.getParameter("icon");
 
-        // hiddenをStringからintに変換
-        int hid = Integer.parseInt(hide);
+		// hiddenをStringからintに変換
+        int hidden1 = Integer.parseInt(hidden);
 
         // Friendsオブジェクトを作成
-        Friends friend = new Friends();
-        friend.setHidden(hidden);
-        friend.setName(name);
-        friend.setIcon(icon);
+        Friends f = new Friends();
+        f.setHidden(hidden1);
+        f.setName(name);
+        f.setIcon(icon);
 
         // DAOを使用してデータベース操作
         FriendsDAO dao = new FriendsDAO();
@@ -53,12 +53,12 @@ public class HiddenServlet extends HttpServlet {
         try {
             // フレンドリストに追加する
             if (req.getParameter("cansellation") != null) {
-                dao.insert(friend);
+                dao.insert(f);
             }
 
             // データを削除する
             if (req.getParameter("delete") != null) {
-                dao.delete(hidden);
+                dao.delete(hidden1);
             }
 
             // 必要に応じて他の操作もここに追加
