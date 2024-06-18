@@ -32,7 +32,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse res) throws Se
 	//インスタンス生成
 	Users u=new Users();
 	u.setSecret(secret);
-
+//TODO
 	if (uDao.isLoginOK(u)) {	// 処理成功
 
 
