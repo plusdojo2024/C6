@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UsersDAO;
+import model.Users;
+
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -27,15 +30,19 @@ public class LoginServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		String name = req.getParameter("name");
 		String password = req.getParameter("password");
-/*
+
 		// ログイン処理を行う
 		UsersDAO uDAO = new UsersDAO();
-		if (uDAO.isLoginOK(new Users(name, password))) {
+		//インスタンス生成
+		Users u=new Users();
+		u.setName(name);
+		u.setPassword(password);
 
+		if (uDAO.isLoginOK(u) {
 		// セッションスコープにIDを格納する
 		HttpSession session = req.getSession();
 		session.setAttribute("name", new LoginUser(name));
-*/
+
 		// ログインに成功したら、スマホならマイページのuserサーブレットにリダイレクトする
 		res.sendRedirect("/WEB-INF/jsp/user.jsp");
 		}
