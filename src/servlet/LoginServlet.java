@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UsersDAO;
 import model.Users;
@@ -37,6 +38,7 @@ public class LoginServlet extends HttpServlet {
 		Users u=new Users();
 		u.setName(name);
 		u.setPassword(password);
+		uDAO.select(u);
 
 		if (uDAO.isLoginOK(u) {
 		// セッションスコープにIDを格納する
@@ -47,5 +49,5 @@ public class LoginServlet extends HttpServlet {
 		res.sendRedirect("/WEB-INF/jsp/user.jsp");
 		}
 
-
+	}
 }
