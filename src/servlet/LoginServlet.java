@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 				if (uDAO.isLoginOK(u)) {
 				//セッションオブジェクトを生成し、データを格納
 				HttpSession session = req.getSession();
-				session.setAttribute(name,u);
+				session.setAttribute("name",name);
 
 				// ログインに成功したら、スマホならマイページのuserサーブレットにリダイレクトする
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
