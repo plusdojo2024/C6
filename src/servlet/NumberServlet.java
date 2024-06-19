@@ -45,14 +45,16 @@ public class NumberServlet extends HttpServlet {
 			if (uDAO.checkNumber(name,subject)) {
 				//ナンバーとニックネームが一致したら、新しいナンバーの更新処理を行う
 				uDAO.updateNumber(name, newsubject);
+				//その後マイページに遷移する
+				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
+				dispatcher.forward(req, res);
 			} else {
 				//ナンバーとニックネームが一致しなかったら、ナンバー変更画面に戻る
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/number.jsp");
 				dispatcher.forward(req, res);
 			}
 
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
-			dispatcher.forward(req, res);
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
