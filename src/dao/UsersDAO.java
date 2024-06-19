@@ -139,7 +139,7 @@ public class UsersDAO {
 		Connection conn = null;
 		boolean result = false;
 		//現在時刻を取得する
-		 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
@@ -223,7 +223,7 @@ public class UsersDAO {
 			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
 				pStmt.setString(12, card.getTimestamp());
 			} else {
-				pStmt.setTimestamp(12,timestamp );
+				pStmt.setTimestamp(12, timestamp);
 			}
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -235,7 +235,7 @@ public class UsersDAO {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			// データベースを切断
 			if (conn != null) {
 				try {
@@ -463,8 +463,6 @@ public class UsersDAO {
 
 	//
 
-
-
 	//ログインチェック
 	public boolean isLoginOK(Users u) throws Exception {
 		Connection conn = null;
@@ -544,7 +542,7 @@ public class UsersDAO {
 	}
 
 	// パスワード変更
-	public void updatePassword(String name,Users u ) throws Exception {
+	public void updatePassword(String name, Users u) throws Exception {
 		Connection conn = null;
 		try {
 			//Connctionする
@@ -577,4 +575,82 @@ public class UsersDAO {
 		}
 	}
 
+	//入力されたニックネームと4ナンバーに一致する人がいるかチェック
+	public boolean checkFriend(Users u) throws Exception {
+		Connection conn = null;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ? AND number=  ? ";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, u.getName());
+			pStmt.setInt(2, u.getNumber());
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+
+			//
+			if (rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return false;
+	}
+
+	//ニックネームからidを取得する
+	public int selectId(String name) throws Exception {
+		Connection conn = null;
+		int id = 0;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, name);
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			//idを取得する
+			id = rs.getInt("id");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return id;
+	}
 }
