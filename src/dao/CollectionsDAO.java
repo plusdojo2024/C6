@@ -241,9 +241,22 @@ public class CollectionsDAO {
 
 		// 結果を返す
 		return result;
-	}
-	public void gacha(Collections u) {
-		// TODO 自動生成されたメソッド・スタブ
+
+
+	//ガチャjsで生成された数字とセッションidをサーブレット経由でインサート
+	/*public boolean addGachaNumber(String reqData) {
+		Connection conn = null;
+		boolean result = false;
+
+		// SQL文を準備する
+		String sql = "UPDATE * FROM COLLECTIONS WHERE name =  ? AND password=  ? ";
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+	*/
+
+
+
+
+
 
 	}
 }

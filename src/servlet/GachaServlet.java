@@ -29,7 +29,7 @@ public class GachaServlet extends HttpServlet {
         String reqData = req.getReader().readLine();
         // ここでDAOにデータを渡す処理を実行
         CollectionsDAO collectionDAO = new CollectionsDAO();
-        boolean success = collectionDAO.addData(reqData); // あとでDAOにデータを追加するからエラー出てる
+        boolean success = collectionDAO.addGachaNumber(reqData); // あとでDAOにデータを追加するからエラー出てる
 
 
 	}
