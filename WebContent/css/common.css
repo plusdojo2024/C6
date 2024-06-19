@@ -24,7 +24,15 @@ input[type="text"] {
 input[type="password"] {
     color: white;
 }
-
+input[type="time"]::-webkit-datetime-edit-text {
+    color: white; /* 時間の数字の色を白にする */
+}
+input[type="time"]::-webkit-datetime-edit-hour-field {
+    color: white; /* 時間の時の部分の色を白にする */
+}
+input[type="time"]::-webkit-datetime-edit-minute-field {
+    color: white; /* 時間の分の部分の色を白にする */
+}
 input {
 	background-color: #020430;
 	outline: solid 2px #FFFFFF
