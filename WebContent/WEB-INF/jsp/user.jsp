@@ -22,14 +22,16 @@
 		<li></li>
 	</ul>
 	<h1><img src="img/mypagelogo.png"  width="500" height="90"></h1>
-	<form method="post" action="/c6/UserServlet">
+	<form method="post" action="/c6/UserServlet" method="get">
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
-		<button type='button' class="transparent-button"><img src="img/open.png" alt="open" style="width: 200px; height: 70px;"></button>
-		<button type='button' class="transparent-button"><img src="img/close.png" alt="close" style="width: 200px; height: 70px;"></button>
-		<button type='button' class="transparent-button"><img src="img/now.png" alt="open" style="width: 200px; height: 100px;"></button>
+
+		<input type="checkbox" name="motivation" value="1">open
+		<input type="checkbox" name="motivation" value="2">close
+		<input type="checkbox" name="motivation" value="3">now
+
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
-        <select id="prefecture" name="prefecture" >
+        <select id="location" name="location" >
             <option value="">-- 選択してください --</option>
             <option value="hokkaido">北海道</option>
             <option value="aomori">青森県</option>
@@ -84,11 +86,11 @@
                 <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
 
-        <!--  input type="time" id="start-time" name="start-time" min="00:00" max="23:59" required>-->
-        <input type="time" required>
+        <!--  input type="time" id="start" name="start" min="00:00" max="23:59" required>-->
+        <input type="time" id="start" name="start" required>
         ～
-        <!-- input type="time" id="end-time" name="end-time" min="00:00" max="23:59" required-->
-        <input type="time" required>
+        <!-- input type="time" id="finish" name="finish" min="00:00" max="23:59" required-->
+        <input type="time" id="finish" name="finish" required>
         <button type="reset">リセット</button>
         <br>
         <br>

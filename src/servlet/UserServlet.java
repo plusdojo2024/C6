@@ -51,28 +51,30 @@ public class UserServlet extends HttpServlet {
 		String  remarks = req.getParameter("remarks");
 
 
+
 		// 登録処理を行う
 		UsersDAO uDAO = new UsersDAO();
 
 		//intに変換
         int motivation1 = Integer.parseInt(motivation);
-        int start1 = Integer.parseInt(start);
-        int finish1 = Integer.parseInt(finish);
 
-      //beanにセット
-		Users u = new Users();
-		u.setName(name);
-		u.setMotivation(motivation1);
-		u.setLocation(location);
-		u.setStart(start1);
-		u.setFinish(finish1);
-		u.setRemarks(remarks);
 
-		uDAO.update(u);
+        // beanにセット
+        Users u = new Users();
+        u.setName(name);
+        u.setMotivation(motivation1);
+        u.setLocation(location);
+        u.setStart(start);
+        u.setFinish(finish);
+        u.setRemarks(remarks);
+
+
+
+        uDAO.update(u);
 
 
 	// 登録完了後、フレンドページにフォワードする
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friends.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 	dispatcher.forward(req, res);
 
 		} catch (Exception e) {

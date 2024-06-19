@@ -70,12 +70,12 @@ public class UsersDAO {
 			} else {
 				pStmt.setString(8, "%");
 			}
-			if (card.getStart() != 0) {
+			if (card.getStart() != null) {
 				pStmt.setString(9, "%" + card.getStart() + "%");
 			} else {
 				pStmt.setString(9, "%");
 			}
-			if (card.getFinish() != 0) {
+			if (card.getFinish() != null) {
 				pStmt.setString(10, "%" + card.getFinish() + "%");
 			} else {
 				pStmt.setString(10, "%");
@@ -106,8 +106,8 @@ public class UsersDAO {
 						rs.getString("location"),
 						rs.getInt("motivation"),
 						rs.getString("icon"),
-						rs.getInt("start"),
-						rs.getInt("finish"),
+						rs.getString("start"),
+						rs.getString("finish"),
 						rs.getString("remarks"),
 						rs.getString("timestamp"));
 				cardList.add(record);
@@ -203,14 +203,14 @@ public class UsersDAO {
 				pStmt.setString(8, "");
 			}
 
-			if (card.getStart() != 0 && card.getStart() != 0) {
-				pStmt.setInt(9, card.getStart());
+			if (card.getStart() != null ) {
+				pStmt.setString(9, card.getStart());
 			} else {
 				pStmt.setInt(9, 0);
 			}
 
-			if (card.getFinish() != 0 && card.getFinish() != 0) {
-				pStmt.setInt(10, card.getFinish());
+			if (card.getFinish() != null ) {
+				pStmt.setString(10, card.getFinish());
 			} else {
 				pStmt.setInt(10, 0);
 			}
@@ -260,7 +260,7 @@ public class UsersDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=?, timestamp=?, WHERE id=?";
+			String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=?, timestamp=? WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -304,13 +304,13 @@ public class UsersDAO {
 			} else {
 				pStmt.setString(8, null);
 			}
-			if (card.getStart() != 0 && card.getStart() != 0) {
-				pStmt.setInt(9, card.getStart());
+			if (card.getStart() != null ) {
+				pStmt.setString(9, card.getStart());
 			} else {
 				pStmt.setInt(9, 0);
 			}
-			if (card.getFinish() != 0 && card.getFinish() != 0) {
-				pStmt.setInt(10, card.getFinish());
+			if (card.getFinish() != null) {
+				pStmt.setString(10, card.getFinish());
 			} else {
 				pStmt.setInt(10, 0);
 			}

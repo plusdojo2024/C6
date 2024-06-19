@@ -13,12 +13,12 @@ public class Users implements Serializable {
 	private String  location;	/*プルダウンの変換*/
 	private int	 motivation;
 	private String icon;
-	private int start;
-	private int finish;
+	private String start;
+	private String finish;
 	private String remarks;
 	private String timestamp;
 	public Users(int id, String name, String password, int number, String secret, String birthday, String location,
-			int motivation, String icon, int start, int finish, String remarks, String timestamp) {
+			int motivation, String icon, String start, String finish, String remarks, String timestamp) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -91,16 +91,16 @@ public class Users implements Serializable {
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	public int getStart() {
+	public String getStart() {
 		return start;
 	}
-	public void setStart(int start) {
+	public void setStart(String start) {
 		this.start = start;
 	}
-	public int getFinish() {
+	public String getFinish() {
 		return finish;
 	}
-	public void setFinish(int finish) {
+	public void setFinish(String finish) {
 		this.finish = finish;
 	}
 	public String getRemarks() {
