@@ -244,15 +244,37 @@ public class CollectionsDAO {
 
 
 	//ガチャjsで生成された数字とセッションidをサーブレット経由でインサート
-	/*public boolean addGachaNumber(String reqData) {
+	public boolean addGachaNumber(String reqData,int id) {
 		Connection conn = null;
-		boolean result = false;
 
+	try{
 		// SQL文を準備する
-		String sql = "UPDATE * FROM COLLECTIONS WHERE name =  ? AND password=  ? ";
+		String sql = "UPDATE * FROM COLLECTIONS WHERE users_id =? AND items_id=? ";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
-	*/
+		// SQL文を完成させる
+		int users_id = Integer.parseInt(intId);
+		int items_id = Integer.parseInt(strReqData);
 
+		pStmt.setInt(1, users_id );
+		pStmt.setInt(2, item_id );
+
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	// 結果を返す
+	return result;
 
 
 
