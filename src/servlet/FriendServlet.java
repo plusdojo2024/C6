@@ -11,39 +11,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.FriendsDAO;
-import model.Friends;
+/*import dao.FriendsDAO;
+import model.Friends;*/
 import dao.UsersDAO;
 import model.Users;
 
 @WebServlet("/FriendServlet")
 public class FriendServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private FriendsDAO friendDAO;
-	private UsersDAO usersDAO;
+
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
 
 	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-				HttpSession session = req.getSession();
-				if (session.getAttribute("id") == null) {
-					res.sendRedirect("/c6/LoginServlet");
-					return;
-				}
+		HttpSession session = req.getSession();
 
-				// 一覧ページにフォワードする
-				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
-				dispatcher.forward(req, res);
-			}
+		if (session.getAttribute("id") == null) {
+			res.sendRedirect("/c6/LoginServlet");
+			return;
+		}
 
-	//自分のステータスを表示させる
+
+
+
+//自分のステータスを表示させる
 		UsersDAO uDAO= new UsersDAO();
 
-		List<Users> cardList=uDAO.select(new Users());
+
+
+		List<Users> cardList = uDAO.select(new Users());
 
 		req.setAttribute("cardList", cardList);
 
@@ -56,4 +57,8 @@ public class FriendServlet extends HttpServlet {
 
 		req.setAttribute("friendList", friendList);*/
 
+// 一覧ページにフォワードする
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
+		dispatcher.forward(req, res);
 	}
+}

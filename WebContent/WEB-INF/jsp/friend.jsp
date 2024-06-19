@@ -25,18 +25,6 @@
 	</div>
 
 	<div><img src="/c6/img/mystatus.png" width="500" height="100"></div>
-	ニックネーム<br>
-	<p><input type="text" name="subject" placeholder="ニックネーム"></p>
-	誕生日<br>
-	<p><input type="date" name="birthday" placeholder="誕生日"></p>
-	場所<br>
-	<p>東京</p>
-	時間帯<br>
-
-	メモ<br>
-	<input type="text" name="subject" placeholder="メモ">
-
-
 
 	<tr>
 		<td>${Users.icon }</td>
