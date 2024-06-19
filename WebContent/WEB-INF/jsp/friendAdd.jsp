@@ -24,10 +24,10 @@
 	<form method="post" action="/c6/FriendAddServlet">
 	<div><img src="img/addfriend.png" width="300px" height="100px" ></div>
 		<div>nickname
-			<input type = "text"  required >
+			<input type = "text"  required name="name">
 		</div>
 		<div>4number
-			<input type = "text" required >
+			<input type = "text" required name="number">
 		</div>
 		<div>
 			<input type="submit" class="submitbutton" name="change" value="registration">

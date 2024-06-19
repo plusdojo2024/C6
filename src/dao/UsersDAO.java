@@ -203,13 +203,13 @@ public class UsersDAO {
 				pStmt.setString(8, "");
 			}
 
-			if (card.getStart() != null ) {
+			if (card.getStart() != null) {
 				pStmt.setString(9, card.getStart());
 			} else {
 				pStmt.setInt(9, 0);
 			}
 
-			if (card.getFinish() != null ) {
+			if (card.getFinish() != null) {
 				pStmt.setString(10, card.getFinish());
 			} else {
 				pStmt.setInt(10, 0);
@@ -304,7 +304,7 @@ public class UsersDAO {
 			} else {
 				pStmt.setString(8, null);
 			}
-			if (card.getStart() != null ) {
+			if (card.getStart() != null) {
 				pStmt.setString(9, card.getStart());
 			} else {
 				pStmt.setInt(9, 0);
@@ -592,7 +592,6 @@ public class UsersDAO {
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-
 			//
 			if (rs.next()) {
 				return true;
@@ -634,7 +633,9 @@ public class UsersDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			//idを取得する
-			id = rs.getInt("id");
+			if (rs.next()) {
+				id = rs.getInt("id");
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -653,14 +654,14 @@ public class UsersDAO {
 		// 結果を返す
 		return id;
 	}
+
 	public Users select1(Users book) {
 		Connection conn = null;
-		Users bookList = new Users ();
+		Users bookList = new Users();
 
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
-
 
 			String sql = "SELECT * FROM Users WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -717,7 +718,7 @@ public class UsersDAO {
 				pStmt.setString(10, "%");
 			}
 			if (book.getRemarks() != null) {
-				pStmt.setString(11, "%" +book.getRemarks() + "%");
+				pStmt.setString(11, "%" + book.getRemarks() + "%");
 			} else {
 				pStmt.setString(11, "%");
 			}
