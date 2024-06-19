@@ -23,9 +23,12 @@
 	</ul>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><img src="/c6/img/sound.png" width="400" height="250">
 	<form method="post" action="/c6/SoundServlet">
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><input type="range" min="0" max="100" step="10"><br>
-		<input type = "submit" class = "submitbutton" value ="registration">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+		<input type = "button"  id="player" class="playvolume" value = "再生"><br>
+		<input type="range" id="volume" min="0" max="100" step="10"><br>
+		<input type = "submit" id="volume" class = "submitbutton" value ="registration">
 	</form>
-	<script src= "sound.js"></script>
+	<script src= "set.js"></script>
 </body>
 </html>
