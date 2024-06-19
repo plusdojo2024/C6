@@ -771,4 +771,43 @@ public class UsersDAO {
 		return book;
 	}
 
+	// アカウント削除
+	public boolean updateUnknown(Users card, int id) throws Exception {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "UPDATE Users SET name=?, password=null, number=null, secret=null, birthday=null, location=null, motivation=null, icon=null, start=null, finish=null, remarks=null, timestamp=null WHERE id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+				pStmt.setString(1, "unknown" + id);
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+
 }

@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.UsersDAO;
 
 @WebServlet("/DeleteServlet")
 public class DeleteServlet extends HttpServlet {
@@ -21,9 +24,16 @@ public class DeleteServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//doGet(req, res);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/newRegist.jsp");
 		dispatcher.forward(req, res);
+		int id = 0;
+		// セッションから名前を取得する
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
+		//idを取得する
+		UsersDAO uDAO = new UsersDAO();
+		id = uDAO.selectId(name);
+		//アカウントを削除する
 
 	}
-
 }
