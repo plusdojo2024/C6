@@ -236,6 +236,7 @@ public class FriendsDAO {
 	}
 
 	//友達を追加する
+	//TODO トランザクション処理が必要か確認
 	public void insertFriend(Friends card) throws Exception {
 		Connection conn = null;
 
