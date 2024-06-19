@@ -10,4 +10,5 @@ public class common {
 		int randomNumber=1000+random.nextInt(9000);
 
 	}
+
 }
