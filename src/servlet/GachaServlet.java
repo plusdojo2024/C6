@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,11 +27,15 @@ public class GachaServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException {
 
-		// リクエストボディからデータを取得
+		// jSリクエストボディからデータを取得
         String reqData = req.getReader().readLine();
         // ここでDAOにデータを渡す処理を実行
-        CollectionsDAO collectionDAO = new CollectionsDAO();
-        boolean success = collectionDAO.addGachaNumber(reqData); // あとでDAOにデータを追加するからエラー出てる
+        CollectionsDAO CollectionDAO = new CollectionsDAO();
+        boolean success = CollectionDAO.addGachaNumber(reqData); // あとでDAOにデータを追加するからエラー出てる
+
+//
+		List<Collection> cardList = uDAO.select(new Collections());
+		req.setAttribute("labelAndName", あたい);
 
 
 	}
