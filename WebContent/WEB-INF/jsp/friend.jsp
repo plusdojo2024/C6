@@ -37,7 +37,7 @@
 	<input type="text" name="subject" placeholder="メモ">
 
 
-	<c:forEach var="Users" items="${cardList }">
+
 	<tr>
 		<td>${Users.icon }</td>
 		<td>${Users.name }</td>
@@ -48,7 +48,7 @@
 		<td>${Users.finish}</td>
 		<td>${Users.remarks}</td>
 	</tr>
-	</c:forEach>
+
 	<h1>friend list</h1>
 	<p>ニックネーム</p>
 	<a>アイコン</a>
@@ -57,7 +57,7 @@
 	<input type="date" name="birthday" placeholder="誕生日">
 	<a>open</a>
 
-	<c:forEach var="Friends" items="${cardList}">
+	<c:forEach var="Friends" items="${friendList}">
 
 		<a>${Friends.icon}</a>
 		<td>${Friends.favorite}</td>
