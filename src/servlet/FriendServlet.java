@@ -47,13 +47,13 @@ public class FriendServlet extends HttpServlet {
 
 		req.setAttribute("cardList", cardList);
 
+
+
 	//フレンド一覧を表示させる　要トランザクション
-		FriendsDAO fDAO=new FriendsDAO();
+		/*FriendsDAO fDAO=new FriendsDAO();
 
 		List<Friends> friendList=fDAO.select(new Friends());
 
-		req.setAttribute("friendList", friendList);
+		req.setAttribute("friendList", friendList);*/
 
 	}
-
-
