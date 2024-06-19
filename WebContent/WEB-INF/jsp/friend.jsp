@@ -41,11 +41,12 @@
 	</tr>
 </table>
 
+
 <table>
 
 	<tr>
-		<td>${cardList.icon} </td>
-		<td>${cardList.name}</td>
+		<td><((FriendServlet)request.getAttribute("cardList")).getIcon()%> </td>
+		<td><((FriendServlet)request.getAttribute("cardList")).getName()%> </td>
 		<td>${cardList.motivation}</td>
 		<td>${cardList.birthday}</td>
 		<td>${cardList.location}</td>

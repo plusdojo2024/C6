@@ -1,14 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class common {
+public class common implements Serializable{
 	public static void main(String[] args) {
 
 		Random random= new Random();
 
-		int randomNumber=1000+random.nextInt(9000);
-
+		int number=1000+random.nextInt(9000);
 	}
 
 }
