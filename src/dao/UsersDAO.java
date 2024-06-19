@@ -251,85 +251,94 @@ public class UsersDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Users card) throws Exception {
+	public void update(Users card) throws Exception {
 		Connection conn = null;
-		boolean result = false;
 
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
 
+			//TODO 木村さん
 			// SQL文を準備する
-			String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=?, timestamp=? WHERE id=?";
+			//String sql = "UPDATE Users SET name=?, password=?, number=?, secret=?, birthday=?, location=?, motivation=?, icon=?, start=?, finish=?, remarks=?, timestamp=? WHERE id=?";
+			String sql = "UPDATE Users SET location=?, motivation=?, start=?, finish=?, remarks=? WHERE name=?";
+
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			//TODO 木村さん
 			// SQL文を完成させる
-			if (card.getName() != null && !card.getName().equals("")) {
-				pStmt.setString(1, card.getName());
-			} else {
-				pStmt.setString(1, null);
-			}
-			if (card.getPassword() != null && !card.getPassword().equals("")) {
-				pStmt.setString(2, card.getPassword());
-			} else {
-				pStmt.setString(2, null);
-			}
-			if (card.getNumber() != 0 && card.getNumber() != 0) {
-				pStmt.setInt(3, card.getNumber());
-			} else {
-				pStmt.setInt(3, 0);
-			}
-			if (card.getSecret() != null && !card.getSecret().equals("")) {
-				pStmt.setString(4, card.getSecret());
-			} else {
-				pStmt.setString(4, null);
-			}
-			if (card.getBirthday() != null && !card.getBirthday().equals("")) {
-				pStmt.setString(5, card.getBirthday());
-			} else {
-				pStmt.setInt(5, 0);
-			}
-			if (card.getLocation() != null && !card.getLocation().equals("")) {
-				pStmt.setString(6, card.getLocation());
-			} else {
-				pStmt.setString(6, null);
-			}
-			if (card.getMotivation() != 0 && card.getMotivation() != 0) {
-				pStmt.setInt(7, card.getMotivation());
-			} else {
-				pStmt.setInt(7, 0);
-			}
-			if (card.getIcon() != null && !card.getIcon().equals("")) {
-				pStmt.setString(8, card.getIcon());
-			} else {
-				pStmt.setString(8, null);
-			}
-			if (card.getStart() != null) {
-				pStmt.setString(9, card.getStart());
-			} else {
-				pStmt.setInt(9, 0);
-			}
-			if (card.getFinish() != null) {
-				pStmt.setString(10, card.getFinish());
-			} else {
-				pStmt.setInt(10, 0);
-			}
-			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
-				pStmt.setString(11, card.getRemarks());
-			} else {
-				pStmt.setString(11, null);
-			}
-			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
-				pStmt.setString(12, card.getTimestamp());
-			} else {
-				pStmt.setString(12, "currenttimestamp");
-			}
-			pStmt.setInt(13, card.getId());
+			//			if (card.getName() != null && !card.getName().equals("")) {
+			//				pStmt.setString(1, card.getName());
+			//			} else {
+			//				pStmt.setString(1, null);
+			//			}
+			//			if (card.getPassword() != null && !card.getPassword().equals("")) {
+			//				pStmt.setString(2, card.getPassword());
+			//			} else {
+			//				pStmt.setString(2, null);
+			//			}
+			//			if (card.getNumber() != 0 && card.getNumber() != 0) {
+			//				pStmt.setInt(3, card.getNumber());
+			//			} else {
+			//				pStmt.setInt(3, 0);
+			//			}
+			//			if (card.getSecret() != null && !card.getSecret().equals("")) {
+			//				pStmt.setString(4, card.getSecret());
+			//			} else {
+			//				pStmt.setString(4, null);
+			//			}
+			//			if (card.getBirthday() != null && !card.getBirthday().equals("")) {
+			//				pStmt.setString(5, card.getBirthday());
+			//			} else {
+			//				pStmt.setInt(5, 0);
+			//			}
+			//			if (card.getLocation() != null && !card.getLocation().equals("")) {
+			//				pStmt.setString(6, card.getLocation());
+			//			} else {
+			//				pStmt.setString(6, null);
+			//			}
+			//			if (card.getMotivation() != 0 && card.getMotivation() != 0) {
+			//				pStmt.setInt(7, card.getMotivation());
+			//			} else {
+			//				pStmt.setInt(7, 0);
+			//			}
+			//			if (card.getIcon() != null && !card.getIcon().equals("")) {
+			//				pStmt.setString(8, card.getIcon());
+			//			} else {
+			//				pStmt.setString(8, null);
+			//			}
+			//			if (card.getStart() != null) {
+			//				pStmt.setString(9, card.getStart());
+			//			} else {
+			//				pStmt.setInt(9, 0);
+			//			}
+			//			if (card.getFinish() != null) {
+			//				pStmt.setString(10, card.getFinish());
+			//			} else {
+			//				pStmt.setInt(10, 0);
+			//			}
+			//			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
+			//				pStmt.setString(11, card.getRemarks());
+			//			} else {
+			//				pStmt.setString(11, null);
+			//			}
+			//			if (card.getTimestamp() != null && !card.getTimestamp().equals("")) {
+			//				pStmt.setString(12, card.getTimestamp());
+			//			} else {
+			//				pStmt.setString(12, "currenttimestamp");
+			//			}
+			//			pStmt.setInt(13, card.getId());
+
+			pStmt.setString(1, card.getLocation());
+			pStmt.setInt(2, card.getMotivation());
+			pStmt.setString(3, card.getStart());
+			pStmt.setString(4, card.getFinish());
+			pStmt.setString(5, card.getRemarks());
+			pStmt.setString(6, card.getName());
 
 			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = true;
-			}
+			pStmt.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -344,9 +353,6 @@ public class UsersDAO {
 				}
 			}
 		}
-
-		// 結果を返す
-		return result;
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
@@ -785,7 +791,7 @@ public class UsersDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-				pStmt.setString(1, "unknown" + id);
+			pStmt.setString(1, "unknown" + id);
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -808,6 +814,5 @@ public class UsersDAO {
 		// 結果を返す
 		return result;
 	}
-
 
 }

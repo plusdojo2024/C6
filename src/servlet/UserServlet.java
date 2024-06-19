@@ -20,68 +20,58 @@ import model.Users;
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
-	dispatcher.forward(req, res);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
+		dispatcher.forward(req, res);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
 
-		/*
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = req.getSession();
-		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/c6/LoginServlet");
-			return;
-		}
-		*/
-		//セッションからnameを取得する
-		HttpSession session = req.getSession();
-		String name = (String) session.getAttribute("name");
+			/*
+			// もしもログインしていなかったらログインサーブレットにリダイレクトする
+			HttpSession session = req.getSession();
+			if (session.getAttribute("id") == null) {
+				res.sendRedirect("/c6/LoginServlet");
+				return;
+			}
+			*/
+			//セッションからnameを取得する
+			HttpSession session = req.getSession();
+			String name = (String) session.getAttribute("name");
 
+			//リクエストパラメーターを取得する
+			req.setCharacterEncoding("UTF-8");
+			String motivation = req.getParameter("motivation");
+			String location = req.getParameter("location");
+			String start = req.getParameter("start");
+			String finish = req.getParameter("finish");
+			String remarks = req.getParameter("remarks");
 
-		//リクエストパラメーターを取得する
-		req.setCharacterEncoding("UTF-8");
-		String  motivation = req.getParameter("motivation");
-		String  location = req.getParameter("location");
-		String  start = req.getParameter("start");
-		String  finish = req.getParameter("finish");
-		String  remarks = req.getParameter("remarks");
+			// 登録処理を行う
+			UsersDAO uDAO = new UsersDAO();
 
+			//intに変換
+			int motivation1 = Integer.parseInt(motivation);
 
+			// beanにセット
+			Users u = new Users();
+			u.setName(name);
+			u.setMotivation(motivation1);
+			u.setLocation(location);
+			u.setStart(start);
+			u.setFinish(finish);
+			u.setRemarks(remarks);
 
-		// 登録処理を行う
-		UsersDAO uDAO = new UsersDAO();
+			uDAO.update(u);
 
-		//intに変換
-        int motivation1 = Integer.parseInt(motivation);
-
-
-        // beanにセット
-        Users u = new Users();
-        u.setName(name);
-        u.setMotivation(motivation1);
-        u.setLocation(location);
-        u.setStart(start);
-        u.setFinish(finish);
-        u.setRemarks(remarks);
-
-
-
-        uDAO.update(u);
-
-
-	// 登録完了後、フレンドページにフォワードする
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
-	dispatcher.forward(req, res);
+			// 登録完了後、フレンドページにフォワードする
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
+			dispatcher.forward(req, res);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
 }
-}
-
-
