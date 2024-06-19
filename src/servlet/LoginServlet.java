@@ -26,35 +26,34 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-try {
-		// リクエストパラメータを取得する
-		req.setCharacterEncoding("UTF-8");
-		String name = req.getParameter("name");
-		String password = req.getParameter("password");
+		try {
+			// リクエストパラメータを取得する
+			req.setCharacterEncoding("UTF-8");
+			String name = req.getParameter("name");
+			String password = req.getParameter("password");
 
-		// ログイン処理を行う
-		UsersDAO uDAO = new UsersDAO();
-		//インスタンス生成
-		Users u=new Users();
-		u.setName(name);
-		u.setPassword(password);
+			// ログイン処理を行う
+			UsersDAO uDAO = new UsersDAO();
+			//インスタンス生成
+			Users u=new Users();
+			u.setName(name);
+			u.setPassword(password);
 
+				if (uDAO.isLoginOK(u)) {
+				//セッションオブジェクトを生成し、データを格納
+				HttpSession session = req.getSession();
+				session.setAttribute("name",name);
 
-			if (uDAO.isLoginOK(u)) {
-			//セッションオブジェクトを生成し、データを格納
-			HttpSession session = req.getSession();
-			session.setAttribute(name,u);
-
-			// ログインに成功したら、スマホならマイページのuserサーブレットにリダイレクトする
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
-			dispatcher.forward(req, res);
-			//失敗したら、、、
-			}else {
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/set.jsp");
-			dispatcher.forward(req, res);
-
-			}
-		} catch (Exception e) {
+				// ログインに成功したら、スマホならマイページのuserサーブレットにリダイレクトする
+				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
+				dispatcher.forward(req, res);
+				//失敗したらログインページに戻す
+				}else {
+					RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+					dispatcher.forward(req, res);
+				}
+		}
+		catch (Exception e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}

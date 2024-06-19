@@ -13,7 +13,7 @@ import model.Users;
 public class UsersDAO {
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Users> select(Users card) throws Exception {
+	public List<Users> select(Users card) {
 		Connection conn = null;
 		List<Users> cardList = new ArrayList<Users>();
 
@@ -135,7 +135,7 @@ public class UsersDAO {
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Users card) throws Exception {
+	public boolean insert(Users card) {
 		Connection conn = null;
 		boolean result = false;
 		//現在時刻を取得する
@@ -143,6 +143,7 @@ public class UsersDAO {
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
+
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 			String sql = "INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -232,7 +233,9 @@ public class UsersDAO {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} finally {
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
 			// データベースを切断
 			if (conn != null) {
 				try {

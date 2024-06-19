@@ -25,19 +25,7 @@
 	</div>
 
 	<div><img src="/c6/img/mystatus.png" width="500" height="100"></div>
-	ニックネーム<br>
-	<p><input type="text" name="subject" placeholder="ニックネーム"></p>
-	誕生日<br>
-	<p><input type="date" name="birthday" placeholder="誕生日"></p>
-	場所<br>
-	<p>東京</p>
-	時間帯<br>
 
-	メモ<br>
-	<input type="text" name="subject" placeholder="メモ">
-
-
-	<c:forEach var="Users" items="${cardList }">
 	<tr>
 		<td>${Users.icon }</td>
 		<td>${Users.name }</td>
@@ -48,7 +36,7 @@
 		<td>${Users.finish}</td>
 		<td>${Users.remarks}</td>
 	</tr>
-	</c:forEach>
+
 	<h1>friend list</h1>
 	<p>ニックネーム</p>
 	<a>アイコン</a>
@@ -57,7 +45,7 @@
 	<input type="date" name="birthday" placeholder="誕生日">
 	<a>open</a>
 
-	<c:forEach var="Friends" items="${cardList}">
+	<c:forEach var="Friends" items="${friendList}">
 
 		<a>${Friends.icon}</a>
 		<td>${Friends.favorite}</td>

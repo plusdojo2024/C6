@@ -21,6 +21,10 @@ input[type="text"] {
 	color: white;
 }
 
+input[type="password"] {
+    color: white;
+}
+
 input {
 	background-color: #020430;
 	outline: solid 2px #FFFFFF
