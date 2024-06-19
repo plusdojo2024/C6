@@ -19,7 +19,8 @@ public class CollectionsDAO {
 	//　　ラベルのみ表示
 	//　ラベル押下時、
 	//　　ラベルlabel、名前name、詳細memoを表示
-	//SELECT items.label,items,name,items,memo FROM Collections INNER JOIN Items ON Collections.items_id = items.id;
+
+	//String query="SELECT items.label,items,name,items,memo FROM Collections INNER JOIN Items ON Collections.items_id = items.id";
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Collections> select(Collections card) throws Exception {
