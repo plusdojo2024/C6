@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Friends;
+
 public class FriendsDAO {
 	Connection conn = null;
+
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Friends> select(Friends card) throws Exception {
 		Connection conn = null;
@@ -19,7 +21,7 @@ public class FriendsDAO {
 
 		try {
 			//Connctionする
-			 conn = BaseDAO.conn();
+			conn = BaseDAO.conn();
 
 			// SQL文を準備する
 			String sql = "SELECT * FROM Collections WHERE users_id LIKE ? AND friends_id LIKE ? AND hidden LIKE ? AND favorite LIKE? ORDER BY id";
@@ -28,69 +30,60 @@ public class FriendsDAO {
 
 			if (card.getUsers_id() != 0) {
 				pStmt.setString(1, "%" + card.getUsers_id() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(1, "%");
 			}
 			if (card.getFriends_id() != 0) {
 				pStmt.setString(2, "%" + card.getFriends_id() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(2, "%");
 			}
 			if (card.getHidden() != 0) {
 				pStmt.setString(3, "%" + card.getHidden() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(3, "%");
 			}
 			if (card.getFavorite() != 0) {
 				pStmt.setString(4, "%" + card.getFavorite() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(4, "%");
 			}
 
-
 			// SQL文を実行し、結果表を取得する
-						ResultSet rs = pStmt.executeQuery();
+			ResultSet rs = pStmt.executeQuery();
 
-						// 結果表をコレクションにコピーする
-						while (rs.next()) {
-							Friends record = new Friends(
-							rs.getInt("id"),
-							rs.getInt("users_id"),
-							rs.getInt("friends_id"),
-							rs.getInt("hidden"),
-							rs.getInt("favorite")
-							);
-							cardList.add(record);
-						}
-					}
-					catch (SQLException e) {
-						e.printStackTrace();
-						cardList = null;
-					}
-					catch (ClassNotFoundException e) {
-						e.printStackTrace();
-						cardList = null;
-					}
-					finally {
-						// データベースを切断
-						if (conn != null) {
-							try {
-								conn.close();
-							}
-							catch (SQLException e) {
-								e.printStackTrace();
-								cardList = null;
-							}
-						}
-					}
-
-					// 結果を返す
-					return cardList;
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				Friends record = new Friends(
+						rs.getInt("id"),
+						rs.getInt("users_id"),
+						rs.getInt("friends_id"),
+						rs.getInt("hidden"),
+						rs.getInt("favorite"));
+				cardList.add(record);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
 				}
+			}
+		}
+
+		// 結果を返す
+		return cardList;
+	}
+
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Friends card) throws Exception {
 		Connection conn = null;
@@ -98,7 +91,7 @@ public class FriendsDAO {
 
 		try {
 			//Connctionする
-			 conn = BaseDAO.conn();
+			conn = BaseDAO.conn();
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 			String sql = "INSERT INTO Friends VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -115,27 +108,28 @@ public class FriendsDAO {
 			if (card.getFriends_id() != 0 && card.getFriends_id() != 0) {
 				pStmt.setInt(3, card.getFriends_id());
 			} else {
-				pStmt.setInt(3,0);
+				pStmt.setInt(3, 0);
 			}
-			if (card.getHidden() != 0 && card.getHidden() != 0)  {
+			if (card.getHidden() != 0 && card.getHidden() != 0) {
 				pStmt.setInt(4, card.getHidden());
 			} else {
-				pStmt.setInt(4,0);
+				pStmt.setInt(4, 0);
 			}
 			if (card.getFavorite() != 0 && card.getFavorite() != 0) {
 
-			if (card.getFavorite() != 0 ) {
+				if (card.getFavorite() != 0) {
 
-				pStmt.setInt(5, card.getFavorite());
-			} else {
-				pStmt.setInt(5,0);
+					pStmt.setInt(5, card.getFavorite());
+				} else {
+					pStmt.setInt(5, 0);
+				}
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
 			}
-
-			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = true;
-			}}}
-			catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -168,7 +162,7 @@ public class FriendsDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getHidden() != 0 ) {
+			if (card.getHidden() != 0) {
 				pStmt.setInt(4, card.getHidden());
 			} else {
 				pStmt.setInt(4, 0);
@@ -176,7 +170,7 @@ public class FriendsDAO {
 			if (card.getFavorite() != 0) {
 				pStmt.setInt(5, card.getFavorite());
 			} else {
-				pStmt.setInt(5,0);
+				pStmt.setInt(5, 0);
 			}
 
 			// SQL文を実行する
@@ -240,10 +234,49 @@ public class FriendsDAO {
 		// 結果を返す
 		return result;
 	}
+
+	//友達を追加する
+	public void insertFriend(Friends card) throws Exception {
+		Connection conn = null;
+
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+			// ユーザーに友達を追加
+			String sql = "INSERT INTO Friends VALUES (null,?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, card.getUsers_id());
+			pStmt.setInt(2, card.getFriends_id());
+
+			// SQL文を実行する
+			pStmt.executeUpdate();
+
+			// 友達にユーザーを追加
+			sql = "INSERT INTO Friends VALUES (null,?, ?)";
+			pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, card.getFriends_id());
+			pStmt.setInt(2, card.getUsers_id());
+
+			// SQL文を実行する
+			pStmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }
-
-
-
-
-
-
