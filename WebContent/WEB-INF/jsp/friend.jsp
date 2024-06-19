@@ -27,6 +27,15 @@
 	<div><img src="/c6/img/mystatus.png" width="500" height="100"></div>
 
 	<tr>
+		<td>icon</td>
+		<td>nickname</td>
+		<td>飲みベ</td>
+		<td>誕生日</td>
+		<td>場所</td>
+		<td>メモ</td>
+	</tr>
+
+	<tr>
 		<td>${Users.icon }</td>
 		<td>${Users.name }</td>
 		<td>${Users. motivation}</td>
