@@ -244,7 +244,7 @@ public class FriendsDAO {
 			//Connctionする
 			conn = BaseDAO.conn();
 			// ユーザーに友達を追加
-			String sql = "INSERT INTO Friends VALUES (null,?, ?)";
+			String sql = "INSERT INTO Friends VALUES (null,?, ?,0,0)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -255,7 +255,7 @@ public class FriendsDAO {
 			pStmt.executeUpdate();
 
 			// 友達にユーザーを追加
-			sql = "INSERT INTO Friends VALUES (null,?, ?)";
+			sql = "INSERT INTO Friends VALUES (null,?, ?,0,0)";
 			pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
