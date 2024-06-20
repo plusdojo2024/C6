@@ -675,7 +675,7 @@ public class UsersDAO {
 	}
 
 	// アカウント削除
-	public boolean updateUnknown(Users card, int id) throws Exception {
+	public boolean updateUnknown(int id) throws Exception {
 		Connection conn = null;
 		boolean result = false;
 
