@@ -23,7 +23,7 @@ public class FriendsDAO {
 		try {
 			conn=BaseDAO.conn();
 
-		String sql="select *from friends inner join users on users.id=friends.users_id where users_id = ?";
+		String sql="select *from friends inner join users on users.id=friends.users_id where friends_id = ?";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		pStmt.setInt(1, id);
