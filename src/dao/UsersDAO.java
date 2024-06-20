@@ -689,6 +689,7 @@ public class UsersDAO {
 
 			// SQL文を完成させる
 			pStmt.setString(1, "unknown" + id);
+			pStmt.setInt(2,id);
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
