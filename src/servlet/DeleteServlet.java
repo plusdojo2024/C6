@@ -28,12 +28,11 @@ public class DeleteServlet extends HttpServlet {
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/newRegist.jsp");
 			dispatcher.forward(req, res);
 			int id = 0;
-			// セッションから名前を取得する
+			//セッションから名前を取得する
 			HttpSession session = req.getSession();
 			String name = (String) session.getAttribute("name");
 			//idを取得する
 			UsersDAO uDAO = new UsersDAO();
-
 			id = uDAO.selectId(name);
 
 		//アカウントを削除する
