@@ -42,7 +42,6 @@ input {
 
 /* ここからハンバーガーリスト */
 
-/* ===== 機能の実装に必要なCSS ===== */
 
 /* ドロワーナビゲーションの必須スタイル */
 #nav {
@@ -55,7 +54,7 @@ input {
 
 /* ドロワーが開かれたときのスタイル */
 .show {
-    transform: translate3d(-300px, 0,0 );
+    transform: translate3d(-1000px, 0,0 );
     z-index: -2; /* 奥行き */
 }
 
@@ -145,6 +144,8 @@ header .container {
 .footericon{
     margin:  0 auto;
     list-style: none;
+    position: fixed;
+    bottom: 0;
 }
 
 .footericon ul li{
@@ -158,6 +159,7 @@ text-decoration: none;
 color: #333;
 display:inline-block
 }
+
 
 /* 色が背景色から白色に代わるボタン */
 .submitbutton {
