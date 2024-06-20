@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\pleiades\workspace\c6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1562727423.index
+\simpleBC\src
+C:\pleiades\workspace\c6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\436250710.index
+\practice\src
+C:\pleiades\workspace\c6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4114895626.index
+\practice\src

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.FriendsDAO;
 import model.Friends;
@@ -31,11 +32,15 @@ public class HiddenServlet extends HttpServlet {
 			res.sendRedirect("/c6/LoginServlet");
 			return;
 		}
-*/
+		*/
+
+		//セッションからnameを取得する
+			HttpSession session = req.getSession();
+			String name = (String) session.getAttribute("name");
+
 		// リクエストパラメータを取得する
 		req.setCharacterEncoding("UTF-8");
 		String hidden = req.getParameter("hidden");
-        String name = req.getParameter("name");
         String icon = req.getParameter("icon");
 
 		// hiddenをStringからintに変換

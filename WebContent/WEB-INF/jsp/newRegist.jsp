@@ -30,8 +30,22 @@
 			<input type = "password" ><br>
 			<input type = "password"  name="password" ><br>
 			birthday<br>
-			<input type = "text" id="birthday"   name="birthday"><br>
-			secret question<br>
+			<select id="birthday" name="birthday" >
+			<option value="">-- 選択してください --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select><br>
+
 			母親の旧姓は？<br>
 			<input type = "text"   name="secret"><br>
 			<input type = "submit" class="submitbutton" value="registration"><br>
