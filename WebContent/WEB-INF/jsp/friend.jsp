@@ -68,7 +68,7 @@
 	<input type="date" name="birthday" placeholder="誕生日">
 	<a>open</a>
 
-	<!-- <c:forEach var="Friends" items="${friendList}">
+	<c:forEach var="Friends" items="${friendList}">
 
 		<a>${Friends.icon}</a>
 		<td>${Friends.favorite}</td>
@@ -76,7 +76,7 @@
 		<td>${Friends.name }</td>
 		<td>${Friends.motivation }</td>
 
-	</c:forEach>-->
+	</c:forEach>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 </html>

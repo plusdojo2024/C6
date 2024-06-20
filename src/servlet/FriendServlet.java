@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +36,13 @@ public class FriendServlet extends HttpServlet {
 
 		req.setAttribute("bookList", bookList);
 
+		//フレンド一覧を表示させる
+		UsersDAO fDAO=new UsersDAO();
+
+		List<Users> cardList=fDAO.select(new Users());
+
+		req.setAttribute("cardList", cardList);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
 	}
@@ -49,17 +57,7 @@ public class FriendServlet extends HttpServlet {
 	}
 
 
-
-
-
-
-
-	//フレンド一覧を表示させる　要トランザクション
-		/*FriendsDAO fDAO=new FriendsDAO();
-
-		List<Friends> friendList=fDAO.select(new Friends());
-
-		req.setAttribute("friendList", friendList);*/
+;
 
 // 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
