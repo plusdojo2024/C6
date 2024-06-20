@@ -601,7 +601,7 @@ public class UsersDAO {
 
 	public Users select1(Users book) {
 		Connection conn = null;
-		Users bookList = new Users();
+
 
 		try {
 			//Connctionする
@@ -652,12 +652,13 @@ public class UsersDAO {
 				pStmt.setString(8, "%");
 			}
 
+		// SQL文を実行し、結果表を取得する
+		ResultSet rs = pStmt.executeQuery();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			bookList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			bookList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -665,7 +666,6 @@ public class UsersDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					bookList = null;
 				}
 			}
 		}
@@ -675,7 +675,7 @@ public class UsersDAO {
 	}
 
 	// アカウント削除
-	public boolean updateUnknown(Users card, int id) throws Exception {
+	public boolean updateUnknown(int id) throws Exception {
 		Connection conn = null;
 		boolean result = false;
 
@@ -689,6 +689,7 @@ public class UsersDAO {
 
 			// SQL文を完成させる
 			pStmt.setString(1, "unknown" + id);
+			pStmt.setInt(2,id);
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
