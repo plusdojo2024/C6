@@ -74,7 +74,6 @@
 		<c:forEach var="Friends" items="${cardList}">
 
 			<td>${Friends.icon}</td>
-			<td>${Friends.favorite}</td>
 			<td><input type="button" name="hidden">
 			<td>${Friends.name }</td>
 			<td>${Friends.motivation }</td>
