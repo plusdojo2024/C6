@@ -21,9 +21,16 @@ public class FriendServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+
+		//自分のステータスを表示させる
+		UsersDAO uDAO= new UsersDAO();
+		Users bookList = uDAO.select1(new Users());
+
+		req.setAttribute("bookList", bookList);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
-
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -33,19 +40,11 @@ public class FriendServlet extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			res.sendRedirect("/c6/LoginServlet");
 			return;
-		}
+	}
 
 
 
 
-//自分のステータスを表示させる
-		UsersDAO uDAO= new UsersDAO();
-
-
-
-		Users bookList = uDAO.select1(new Users());
-
-		req.setAttribute("bookList", bookList);
 
 
 

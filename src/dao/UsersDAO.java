@@ -601,7 +601,7 @@ public class UsersDAO {
 
 	public Users select1(Users book) {
 		Connection conn = null;
-		Users bookList = new Users();
+
 
 		try {
 			//Connctionする
@@ -652,12 +652,13 @@ public class UsersDAO {
 				pStmt.setString(8, "%");
 			}
 
+		// SQL文を実行し、結果表を取得する
+		ResultSet rs = pStmt.executeQuery();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			bookList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			bookList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -665,7 +666,6 @@ public class UsersDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					bookList = null;
 				}
 			}
 		}
