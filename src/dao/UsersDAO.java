@@ -695,4 +695,34 @@ public class UsersDAO {
 		return result;
 	}
 
+	// 6時に飲みべを更新する
+	public void update6clock() throws Exception {
+		Connection conn = null;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "UPDATE Users SET motivation=0";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を実行する
+			pStmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 }
