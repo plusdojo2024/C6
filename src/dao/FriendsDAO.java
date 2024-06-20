@@ -15,7 +15,7 @@ public class FriendsDAO {
 	Connection conn = null;
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Friends> select(Friends card) throws Exception {
+	public List<Friends> select(Friends card) {
 		Connection conn = null;
 		List<Friends> cardList = new ArrayList<Friends>();
 

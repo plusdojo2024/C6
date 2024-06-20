@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.FriendsDAO;
 /*import dao.FriendsDAO;
 import model.Friends;*/
 import dao.UsersDAO;
+import model.Friends;
 import model.Users;
 
 @WebServlet("/FriendServlet")
@@ -37,9 +39,9 @@ public class FriendServlet extends HttpServlet {
 		req.setAttribute("bookList", bookList);
 
 		//フレンド一覧を表示させる
-		UsersDAO fDAO=new UsersDAO();
+		FriendsDAO fDAO=new FriendsDAO();
 
-		List<Users> cardList=fDAO.select(new Users());
+		List<Friends> cardList=fDAO.select(new Friends());
 
 		req.setAttribute("cardList", cardList);
 
