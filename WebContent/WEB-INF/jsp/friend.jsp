@@ -51,8 +51,10 @@
 		<td>${bookList.birthday}</td>
 		<td>${bookList.location}</td>
 		<td>${bookList.start}</td>
+		<td>時</td>
 		<td>～</td>
 		<td>${bookList.finish}</td>
+		<td>時</td>
 		<td>${bookList.remarks}</td>
 	</tr>
 
