@@ -81,7 +81,7 @@
             <option value="鹿児島県">鹿児島県</option>
             <option value="沖縄県">沖縄県</option>
         </select>
-                <button type="reset">リセット</button>
+                <button type="reset" id ="locationResetBtn">リセット</button>
                 <br>
                 <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
@@ -91,16 +91,20 @@
         ～
         <!-- input type="time" id="finish" name="finish" min="00:00" max="23:59" required-->
         <input type="time" id="finish" name="finish" >
-        <button type="reset">リセット</button>
+
+
+        <button type="reset" id="timeResetBtn">リセット</button>
+
         <br>
         <br>
-        <h2><img src="img/remarks.png" width="500" height="90"></h2>
-            <label for="remarks">備考:</label>
-            <input type="text" id="remarks" name="remarks">
+
+        <h2><input type="text" id="remarks" name="remarks"><img src="img/remarks.png" width="500" height="90"></h2>
+
             <br>
             <br>
-              <button type="submit">registration</button>
+              <button type="submit" id="submit">registration</button>
     </form>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/common.js"></script>
 </html>

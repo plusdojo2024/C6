@@ -25,13 +25,13 @@
 <nav id="nav">
     <div class="logo"><img src="logo.svg" alt=""></div>
     <ul>
-        <li><input type="image" value="my page" onclick="location.href='http://localhost:8080/c6/UserServlet'" src="/c6/img/set_mypage.png" ></li>
-        <li><input type="image" value="icon" onclick="location.href='http://localhost:8080/c6/IconServlet'"src="/c6/img/set_icon.png"></li>
-        <li><input type="image" value="fourNumber" onclick="location.href='http://localhost:8080/c6/NumberServlet'"src="/c6//img/set_fournumber.png"></li>
-        <li><input type="image" value="sound" onclick="location.href='http://localhost:8080/c6/SoundServlet'"src="/c6/img/set_sound.png"></li>
-        <li><input type="image" value="favorite" onclick="location.href='http://localhost:8080/c6/HiddenServlet'"src="/c6/img/set_hiddenlist.png"></li>
-        <li><input type="image" value="accountdeletion" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_accountdeletion.png"></li>
-        <li><input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_logout.png"></li>
+        <li><input type="image" value="my page" onclick="location.href='http://localhost:8080/c6/UserServlet'" src="/c6/img/set_mypage.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="icon" onclick="location.href='http://localhost:8080/c6/IconServlet'"src="/c6/img/set_icon.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="fourNumber" onclick="location.href='http://localhost:8080/c6/NumberServlet'"src="/c6//img/set_fournumber.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="sound" onclick="location.href='http://localhost:8080/c6/SoundServlet'"src="/c6/img/set_sound.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="favorite" onclick="location.href='http://localhost:8080/c6/HiddenServlet'"src="/c6/img/set_hiddenlist.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="accountdeletion" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_accountdeletion.png" width = "1400" height = "300"></li>
+        <li><input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_logout.png" width = "1400" height = "300"></li>
     </ul>
 </nav>
 
