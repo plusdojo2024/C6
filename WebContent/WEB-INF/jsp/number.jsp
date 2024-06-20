@@ -27,9 +27,9 @@
 		<div><input type="text" name="subject" required></div>
 		<div>新しい4number</div>
 		<div><input type="text" name="newsubject" required></div>
-		<div class="submit">
+		
 			<input type="submit" class="submit" value="registration">registration</button>
-		</div>
+	
 	</form>
 <script src= "./js/number.js"></script>
 </body>
