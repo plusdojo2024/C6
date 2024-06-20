@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>フレンド一覧</title>
+<link rel="stylesheet" href="/c6/css/common.css">
+<link rel="stylesheet" href="/c6/css/friend.css">
 </head>
 
 <body>
@@ -45,7 +47,7 @@
 	</table>
 
 
-	<table>
+	<table >
 
 		<tr>
 			<td>${bookList.icon}</td>
