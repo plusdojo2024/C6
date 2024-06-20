@@ -43,7 +43,7 @@ public class FriendServlet extends HttpServlet {
 
 
 
-		Users bookList = uDAO.select(new Users());
+		Users bookList = uDAO.select1(new Users());
 
 		req.setAttribute("bookList", bookList);
 

@@ -45,15 +45,15 @@
 <table>
 
 	<tr>
-		<td><((FriendServlet)request.getAttribute("cardList")).getIcon()%> </td>
-		<td><((FriendServlet)request.getAttribute("cardList")).getName()%> </td>
-		<td>${cardList.motivation}</td>
-		<td>${cardList.birthday}</td>
-		<td>${cardList.location}</td>
-		<td>${cardList.start}</td>
+		<td>${bookList.icon} </td>
+		<td>${bookList.name}</td>
+		<td>${bookList.motivation}</td>
+		<td>${bookList.birthday}</td>
+		<td>${bookList.location}</td>
+		<td>${bookList.start}</td>
 		<td>～</td>
-		<td>${cardList.finish}</td>
-		<td>${cardList.remarks}</td>
+		<td>${bookList.finish}</td>
+		<td>${bookList.remarks}</td>
 	</tr>
 
 </table>

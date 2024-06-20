@@ -669,7 +669,7 @@ public class UsersDAO {
 			//Connctionする
 			conn = BaseDAO.conn();
 
-			String sql = "SELECT * FROM Users WHERE name LIKE ? AND password LIKE ? AND number LIKE ? AND secret LIKE? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE? AND timestamp LIKE? ORDER BY id";
+			String sql = "SELECT * FROM Users WHERE name LIKE ? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE?  ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 
@@ -678,83 +678,42 @@ public class UsersDAO {
 			} else {
 				pStmt.setString(1, "%");
 			}
-			if (book.getPassword() != null) {
-				pStmt.setString(2, "%" + book.getPassword() + "%");
+			if (book.getBirthday() != null) {
+				pStmt.setString(2, "%" + book.getBirthday() + "%");
 			} else {
 				pStmt.setString(2, "%");
 			}
-			if (book.getNumber() != 0) {
-				pStmt.setString(3, "%" + book.getNumber() + "%");
+			if (book.getLocation() != null) {
+				pStmt.setString(3, "%" + book.getLocation() + "%");
 			} else {
 				pStmt.setString(3, "%");
 			}
-			if (book.getSecret() != null) {
-				pStmt.setString(4, "%" + book.getSecret() + "%");
+			if (book.getMotivation() != 0) {
+				pStmt.setString(4, "%" + book.getMotivation() + "%");
 			} else {
 				pStmt.setString(4, "%");
 			}
-			if (book.getBirthday() != null) {
-				pStmt.setString(5, "%" + book.getBirthday() + "%");
+			if (book.getIcon() != null) {
+				pStmt.setString(5, "%" + book.getIcon() + "%");
 			} else {
 				pStmt.setString(5, "%");
 			}
-			if (book.getLocation() != null) {
-				pStmt.setString(6, "%" + book.getLocation() + "%");
+			if (book.getStart() != null) {
+				pStmt.setString(6, "%" + book.getStart() + "%");
 			} else {
 				pStmt.setString(6, "%");
 			}
-			if (book.getMotivation() != 0) {
-				pStmt.setString(7, "%" + book.getMotivation() + "%");
+			if (book.getFinish() != null) {
+				pStmt.setString(7, "%" + book.getFinish() + "%");
 			} else {
 				pStmt.setString(7, "%");
 			}
-			if (book.getIcon() != null) {
-				pStmt.setString(8, "%" + book.getIcon() + "%");
+			if (book.getRemarks() != null) {
+				pStmt.setString(8, "%" + book.getRemarks() + "%");
 			} else {
 				pStmt.setString(8, "%");
 			}
-			if (book.getStart() != null) {
-				pStmt.setString(9, "%" + book.getStart() + "%");
-			} else {
-				pStmt.setString(9, "%");
-			}
-			if (book.getFinish() != null) {
-				pStmt.setString(10, "%" + book.getFinish() + "%");
-			} else {
-				pStmt.setString(10, "%");
-			}
-			if (book.getRemarks() != null) {
-				pStmt.setString(11, "%" + book.getRemarks() + "%");
-			} else {
-				pStmt.setString(11, "%");
-			}
-			if (book.getTimestamp() != null) {
-				pStmt.setString(12, "%" + book.getTimestamp() + "%");
-			} else {
-				pStmt.setString(12, "%");
-			}
 
-			// SQL文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-
-			// 結果表をコレクションにコピーする
-			while (rs.next()) {
-				Users record = new Users(
-						rs.getInt("id"),
-						rs.getString("name"),
-						rs.getString("password"),
-						rs.getInt("number"),
-						rs.getString("secret"),
-						rs.getString("birthday"),
-						rs.getString("location"),
-						rs.getInt("motivation"),
-						rs.getString("icon"),
-						rs.getString("start"),
-						rs.getString("finish"),
-						rs.getString("remarks"),
-						rs.getString("timestamp"));
-				bookList.add(record);
-			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			bookList = null;
