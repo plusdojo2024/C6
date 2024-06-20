@@ -602,58 +602,40 @@ public class UsersDAO {
 	public Users select1(Users book) {
 		Connection conn = null;
 
+		Users bean= new Users();
 
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
 
-			String sql = "SELECT * FROM Users WHERE name LIKE ? AND birthday LIKE? AND location LIKE? AND motivation LIKE? AND icon LIKE? AND start LIKE? AND finish LIKE? AND remarks LIKE?  ORDER BY id";
+			String sql = "SELECT * FROM Users WHERE name=? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 
-			if (book.getName() != null) {
-				pStmt.setString(1, "%" + book.getName() + "%");
-			} else {
-				pStmt.setString(1, "%");
-			}
-			if (book.getBirthday() != null) {
-				pStmt.setString(2, "%" + book.getBirthday() + "%");
-			} else {
-				pStmt.setString(2, "%");
-			}
-			if (book.getLocation() != null) {
-				pStmt.setString(3, "%" + book.getLocation() + "%");
-			} else {
-				pStmt.setString(3, "%");
-			}
-			if (book.getMotivation() != 0) {
-				pStmt.setString(4, "%" + book.getMotivation() + "%");
-			} else {
-				pStmt.setString(4, "%");
-			}
-			if (book.getIcon() != null) {
-				pStmt.setString(5, "%" + book.getIcon() + "%");
-			} else {
-				pStmt.setString(5, "%");
-			}
-			if (book.getStart() != null) {
-				pStmt.setString(6, "%" + book.getStart() + "%");
-			} else {
-				pStmt.setString(6, "%");
-			}
-			if (book.getFinish() != null) {
-				pStmt.setString(7, "%" + book.getFinish() + "%");
-			} else {
-				pStmt.setString(7, "%");
-			}
-			if (book.getRemarks() != null) {
-				pStmt.setString(8, "%" + book.getRemarks() + "%");
-			} else {
-				pStmt.setString(8, "%");
-			}
+				pStmt.setString(1, book.getName());
+
+
 
 		// SQL文を実行し、結果表を取得する
 		ResultSet rs = pStmt.executeQuery();
+
+		// 結果表をコレクションにコピーする
+
+
+		if (rs.next()) {
+
+			bean.setName(rs.getString("name"));
+			bean.setBirthday(rs.getString("birthday"));
+			bean.setLocation(rs.getString("location"));
+			bean.setMotivation(rs.getInt("motivation"));
+			bean.setIcon(rs.getString("icon"));
+			bean.setStart(rs.getString("start"));
+			bean.setFinish(rs.getString("finish"));
+			bean.setRemarks(rs.getString("remarks"));
+
+		}
+
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -671,7 +653,7 @@ public class UsersDAO {
 		}
 
 		// 結果を返す
-		return book;
+		return bean;
 	}
 
 	// アカウント削除

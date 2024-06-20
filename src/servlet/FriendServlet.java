@@ -21,11 +21,17 @@ public class FriendServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
+		//セッションスコープからnameの値を取得する。
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
 
 		//自分のステータスを表示させる
 		UsersDAO uDAO= new UsersDAO();
-		Users bookList = uDAO.select1(new Users());
+
+		Users u= new Users();
+
+		u.setName(name);
+		Users bookList = uDAO.select1(u);
 
 		req.setAttribute("bookList", bookList);
 
