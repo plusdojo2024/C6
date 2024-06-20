@@ -23,6 +23,7 @@
 	</ul>
 	<main>
 	<div><img src="img/sercretquestion.png" width="400px" height="200px" ></div>
+	<span class="label label-danger">${message}</span>
 	<form  method="post" action="/c6/SecretServlet">
 		nickname<br>
 		<input type = "text"  name="name"><br>
