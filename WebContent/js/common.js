@@ -43,9 +43,7 @@ function checkPassword(password) {
 
 
 
-/* 誕生日チェック */
-/* mm/ddの形式かチェック */
-/* 存在する日付か */
+
 
 
 
@@ -62,4 +60,3 @@ function checkPassword(password) {
 /* 午前６時チェック */
 /* 「open」「close」「ジョッキマーク」「更新前」「飲み会中」チェック*/
 /* 備考欄チェック */
-/* アイコンチェック */
