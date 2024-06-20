@@ -14,8 +14,7 @@
     <header>
     <div class="container">
         <div class="title-block">
-            <h1>ドロ</h1>
-            <h2>ミング</h2>
+
         </div>
         <div class="hamburger" id="open_nav">
             <img src="img/hamberger.png" alt="ハンバーガーの写真">
@@ -26,11 +25,13 @@
 <nav id="nav">
     <div class="logo"><img src="logo.svg" alt=""></div>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">今月の特集</a></li>
-        <li><a href="#">ホテル検索</a></li>
-        <li><a href="#">カフェ検索</a></li>
-        <li><a href="#">お問い合わせ</a></li>
+        <li><input type="image" value="my page" onclick="location.href='http://localhost:8080/c6/UserServlet'" src="/c6/img/set_mypage.png" ></li>
+        <li><input type="image" value="icon" onclick="location.href='http://localhost:8080/c6/IconServlet'"src="/c6/img/set_icon.png"></li>
+        <li><input type="image" value="fourNumber" onclick="location.href='http://localhost:8080/c6/NumberServlet'"src="/c6//img/set_fournumber.png"></li>
+        <li><input type="image" value="sound" onclick="location.href='http://localhost:8080/c6/SoundServlet'"src="/c6/img/set_sound.png"></li>
+        <li><input type="image" value="favorite" onclick="location.href='http://localhost:8080/c6/HiddenServlet'"src="/c6/img/set_hiddenlist.png"></li>
+        <li><input type="image" value="accountdeletion" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_accountdeletion.png"></li>
+        <li><input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_logout.png"></li>
     </ul>
 </nav>
 

@@ -1,3 +1,11 @@
+'use strict';
+
+$(document).ready(function() {
+    $('#open_nav').on('click', function() {
+        $('#wrapper, #nav').toggleClass('show');
+    });
+});
+
 /* ニックネームチェック */
 
 /* 文字数チェック(21字以上はfalse) */
@@ -31,14 +39,14 @@ function checkPassword(password) {
 }
 
 
-/* 10文字以上15文字以下 */
+/* 10文字以上15文字以下
 function checkPassword(password) {
 	if (password.match(/^{10,15}*$/)) {
 		return true;
 	}
 	return false;
 }
-
+*/
 /* パスワード一致チェック(パスワードjsかも) */
 
 
