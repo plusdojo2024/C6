@@ -25,11 +25,10 @@
 	<form method="post" action="/c6/UserServlet" method="get">
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
+        <p class="div-open active">open</p>
 
 		<input type="checkbox" name="motivation" value="1">open
-		<input type="checkbox" name="motivation" value="2">close
-		<input type="checkbox" name="motivation" value="3">now
-
+        <div>
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
         <select id="location" name="location" >
             <option value="">-- 選択してください --</option>
@@ -81,26 +80,37 @@
             <option value="鹿児島県">鹿児島県</option>
             <option value="沖縄県">沖縄県</option>
         </select>
-                <button type="reset">リセット</button>
+                <button type="reset" id ="locationResetBtn">リセット</button>
                 <br>
                 <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
 
         <!--  input type="time" id="start" name="start" min="00:00" max="23:59" required>-->
-        <input type="time" id="start" name="start" required>
+        <input type="time" id="start" name="start" >
         ～
         <!-- input type="time" id="finish" name="finish" min="00:00" max="23:59" required-->
-        <input type="time" id="finish" name="finish" required>
-        <button type="reset">リセット</button>
+        <input type="time" id="finish" name="finish" >
+
+
+        <button type="reset" id="timeResetBtn">リセット</button>
+
         <br>
         <br>
-        <h2><img src="img/remarks.png" width="500" height="90"></h2>
-            <label for="remarks">備考:</label>
-            <input type="text" id="remarks" name="remarks">
+
+        <h2><input type="text" id="remarks" name="remarks"><img src="img/remarks.png" width="500" height="90"></h2>
+
             <br>
             <br>
-              <button type="submit">registration</button>
+            </div>
+             <p class="nav-open active">close</p>
+             <input type="checkbox" name="motivation" value="2">close
+             <p class="nav-open active">now</p>
+             <input type="checkbox" name="motivation" value="3">now
+
+              <button type="submit" id="submit">registration</button>
     </form>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/common.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
 </html>
