@@ -87,10 +87,10 @@
         <h2><img src="img/time.png" width="300" height="70"></h2>
 
         <!--  input type="time" id="start" name="start" min="00:00" max="23:59" required>-->
-        <input type="time" id="start" name="start" required>
+        <input type="time" id="start" name="start" >
         ～
         <!-- input type="time" id="finish" name="finish" min="00:00" max="23:59" required-->
-        <input type="time" id="finish" name="finish" required>
+        <input type="time" id="finish" name="finish" >
         <button type="reset">リセット</button>
         <br>
         <br>
