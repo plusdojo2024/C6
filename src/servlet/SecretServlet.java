@@ -45,7 +45,10 @@ public class SecretServlet extends HttpServlet {
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/password.jsp");
 				dispatcher.forward(req, res);
 			}
-		} catch (Exception e) {
+			else {		//失敗
+				req.setAttribute("message", "IDまたはパスワードが違います");
+
+		}} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
