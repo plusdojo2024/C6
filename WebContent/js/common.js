@@ -5,6 +5,7 @@ $(document).ready(function() {
 	});
 });
 
+
 /* 午前６時チェック */
 function checkTime() {
 	// 現在の日時を取得
@@ -16,31 +17,27 @@ function checkTime() {
 
 	// AM6:00の時刻を表すDateオブジェクトを作成
 	let sixAM = new Date();
-	sixAM.setHours(15, 12, 0, 0); // 時、分、秒、ミリ秒の順
+	sixAM.setHours(15, 56, 0, 0);
 
 	// 現在の時刻がAM6:00かどうかを比較
-	if (hours === 15 && minutes === 12) {
-		;
-		// リセットボタンを実行
-		let formElement = document.getElementById("locationResetBtn");
-		if (formElement) {
-			formElement.reset();
-		}
-		let formElement = document.getElementById("timeResetBtn");
-		if (formElement) {
-			formElement.reset();
-		}
-		//submitボタンを実行
-		let submitButton = document.getElementById("submitBtn");
-		if (submitButton) {
-			submitButton.click();
-		}
+	if (hours === 15 && minutes === 56) {
+		// 時刻が一致した場合
+		console.log("現在の時刻は " + hours + ":" + minutes + " だよ。");
+		// 実行したいメソッド
+		UsersDAO.update6clock();
 
-
+	} else {
+		// 時刻が一致しない場合
+		console.log("現在の時刻は " + hours + ":" + minutes + " です。");
 	}
 }
+
+// 初回のチェック実行
+checkTime();
+
 // 1分ごとにチェック
 setInterval(checkTime, 60000);
+
 
 
 
