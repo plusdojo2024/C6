@@ -1,3 +1,4 @@
+
 /* ハンバーガーボタン */
 $(document).ready(function() {
 	$('#open_nav').on('click', function() {
@@ -55,6 +56,7 @@ setInterval(checkTime, 60000);
 
 
 
+
 /* ニックネームチェック */
 /* 文字数チェック(21字以上はfalse) */
 /* HTML要素をオブジェクトとして取得する */
@@ -87,7 +89,11 @@ function checkPassword(password) {
 }
 
 
+
 /* 10文字以上15文字以下
+/* 10文字以上15文字以下 */
+/*
+
 function checkPassword(password) {
 	if (password.match(/^{10,15}*$/)) {
 		return true;
@@ -105,3 +111,8 @@ function checkPassword(password) {
 
 /* 「open」「close」「ジョッキマーク」「更新前」「飲み会中」チェック*/
 /* 備考欄チェック */
+
+/* アイコンチェック */
+
+
+
