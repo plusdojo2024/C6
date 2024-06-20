@@ -54,8 +54,8 @@ input {
 
 /* ドロワーが開かれたときのスタイル */
 .show {
-    transform: translate3d(-1000px, 0,0 );
-    z-index: -2; /* 奥行き */
+    transform: translate3d(-900px, 0,0 );
+    z-index: 2; /*奥行き */
 }
 
 /* 開く・閉じるアニメーション */
@@ -75,12 +75,15 @@ header .container {
     flex: 1 1 auto;
 }
 .hamburger {
-    flex: 0 0 32px;
+    flex: 0 0 0px;
     align-self: center;
     margin-left: 16px;
     text-align: center;
     color: #fff;
     width : 10%;
+}
+.hamburger > img{
+
 }
 
 /* ===== 装飾的なCSS ===== */
@@ -96,13 +99,13 @@ header .container {
     padding: 0;
     list-style: none;
 }
-#nav li a {
+/*#nav li a {
     display: block;
     padding: 0.75rem 0;
     border-bottom: 1px solid #114d60;
     text-decoration: none;
     color: #fff;
-}
+}*/
 #nav li a:hover {
     background: #020430;
 }
@@ -146,6 +149,9 @@ header .container {
     list-style: none;
     position: fixed;
     bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
 }
 
 .footericon ul li{
@@ -153,12 +159,12 @@ header .container {
 	width: 18%;
 	min-width: 90px;
 }
-.footericon ul li a{
+/*.footericon ul li a{
 
 text-decoration: none;
 color: #333;
 display:inline-block
-}
+}*/
 
 
 /* 色が背景色から白色に代わるボタン */
