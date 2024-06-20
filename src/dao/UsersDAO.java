@@ -258,20 +258,14 @@ public class UsersDAO {
 			//Connctionする
 			conn = BaseDAO.conn();
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 			// SQL文を準備する
 			String sql = "UPDATE Users SET location=?, motivation=?, start=?, finish=?, remarks=? WHERE name=?";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//TODO 木村さん
-<<<<<<< Updated upstream
-=======
-			// SQL文を完成させる
->>>>>>> Stashed changes
+// SQL文を完成させる
+
 
 
 			pStmt.setString(1, card.getLocation());

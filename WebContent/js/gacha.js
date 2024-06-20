@@ -20,6 +20,7 @@ function start() {
 
 
 function next() {
+	//'大吉', '吉', '吉', '中吉',の中をDAOの最大値にしたい
 	const omikuji = ['大吉', '吉', '吉', '中吉', '中吉', '中吉', '小吉', '小吉', '小吉', '小吉', '末吉', '末吉', '末吉', '凶', '凶', '大凶'];
 	const randomIndex = Math.floor(Math.random() * omikuji.length);
 	const result = omikuji[randomIndex];
