@@ -49,9 +49,9 @@ public class LoginServlet extends HttpServlet {
 				dispatcher.forward(req, res);
 				//失敗したらログインページに戻す
 				}else {
-					/*RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-					dispatcher.forward(req, res);*/
-					req.setAttribute("message", "IDまたはパスワードが違います");
+					RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+					dispatcher.forward(req, res);
+					//req.setAttribute("message", "IDまたはパスワードが違います");
 				}
 		}
 		catch (Exception e) {
