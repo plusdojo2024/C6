@@ -7,6 +7,7 @@
 <title>collection</title>
 <link rel="stylesheet" href="/c6/css/common.css">
 <link rel="stylesheet" href="/c6/css/collection.css">
+
 </head>
 <body>
 	<ul class="circles">
@@ -27,8 +28,8 @@
 </main>
 <script src= "collection.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
-<script src= "./js/common.js"></script>
 
+<script src= "./js/common.js"></script>
 
 </body>
 </html>

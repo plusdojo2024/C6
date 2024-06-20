@@ -1,7 +1,12 @@
-	$(function(){
+	(function(){
 		//クリックで動く
-		$('.nav-open').click(function(){
-			$(this).toggleClass('active');
-			$(this).next('nav').slideToggle();
+		('.div-open').click(function(){
+			if((this).hasClass('active')){
+				(this).toggleClass('active');
+				(this).next('div').fadeOut();
+			} else {
+				(this).toggleClass('active');
+				(this).next('div').fadeIn();
+			}
 		});
-	});
+  });
