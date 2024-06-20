@@ -560,7 +560,7 @@ public class UsersDAO {
 	}
 
 	//ニックネームからidを取得する
-	public int selectId(String name) throws Exception {
+	public int selectId(String name){
 		Connection conn = null;
 		int id = 0;
 		try {

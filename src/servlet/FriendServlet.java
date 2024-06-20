@@ -15,33 +15,32 @@ import dao.FriendsDAO;
 /*import dao.FriendsDAO;
 import model.Friends;*/
 import dao.UsersDAO;
-import model.Friends;
 import model.Users;
 
 @WebServlet("/FriendServlet")
 public class FriendServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//セッションスコープからnameの値を取得する。
 		HttpSession session = req.getSession();
 		String name = (String) session.getAttribute("name");
 
+		UsersDAO uDAO = new UsersDAO();
+
+		Users u = new Users();
+
 		//自分のステータスを表示させる
-		UsersDAO uDAO= new UsersDAO();
-
-		Users u= new Users();
-
 		u.setName(name);
 		Users bookList = uDAO.select1(u);
 
 		req.setAttribute("bookList", bookList);
 
 		//フレンド一覧を表示させる
-		FriendsDAO fDAO=new FriendsDAO();
+		int id = uDAO.selectId(name);
+		FriendsDAO fDAO = new FriendsDAO();
 
-		List<Friends> cardList=fDAO.select(new Friends());
+		List<Users> cardList = fDAO.selectFriends(id);
 
 		req.setAttribute("cardList", cardList);
 
@@ -56,12 +55,11 @@ public class FriendServlet extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			res.sendRedirect("/c6/LoginServlet");
 			return;
-	}
+		}
 
+		;
 
-;
-
-// 一覧ページにフォワードする
+		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
 	}

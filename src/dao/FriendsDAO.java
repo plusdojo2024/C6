@@ -10,9 +10,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Friends;
+import model.Users;
 
 public class FriendsDAO {
 	Connection conn = null;
+
+	public List<Users> selectFriends(int id){
+
+		Connection conn = null;
+		List<Users> cardList = new ArrayList<Users>();
+
+		try {
+			conn=BaseDAO.conn();
+
+		String sql="select *from friends inner join users on users.id=friends.users_id where users_id = ?";
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		pStmt.setInt(1, id);
+
+		// SQL文を実行し、結果表を取得する
+		ResultSet rs = pStmt.executeQuery();
+
+		while(rs.next()) {
+			Users bean= new Users();
+					bean.setName(rs.getString("name"));
+					bean.setBirthday(rs.getString("birthday"));
+					bean.setLocation(rs.getString("location"));
+					bean.setMotivation(rs.getInt("motivation"));
+					bean.setIcon(rs.getString("icon"));
+					bean.setStart(rs.getString("start"));
+					bean.setFinish(rs.getString("finish"));
+					bean.setRemarks(rs.getString("remarks"));
+			cardList.add(bean);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+		cardList = null;
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+		cardList = null;
+	} finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+		}
+	}
+
+	// 結果を返す
+	return cardList;
+}
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Friends> select(Friends card) {
