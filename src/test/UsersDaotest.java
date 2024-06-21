@@ -26,7 +26,7 @@ public class UsersDaotest {
 			System.out.println("備考：" + card.getRemarks());
 			System.out.println("時間：" + card.getTimestamp());
 			System.out.println();
-		}
+		}}
 		// insertメソッドのテスト
 		int upDelNumber = 0;		// 後で更新および削除する番号
 		System.out.println("<< insertメソッドのテスト（1件のレコードを登録します）>>");
@@ -63,4 +63,14 @@ public class UsersDaotest {
 		}
 	}
 
-}
+
+		//updateIconのテスト
+		System.out.println("<< updateメソッドのテスト（1件のレコードを更新します）>>");
+			Users upRec = new Users(0, null, null, 0, null, null, null, 0, null, null, null, null, null);
+				if (dao.updateIcon(upRec)) {
+						System.out.println("更新成功！");
+					}
+					else {
+							System.out.println("更新失敗！");
+						}
+					System.out.println();}}
