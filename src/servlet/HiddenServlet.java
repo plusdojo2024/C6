@@ -78,6 +78,12 @@ public class HiddenServlet extends HttpServlet {
 				fDAO.deleteFriend( id, hiddenId);
 			}
 
+			//非表示フレンド一覧を取得
+			List<Users> hiddenList = fDAO.selectHiddenFriends(id);
+
+
+			req.setAttribute("hiddenList", hiddenList);
+
 			// 非表示ページにフォワードする
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
 			dispatcher.forward(req, res);
