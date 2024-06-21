@@ -38,7 +38,7 @@
 
 
 
-	<table >
+	<table>
 
 		<tr>
 			<td>${bookList.icon}</td>
@@ -58,21 +58,45 @@
 
 	<h1>friend list</h1>
 
-	<table>
-		<c:forEach var="Friends" items="${cardList}">
+	<form action="/c6/FriendServlet" method="post" class="friend">
+		<table>
+			<c:forEach var="Friends" items="${cardList}">
 
-			<tr><th>icon</th><td>${Friends.icon}</td></tr>
-			<tr>
-				<th>favorite</th>
-					<td><input type="checkbox" class="favorite" ></td>
-			</tr>
-			<tr><th>hidden</th><td><input type="image" src="/c6/img/hidden.png"width = "40" height = "30"></tr>
-			<tr><th>nick name</th><td>${Friends.name }</td></tr>
-			<tr><th>飲みベ</th><td>${Friends.motivation }</td></tr>
-			<tr><th>時間</th><td>${Friends.start}</td><td>～</td><td>${Friends.finish}</td></tr>
-			<tr><th>誕生日</th><td>${Friends.birthday}</td></tr>
-		</c:forEach>
-	</table>
+				<tr>
+					<th>icon</th>
+					<td>${Friends.icon}</td>
+				</tr>
+				<tr>
+					<th>favorite</th>
+					<td><input type="checkbox" class="favorite" value="1"
+						name="favorite"></td>
+				</tr>
+				<tr>
+					<th>hidden</th>
+					<td><input type="image" src="/c6/img/hidden.png" width="40"
+						height="30">
+				</tr>
+				<tr>
+					<th>nick name</th>
+					<td>${Friends.name }</td>
+				</tr>
+				<tr>
+					<th>飲みベ</th>
+					<td>${Friends.motivation }</td>
+				</tr>
+				<tr>
+					<th>時間</th>
+					<td>${Friends.start}</td>
+					<td>～</td>
+					<td>${Friends.finish}</td>
+				</tr>
+				<tr>
+					<th>誕生日</th>
+					<td>${Friends.birthday}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</form>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp"%>
 </html>

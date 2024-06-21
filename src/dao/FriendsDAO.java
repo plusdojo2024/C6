@@ -200,7 +200,7 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Friends card) throws Exception {
+	public boolean updateFavorite(Friends card) {
 		Connection conn = null;
 		boolean result = false;
 
