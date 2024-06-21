@@ -23,7 +23,7 @@ public class FriendsDAO {
 		try {
 			conn=BaseDAO.conn();
 
-		String sql="select *from friends inner join users on users.id=friends.users_id where friends_id = ?";
+		String sql="select *from friends inner join users on users.id=friends.users_id where hidden= 0 AND friends_id = ?";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		pStmt.setInt(1, id);
@@ -64,7 +64,49 @@ public class FriendsDAO {
 	// 結果を返す
 	return cardList;
 }
+	public List<Users> selectHiddenFriends(int id){
 
+		Connection conn = null;
+		List<Users> hiddenList = new ArrayList<Users>();
+
+		try {
+			conn=BaseDAO.conn();
+
+		String sql="select *from friends inner join users on users.id=friends.users_id where hidden= 1 AND friends_id = ?";
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		pStmt.setInt(1, id);
+
+		// SQL文を実行し、結果表を取得する
+		ResultSet rs = pStmt.executeQuery();
+
+		while(rs.next()) {
+			Users bean= new Users();
+					bean.setName(rs.getString("name"));
+					bean.setIcon(rs.getString("icon"));
+					hiddenList.add(bean);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+		hiddenList = null;
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+		hiddenList = null;
+	} finally {
+		// データベースを切断
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				hiddenList = null;
+			}
+		}
+	}
+
+	// 結果を返す
+	return hiddenList;
+}
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Friends> select(Friends card) {
 		Connection conn = null;
