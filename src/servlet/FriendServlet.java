@@ -62,7 +62,7 @@ public class FriendServlet extends HttpServlet {
 
 		f.setFavorite(favorite);
 
-		fDAO.updateFavorite(f);
+		fDAO.updateFavorite(favorite, 0);
 
 		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");

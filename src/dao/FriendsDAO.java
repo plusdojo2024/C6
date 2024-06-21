@@ -244,10 +244,8 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean updateFavorite(int favorite,int hidden) {
+	public void updateFavorite(int favorite,int hidden) {
 		Connection conn = null;
-		boolean result = false;
-
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
@@ -276,6 +274,8 @@ public class FriendsDAO {
 					e.printStackTrace();
 				}
 			}
+		}
+	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
 	public boolean delete(int hidden) throws Exception {
