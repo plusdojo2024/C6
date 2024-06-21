@@ -22,15 +22,17 @@
 		<li></li>
 	</ul>
 	<h1><img src="img/mypagelogo.png"  width="500" height="90"></h1>
-	<form method="post" action="/c6/UserServlet" method="get">
+	<form method="post" action="/c6/UserServlet" >
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
 
-        <p class="div-open active">open</p>
+        <p class="div-open active"></p>
 		<input type="checkbox" id="motivation"name="motivation" value="1" onchange="toggleLocation();">open
-		<div class="div-open" onclick="changeDisplay()">open</div>
+		<div class="div-open" onclick="changeDisplay()"></div>
+
+		<div id="formSection" class="hidden">
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
-        <select id="location" name="location" >
+        <select id="formlocation" name="location" >
             <option value="">-- 選択してください --</option>
             <option value="北海道">北海道</option>
             <option value="青森県">青森県</option>
@@ -81,15 +83,13 @@
             <option value="沖縄県">沖縄県</option>
         </select>
               <button type="reset" id ="locationResetBtn">リセット</button>
-            </div>
+
                 <br>
                 <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
 
-        <!--  input type="time" id="start" name="start" min="00:00" max="23:59" required>-->
         <input type="time" id="start" name="start" >
         ～
-        <!-- input type="time" id="finish" name="finish" min="00:00" max="23:59" required-->
         <input type="time" id="finish" name="finish" >
 
 
@@ -102,45 +102,18 @@
 
             <br>
             <br>
-
-             <p class="nav-open active">close</p>
+            </div>
+             <p class="nav-open active"></p>
              <input type="checkbox" name="motivation" value="2">close
-             <p class="nav-open active">now</p>
+             <p class="nav-open active"></p>
              <input type="checkbox" name="motivation" value="3">now
-
+			<br>
+			<br>
               <button type="submit" id="submit">registration</button>
+              <input type="submit" id="clock">
+
     </form>
-<script>
-	$(function(){
-		//クリックで動く
-		$('.div-open').click(function(){
-			if($(this).hasClass('active')){
-				$(this).toggleClass('active');
-				$(this).next('div').fadeOut();
-			} else {
-				$(this).toggleClass('active');
-				$(this).next('div').fadeIn();
-			}
-		});
 
-	});
-const changeDisplay = () => {
-  var ele = document.getElementById('motivation');
-
-  if (ele.style.display == 'none') {
-   ele.style.display = 'block';
-  } else {
-    ele.style.display = 'none';
-  }
-};
-
-        alert("現在の4ナンバーと同じです");
-        return false; // フォームを送信しない
-    }
-
-    return true; // フォームを送信する
-    }
-</script>>
 </body>
 
 <%@ include file="/WEB-INF/jsp/common.jsp" %>

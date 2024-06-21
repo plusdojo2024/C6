@@ -1,16 +1,18 @@
+ function toggleLocation() {
+        var checkbox = document.getElementById('motivation');
+        var formSection = document.getElementById('formSection');
+        if (checkbox.checked) {
+            formSection.classList.remove('hidden');
+        } else {
+            formSection.classList.add('hidden');
+        }
+    }
 
-	(function(){
-		//クリックで動く
-		('.div-open').click(function(){
-			if((this).hasClass('active')){
-				(this).toggleClass('active');
-				(this).next('div').fadeOut();
-			} else {
-				(this).toggleClass('active');
-				(this).next('div').fadeIn();
-			}
-		});
-  });
+    function changeDisplay() {
+        var checkbox = document.getElementById('motivation');
+        checkbox.checked = !checkbox.checked;
+        toggleLocation();
+    }
 
   /* 午前６時チェック */
 function checkTime() {
