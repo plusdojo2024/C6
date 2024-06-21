@@ -742,8 +742,8 @@ public class UsersDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 		// SQL文を完成させる
-				pStmt.setString(1, icon  );
-				pStmt.setString(2, name  );
+				pStmt.setString(1, icon);
+				pStmt.setString(2, name);
 		// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
