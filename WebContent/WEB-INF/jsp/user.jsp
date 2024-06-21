@@ -144,7 +144,7 @@ const changeDisplay = () => {
 </body>
 
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
-<!-- <script src= "./js/user.js"></script>-->
+<script src= "./js/user.js"></script>
 <script src= "./js/common.js"></script>
 <script src="./js/jquery3.7.1.min.js"></script>
 </html>
