@@ -1,3 +1,4 @@
+
 	(function(){
 		//クリックで動く
 		('.div-open').click(function(){
@@ -43,6 +44,5 @@ checkTime();
 
 // 1分ごとにチェック
 setInterval(checkTime, 60000);
-
-
 }
+
