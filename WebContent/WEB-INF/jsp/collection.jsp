@@ -29,7 +29,7 @@
 <script src= "collection.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 
-<script src= "./js/common.js"></script>
+
 
 </body>
 </html>
