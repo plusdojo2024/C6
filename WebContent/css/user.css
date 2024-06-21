@@ -48,7 +48,7 @@ h2 {
 	color: #000066; /* 背景色     */
 	background: #ffffff; /* 文字色     */
 }
-.div-open { display: block; }
+<!--.div-open { display: block; }-->
 
 .div-open{
 	padding: 15px;
