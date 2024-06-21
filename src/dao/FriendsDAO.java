@@ -244,7 +244,7 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean updateFavorite(Friends card) {
+	public boolean updateFavorite(int favorite,int hidden) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -253,25 +253,16 @@ public class FriendsDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Friends SET hidden=?, favorite=?";
+			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE name=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getHidden() != 0) {
-				pStmt.setInt(4, card.getHidden());
-			} else {
-				pStmt.setInt(4, 0);
-			}
-			if (card.getFavorite() != 0) {
-				pStmt.setInt(5, card.getFavorite());
-			} else {
-				pStmt.setInt(5, 0);
-			}
+			pStmt.setInt(1, favorite);
+			pStmt.setInt(2,hidden);
 
 			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = true;
-			}
+			pStmt.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -285,11 +276,6 @@ public class FriendsDAO {
 					e.printStackTrace();
 				}
 			}
-		}
-
-		// 結果を返す
-		return result;
-	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
 	public boolean delete(int hidden) throws Exception {
