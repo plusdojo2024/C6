@@ -92,7 +92,7 @@ public class CollectionsDAO {
 
 
 	//ガチャ結果のINSERT文
-	public static void insertGacha(int users_id, Collections c) throws Exception {
+	public static  void insertGacha(int users_id, Collections c) throws Exception {
 		Connection conn = null;
 		try {
 			//Connctionする

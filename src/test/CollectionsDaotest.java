@@ -23,7 +23,7 @@ public class CollectionsDaotest {
 		System.out.println("<< insertメソッドのテスト（1件のレコードを登録します）>>");
 		Collections insRec = new Collections(0, 0, 0);
 		try {
-			if (dao.insert(insRec)) {
+			if (CollectionsDAO.insertGacha()) {
 				System.out.println("登録成功！");
 				cardList = dao.select(insRec);
 				for (Collections card : cardList) {

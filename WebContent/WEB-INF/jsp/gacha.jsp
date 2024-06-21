@@ -23,16 +23,17 @@
 		<li></li>
 	</ul>
 <main>
-<form method="post" action="/c6/GachaServlet">
-</form>
+<form id="gachaform" method="post" action="/c6/GachaServlet">
 <div ><img src ="/c6/img/gachatop.gif" class ="gachamain" id="main"></div>
 <input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();"><br>
-<input type = "text" id="gachaRandom"><br><!-- cssでhidden -->
-<input type = "submit" id="gachaSubmit"><!-- cssでhidden -->
+<input type = "hidden" id="gachaRandom"><br>
+<input type = "submit" id="gachaSubmit"><!-- cssでhiddenにする -->
+</form>
 </main>
+
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 <script src= "./js/gacha.js"></script>
 <script src= "./js/common.js"></script>
-<%@ include file="/WEB-INF/jsp/common.jsp" %>
-
+<script src="./js/jquery3.7.1.min.js"></script>
 </body>
 </html>

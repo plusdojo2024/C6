@@ -43,3 +43,14 @@ remarks			VARCHAR(140)			,
 timestamp		TIMESTAMP					,
 PRIMARY KEY(id)
 );
+
+
+菅原メモ
+CREATE TABLE ITEMS(
+id	INTEGER AUTO_INCREMENT(1),
+types_id INTEGER,
+label VARCHAR(140),
+name VARCHAR(20),
+memo	VARCHAR(140),
+PRIMARY KEY(id)
+);
