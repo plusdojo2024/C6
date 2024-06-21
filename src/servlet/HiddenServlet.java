@@ -56,7 +56,6 @@ public class HiddenServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			String name = (String) session.getAttribute("name");
 
-
 			// リクエストパラメータを取得する
 			req.setCharacterEncoding("UTF-8");
 			String hiddenName = req.getParameter("name");
@@ -71,11 +70,13 @@ public class HiddenServlet extends HttpServlet {
 			//処理を行いたいユーザーのidを取得
 			int hiddenId = uDAO.selectId(hiddenName);
 
-			if("") {
-
+			if ("cansellation".equals(submit)) {
+				//非表示リストからフレンドリストにユーザーを移す
+				fDAO.updateFriend(id, hiddenId);
+			} else {
+				//フレンド登録を解除させる
+				fDAO.deleteFriend( id, hiddenId);
 			}
-
-
 
 			// 非表示ページにフォワードする
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
