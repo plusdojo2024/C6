@@ -26,7 +26,9 @@
 <form method="post" action="/c6/GachaServlet">
 </form>
 <div ><img src ="/c6/img/gachatop.gif" class ="gachamain" id="main"></div>
-<input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();">
+<input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();"><br>
+<input type = "text" id="gachaRandom"><br><!-- cssでhidden -->
+<input type = "submit" id="gachaSubmit"><!-- cssでhidden -->
 </main>
 <script src= "./js/gacha.js"></script>
 <script src= "./js/common.js"></script>
