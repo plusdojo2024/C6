@@ -15,33 +15,22 @@
 function start() {
 	main.src = "/c6/img/gachaspread.gif";
 	document.getElementById("gacha").innerHTML = "ガチャを引く";
-	setTimeout(next, 5000);
+	setTimeout(next, 3000);
 }
-
-
 function next() {
-	//'大吉', '吉', '吉', '中吉',の中をDAOの最大値にしたい
-	const omikuji = ['大吉', '吉', '吉', '中吉', '中吉', '中吉', '小吉', '小吉', '小吉', '小吉', '末吉', '末吉', '末吉', '凶', '凶', '大凶'];
-	const randomIndex = Math.floor(Math.random() * omikuji.length);
-	const result = omikuji[randomIndex];
-	window.alert('あなたの運勢は『' + result + '』です！');
+	//20までの数字をランダム生成(20という数字は仮設定)
+	const randomIndex = Math.floor(Math.random() * 20) + 1;
+	//ランダム数字をテキストボックスに入力
+	const inputElement = document.getElementById("gachaRandom");
+	inputElement.value = randomIndex;
+	//submitボタンを実行
+	let submitButton = document.getElementById("gachaSubmit");
+	submitButton.click();
+	//結果を表示
+	const result = randomIndex;
+	window.alert(result);
 	setTimeout(end, 0);
-
-//サーブレットに送る
-/*	fetch('GachaServlet', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'text/plain',
-		},
-		body: randomIndex.toString(), // 数値を文字列に変換して送信
-	})
-		.then(response => response.text())
-		.then(data => {
-			console.log('Response from server:', data);
-		});*/
 }
-
-
 function end() {
-	main.src = "/c6/img/gacha.gif";
+	main.src = "/c6/img/gachatop.gif";
 }

@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,68 +12,79 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.FriendsDAO;
-import model.Friends;
+import dao.UsersDAO;
+import model.Users;
 
 @WebServlet("/HiddenServlet")
 public class HiddenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		//セッションからnameを取得する
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
+
+		// DAOを使用してデータベース操作
+		UsersDAO uDAO = new UsersDAO();
+		FriendsDAO fDAO = new FriendsDAO();
+
+		//ログインしているユーザーのidを取得
+		int id = uDAO.selectId(name);
+
+		//非表示フレンド一覧を取得
+		List<Users> hiddenList = fDAO.selectHiddenFriends(id);
+
+		req.setAttribute("hiddenList", hiddenList);
+
+		// 非表示ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
 		dispatcher.forward(req, res);
-
 	}
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// TODO
 
-		/*//もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = req.getSession();
-		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/c6/LoginServlet");
-			return;
-		}
-		*/
+		try {
+			/*//もしもログインしていなかったらログインサーブレットにリダイレクトする
+			HttpSession session = req.getSession();
+			if (session.getAttribute("id") == null) {
+				res.sendRedirect("/c6/LoginServlet");
+				return;
+			}
+			*/
 
-		//セッションからnameを取得する
+			//セッションからnameを取得する
 			HttpSession session = req.getSession();
 			String name = (String) session.getAttribute("name");
 
-		// リクエストパラメータを取得する
-		req.setCharacterEncoding("UTF-8");
-		String hidden = req.getParameter("hidden");
-        String icon = req.getParameter("icon");
+			// リクエストパラメータを取得する
+			req.setCharacterEncoding("UTF-8");
+			String hiddenName = req.getParameter("name");
+			String submit = req.getParameter("submit");
 
-		// hiddenをStringからintに変換
-        int hidden1 = Integer.parseInt(hidden);
+			// DAOを使用してデータベース操作
+			UsersDAO uDAO = new UsersDAO();
+			FriendsDAO fDAO = new FriendsDAO();
 
-        // Friendsオブジェクトを作成
-        Friends f = new Friends();
-        f.setHidden(hidden1);
-        f.setName(name);
-        f.setIcon(icon);
+			//ログインしているユーザーのidを取得
+			int id = uDAO.selectId(name);
+			//処理を行いたいユーザーのidを取得
+			int hiddenId = uDAO.selectId(hiddenName);
 
-        // DAOを使用してデータベース操作
-        FriendsDAO dao = new FriendsDAO();
+			if ("cansellation".equals(submit)) {
+				//非表示リストからフレンドリストにユーザーを移す
+				fDAO.updateFriend(id, hiddenId);
+			} else {
+				//フレンド登録を解除させる
+				fDAO.deleteFriend( id, hiddenId);
+			}
 
-        try {
-            // フレンドリストに追加する
-            if (req.getParameter("cansellation") != null) {
-                dao.update(f);
-            }
+			// 非表示ページにフォワードする
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
+			dispatcher.forward(req, res);
 
-            // データを削除する
-            if (req.getParameter("delete") != null) {
-                dao.delete(hidden1);
-            }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-            // 必要に応じて他の操作もここに追加
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // 非表示ページにフォワードする
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/hidden.jsp");
-        dispatcher.forward(req, res);
-    }
+	}
 }
