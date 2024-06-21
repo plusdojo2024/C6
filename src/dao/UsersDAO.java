@@ -726,4 +726,44 @@ public class UsersDAO {
 		}
 	}
 
-}
+
+
+		// アイコン変更
+		public boolean updateIcon(String icon, String name) throws Exception {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+		//Connctionする
+				conn = BaseDAO.conn();
+
+		// SQL文を準備する
+				String sql = "UPDATE Users SET icon=?,WHERE name=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		// SQL文を完成させる
+				pStmt.setString(1, icon  );
+				pStmt.setString(2, name  );
+		// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} finally {
+		// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+			}
+		}
+	}
+
+	// 結果を返す
+	return result;
+}}
+
