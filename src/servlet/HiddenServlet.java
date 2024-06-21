@@ -58,7 +58,7 @@ public class HiddenServlet extends HttpServlet {
         try {
             // フレンドリストに追加する
             if (req.getParameter("cansellation") != null) {
-                dao.insert(f);
+                dao.update(f);
             }
 
             // データを削除する
