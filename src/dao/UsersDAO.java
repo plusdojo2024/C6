@@ -697,7 +697,7 @@ public class UsersDAO {
 	}
 
 	// 6時に飲みべを更新する
-	public void update6clock() throws Exception {
+	public static void update6clock() throws Exception {
 		Connection conn = null;
 		try {
 			//Connctionする

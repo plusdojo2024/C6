@@ -82,7 +82,7 @@
             <option value="鹿児島県">鹿児島県</option>
             <option value="沖縄県">沖縄県</option>
         </select>
-              <button type="reset" id ="locationResetBtn">リセット</button>
+              <input type="reset" id ="locationResetBtn">リセット
 
                 <br>
                 <br>
@@ -93,7 +93,7 @@
         <input type="time" id="finish" name="finish" >
 
 
-        <button type="reset" id="timeResetBtn">リセット</button>
+        <input type="reset" id="timeResetBtn">リセット
 
         <br>
         <br>
@@ -109,8 +109,7 @@
              <input type="checkbox" name="motivation" value="3">now
 			<br>
 			<br>
-              <button type="submit" id="submit">registration</button>
-              <input type="submit" id="clock">
+              <input type="submit" id="submit">registration
 
     </form>
 

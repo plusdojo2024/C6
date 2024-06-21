@@ -8,13 +8,28 @@
         }
     }
 
+ HEAD
     function changeDisplay() {
         var checkbox = document.getElementById('motivation');
         checkbox.checked = !checkbox.checked;
         toggleLocation();
     }
 
-  /* 午前６時チェック */
+(function() {
+	//クリックで動く
+	('.div-open').click(function() {
+		if ((this).hasClass('active')) {
+			(this).toggleClass('active');
+			(this).next('div').fadeOut();
+		} else {
+			(this).toggleClass('active');
+			(this).next('div').fadeIn();
+		}
+	});
+});
+f4fd5577a22f6c517c7d3910513b5a415bea4cb7
+
+/* 午前６時チェック */
 function checkTime() {
 	// 現在の日時を取得
 	let now = new Date();
@@ -31,20 +46,25 @@ function checkTime() {
 	if (hours === 16 && minutes === 30) {
 		// 時刻が一致した場合
 		console.log("現在の時刻は " + hours + ":" + minutes + " だよ。");
-		// サーブレットに送る
-		function submitForm() {
-        var form = document.getElementById('sixcheck');
-        form.submit(); // フォームを送信する
-    }
+
+		//submitボタンを実行
+		let submitButton = document.getElementById("clock");
+		if (submitButton) {
+			submitButton.click();
+		}
 
 	} else {
-		// 時刻が一致しない場合
-		console.log("現在の時刻は " + hours + ":" + minutes + " です。");
+		//6時じゃなくてもsubmitボタンを実行
+		let submitButton = document.getElementById("clock");
+		if (submitButton) {
+			submitButton.click();
+		}
 	}
-// 初回のチェック実行
-checkTime();
 
-// 1分ごとにチェック
-setInterval(checkTime, 60000);
+	// 初回のチェック実行
+	checkTime();
+
+	// 1分ごとにチェック
+	setInterval(checkTime, 60000);
 }
 
