@@ -13,7 +13,7 @@
 
 
 function start() {
-	main.src = "/c6/img/gachaafter.gif";
+	main.src = "/c6/img/gachaspread.gif";
 	document.getElementById("gacha").innerHTML = "ガチャを引く";
 	setTimeout(next, 5000);
 }
@@ -28,7 +28,7 @@ function next() {
 	setTimeout(end, 0);
 
 //サーブレットに送る
-	fetch('GachaServlet', {
+/*	fetch('GachaServlet', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'text/plain',
@@ -38,7 +38,7 @@ function next() {
 		.then(response => response.text())
 		.then(data => {
 			console.log('Response from server:', data);
-		});
+		});*/
 }
 
 
