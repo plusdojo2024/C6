@@ -73,7 +73,7 @@ public class FriendsDAO {
 		try {
 			conn = BaseDAO.conn();
 
-			String sql = "select *from friends inner join users on users.id=friends.users_id where hidden= 1 AND friends_id = ?";
+			String sql = "select *from friends inner join users on users.id=friends.friends_id where hidden= 1 AND users_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setInt(1, id);
@@ -244,7 +244,7 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Friends card) throws Exception {
+	public boolean updateFavorite(Friends card) {
 		Connection conn = null;
 		boolean result = false;
 

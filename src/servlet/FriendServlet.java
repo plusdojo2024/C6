@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.FriendsDAO;
-/*import dao.FriendsDAO;
-import model.Friends;*/
 import dao.UsersDAO;
+import model.Friends;
 import model.Users;
 
 @WebServlet("/FriendServlet")
@@ -46,18 +45,24 @@ public class FriendServlet extends HttpServlet {
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
+
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
 
-		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/c6/LoginServlet");
-			return;
-		}
+		req.setCharacterEncoding("UTF-8");
 
-		;
+		int favorite = Integer.parseInt(req.getParameter("favorite"));
+
+		FriendsDAO fDAO = new FriendsDAO();
+
+		Friends f = new Friends();
+
+		f.setFavorite(favorite);
+
+		fDAO.updateFavorite(f);
 
 		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
