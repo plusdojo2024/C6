@@ -26,9 +26,9 @@
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
 
-        <p class="div-open active active">open</p>
-		<input type="checkbox" name="motivation" value="1">open
-		<div class="div-open">
+        <p class="div-open active">open</p>
+		<input type="checkbox" id="motivation"name="motivation" value="1" onchange="toggleLocation();">open
+		<div class="div-open" onclick="changeDisplay()">open</div>
 		<h2><img src="img/plase.png" width="500" height="90"></h2>
         <select id="location" name="location" >
             <option value="">-- 選択してください --</option>
@@ -80,8 +80,8 @@
             <option value="鹿児島県">鹿児島県</option>
             <option value="沖縄県">沖縄県</option>
         </select>
-                <button type="reset" id ="locationResetBtn">リセット</button>
-
+              <button type="reset" id ="locationResetBtn">リセット</button>
+            </div>
                 <br>
                 <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
@@ -102,7 +102,7 @@
 
             <br>
             <br>
-           </div>
+
              <p class="nav-open active">close</p>
              <input type="checkbox" name="motivation" value="2">close
              <p class="nav-open active">now</p>
@@ -110,10 +110,41 @@
 
               <button type="submit" id="submit">registration</button>
     </form>
+<script>
+	$(function(){
+		//クリックで動く
+		$('.div-open').click(function(){
+			if($(this).hasClass('active')){
+				$(this).toggleClass('active');
+				$(this).next('div').fadeOut();
+			} else {
+				$(this).toggleClass('active');
+				$(this).next('div').fadeIn();
+			}
+		});
+
+	});
+const changeDisplay = () => {
+  var ele = document.getElementById('motivation');
+
+  if (ele.style.display == 'none') {
+   ele.style.display = 'block';
+  } else {
+    ele.style.display = 'none';
+  }
+};
+
+        alert("現在の4ナンバーと同じです");
+        return false; // フォームを送信しない
+    }
+
+    return true; // フォームを送信する
+    }
+</script>>
 </body>
 
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
-<script src= "./js/user.js"></script>
+<!-- <script src= "./js/user.js"></script>-->
 <script src= "./js/common.js"></script>
 <script src="./js/jquery3.7.1.min.js"></script>
 </html>
