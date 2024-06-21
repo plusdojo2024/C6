@@ -28,14 +28,13 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
 
-			/*
-			// もしもログインしていなかったらログインサーブレットにリダイレクトする
-			HttpSession session = req.getSession();
-			if (session.getAttribute("id") == null) {
-				res.sendRedirect("/c6/LoginServlet");
-				return;
+			// 6時チェック
+			if (req.getParameter("clock") != null) {
+			    UsersDAO.update6clock();
+			}else {
+				UsersDAO.update6clock();
 			}
-			*/
+
 			//セッションからnameを取得する
 			HttpSession session = req.getSession();
 			String name = (String) session.getAttribute("name");
