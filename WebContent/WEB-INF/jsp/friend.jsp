@@ -35,16 +35,7 @@
 		<img src="/c6/img/mystatus.png" width="500" height="100">
 	</div>
 
-	<table>
-		<tr>
-			<td>icon</td>
-			<td>nickname</td>
-			<td>飲みベ</td>
-			<td>誕生日</td>
-			<td>場所</td>
-			<td>メモ</td>
-		</tr>
-	</table>
+
 
 
 	<table >
@@ -66,20 +57,20 @@
 	</table>
 
 	<h1>friend list</h1>
-	<p>ニックネーム</p>
-	<a>アイコン</a>
-	<a>☆</a>
-	<a>メモあり！</a>
-	<input type="date" name="birthday" placeholder="誕生日">
-	<a>open</a>
+
 	<table>
 		<c:forEach var="Friends" items="${cardList}">
 
-			<td>${Friends.icon}</td>
-			<td><input type="button" name="hidden">
-			<td>${Friends.name }</td>
-			<td>${Friends.motivation }</td>
-
+			<tr><th>icon</th><td>${Friends.icon}</td></tr>
+			<tr>
+				<th>favorite</th>
+					<td><input type="checkbox" class="favorite" ></td>
+			</tr>
+			<tr><th>hidden</th><td><input type="image" src="/c6/img/hidden.png"width = "40" height = "30"></tr>
+			<tr><th>nick name</th><td>${Friends.name }</td></tr>
+			<tr><th>飲みベ</th><td>${Friends.motivation }</td></tr>
+			<tr><th>時間</th><td>${Friends.start}</td><td>～</td><td>${Friends.finish}</td></tr>
+			<tr><th>誕生日</th><td>${Friends.birthday}</td></tr>
 		</c:forEach>
 	</table>
 </body>

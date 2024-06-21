@@ -1,3 +1,19 @@
+ function toggleLocation() {
+        var checkbox = document.getElementById('motivation');
+        var formSection = document.getElementById('formSection');
+        if (checkbox.checked) {
+            formSection.classList.remove('hidden');
+        } else {
+            formSection.classList.add('hidden');
+        }
+    }
+
+ HEAD
+    function changeDisplay() {
+        var checkbox = document.getElementById('motivation');
+        checkbox.checked = !checkbox.checked;
+        toggleLocation();
+    }
 
 (function() {
 	//クリックで動く
@@ -11,6 +27,7 @@
 		}
 	});
 });
+f4fd5577a22f6c517c7d3910513b5a415bea4cb7
 
 /* 午前６時チェック */
 function checkTime() {
