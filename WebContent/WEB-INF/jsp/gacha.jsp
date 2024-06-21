@@ -29,6 +29,8 @@
 <input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();">
 </main>
 <script src= "./js/gacha.js"></script>
+<script src= "./js/common.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
+
 </body>
 </html>

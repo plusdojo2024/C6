@@ -26,5 +26,6 @@
 		<input type = "submit" class = "submitbutton" value ="deletion" onclick="return confirm('本当に削除しますか？');">
 	</form>
 <script src= "delete.js"></script>
+<script src= "./js/common.js"></script>
 </body>
 </html>
