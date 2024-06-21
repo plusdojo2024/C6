@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>I非表示一覧</title>
+<title>非表示一覧</title>
 <link rel="stylesheet" href="/c6/css/common.css">
 <link rel="stylesheet" href="/c6/css/hidden.css">
 </head>
@@ -31,8 +31,8 @@
 					<td>${hiddenList.icon}</td>
 					<td>${hiddenList.name}</td>
 					<td><input type = "hidden"  name="name" value="${hiddenList.name}"></td>
-					<td><input type = "submit" name="submit" value="cansellation">cansellation></td>
-					<td><input type = "submit" name="submit" value="delete">delete></td>
+					<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
+					<td><input type = "submit" class="submitbutton" name="submit" value="delete"></td>
 				</tr>
 			</c:forEach>
 		</table>
