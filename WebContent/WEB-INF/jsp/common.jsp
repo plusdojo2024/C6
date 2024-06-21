@@ -23,7 +23,6 @@
     </header>
 </div>
 <nav id="nav">
-    <div class="logo"><img src="logo.svg" alt=""></div>
     <ul>
         <li><input type="image" value="my page" onclick="location.href='http://localhost:8080/c6/UserServlet'" src="/c6/img/set_mypage.png" width = "1200" height = "300"></li>
         <li><input type="image" value="icon" onclick="location.href='http://localhost:8080/c6/IconServlet'"src="/c6/img/set_icon.png" width = "1400" height = "300"></li>
