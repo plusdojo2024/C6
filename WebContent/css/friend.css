@@ -5,3 +5,15 @@ table{
 	display: flex;
 	justify-content: center;
 }
+
+.favorite{
+	-webkit-appearance: none;
+	font-size: 22px;
+	color: #D2D2D2;
+}
+.favorite:before{
+	content:"★";
+}
+.favorite:checked{
+	color: #F8C601;
+}
