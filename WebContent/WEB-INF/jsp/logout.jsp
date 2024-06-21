@@ -27,5 +27,6 @@
 		<input type = "submit" class = "submitbutton" value ="logout" onclick="return confirm('本当にログアウトしますか？');">
 	</form>
 <script src= "logout.js"></script>
+<script src= "./js/common.js"></script>
 </body>
 </html>

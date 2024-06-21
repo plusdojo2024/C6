@@ -30,5 +30,6 @@
 		<input type = "submit" id="volume" class = "submitbutton" value ="registration">
 	</form>
 	<script src= "set.js"></script>
+	<script src= "./js/common.js"></script>
 </body>
 </html>
