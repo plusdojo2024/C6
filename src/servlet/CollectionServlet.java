@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dao.UsersDAO;
+import model.Collections;
 
 @WebServlet("/CollectionServlet")
 public class CollectionServlet extends HttpServlet {
@@ -21,15 +25,27 @@ public class CollectionServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = req.getSession();
-		if (session.getAttribute("id") == null) {
-			res.sendRedirect("/c6/LoginServlet");
-			return;
+		try {
+			//セッションスコープからnameの値を取得する。
+			HttpSession session = req.getSession();
+			String name = (String) session.getAttribute("name");
+
+			//uDAOのselectIdからIDを取得
+			UsersDAO uDAO = new UsersDAO();
+			int users_id = uDAO.selectId(name);
+			Collections cDAO = new Collections();
+
+			List<Collections> cardList = cDAO.selectGacha(users_id);
+
+			req.setAttribute("cardList", cardList);
+
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
+			dispatcher.forward(req, res);
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		// コレクションページにフォワードする
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
-		dispatcher.forward(req, res);
+
 	}
 
 }

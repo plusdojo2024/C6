@@ -23,12 +23,12 @@
 		<li></li>
 	</ul>
 <main>
-<form method="post" action="/c6/CollectionServlet">
-</form>
+<img src="/c6/img/gachaResult${Png}.png">
 </main>
-<script src= "collection.js"></script>
-<script src= "./js/common.js"></script>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/collection.js"></script>
+<script src= "./js/common.js"></script>
+<script src="./js/jquery3.7.1.min.js"></script>
 
 
 
