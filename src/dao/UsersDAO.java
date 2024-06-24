@@ -250,41 +250,40 @@ public class UsersDAO {
 		return result;
 	}
 
-	  // ニックネームが既に存在するか確認
-    public boolean isNicknameTaken(String name) {
-        Connection conn = null;
-        boolean exists = false;
-        try {
-            // Connectionする
-            conn = BaseDAO.conn();
+	// ニックネームが既に存在するか確認
+	public boolean isNicknameTaken(String name) {
+		Connection conn = null;
+		boolean exists = false;
+		try {
+			// Connectionする
+			conn = BaseDAO.conn();
 
-            // SQL文を準備する
-            String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
-            PreparedStatement pStmt = conn.prepareStatement(sql);
-            // SQL文を完成させる
-            pStmt.setString(1, name);
+			// SQL文を準備する
+			String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を完成させる
+			pStmt.setString(1, name);
 
-            // SQL文を実行し、結果表を取得する
-            ResultSet rs = pStmt.executeQuery();
-            if (rs.next() && rs.getInt(1) > 0) {
-                exists = true;
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            // データベースを切断
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        // 結果を返す
-        return exists;
-    }
-
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+			if (rs.next() && rs.getInt(1) > 0) {
+				exists = true;
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return exists;
+	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
 	public void update(Users card) throws Exception {
@@ -521,39 +520,39 @@ public class UsersDAO {
 	}
 
 	// ニックネームの存在を確認
-    public boolean nicknameExists(String name) {
-        Connection conn = null;
-        boolean exists = false;
-        try {
-            // Connectionする
-            conn = BaseDAO.conn();
+	public boolean nicknameExists(String name) {
+		Connection conn = null;
+		boolean exists = false;
+		try {
+			// Connectionする
+			conn = BaseDAO.conn();
 
-            // SQL文を準備する
-            String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
-            PreparedStatement pStmt = conn.prepareStatement(sql);
-            // SQL文を完成させる
-            pStmt.setString(1, name);
+			// SQL文を準備する
+			String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を完成させる
+			pStmt.setString(1, name);
 
-            // SQL文を実行し、結果表を取得する
-            ResultSet rs = pStmt.executeQuery();
-            if (rs.next() && rs.getInt(1) > 0) {
-                exists = true;
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            // データベースを切断
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        // 結果を返す
-        return exists;
-    }
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+			if (rs.next() && rs.getInt(1) > 0) {
+				exists = true;
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return exists;
+	}
 
 	// パスワード変更
 	public void updatePassword(String name, Users u) throws Exception {
@@ -790,47 +789,9 @@ public class UsersDAO {
 		}
 	}
 
-	// アイコン変更
-	public boolean updateIcon(String icon, String name) throws Exception {
-		Connection conn = null;
-		boolean result = false;
-
-		try {
-			//Connctionする
-			conn = BaseDAO.conn();
-
-			// SQL文を準備する
-			String sql = "UPDATE Users SET icon=?,WHERE name=?";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-
-			// SQL文を完成させる
-			pStmt.setString(1, icon);
-			pStmt.setString(2, name);
-			// SQL文を実行する
-			if (pStmt.executeUpdate() == 1) {
-				result = true;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			// データベースを切断
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		// 結果を返す
-		return result;
-	}
 
 	//ニックネームから4ナンバーを取得する
-	public static int select4number(String name){
+	public static int select4number(String name) {
 		Connection conn = null;
 		int number = 0;
 		try {
@@ -876,7 +837,7 @@ public class UsersDAO {
 	}
 
 	//ニックネームからモチベーションを取得する
-	public int selectMotivation(String name){
+	public int selectMotivation(String name) {
 		Connection conn = null;
 		int motivation = 0;
 		try {
@@ -916,3 +877,34 @@ public class UsersDAO {
 		return motivation;
 	}
 }
+
+
+
+
+	/*public int selectIcon(String name) {
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// データベースに画像のファイルパスを挿入するための SQL 文
+			String sql = "INSERT INTO users (icon) values (?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, filePath);
+
+			// SQL を実行
+			statement.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (conn != null) {
+				// データベース接続をクローズ
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}*/
+
+
+
