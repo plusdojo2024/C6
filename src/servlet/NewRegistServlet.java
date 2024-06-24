@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.UsersDAO;
 import model.Users;
+import model.common;
 
 @WebServlet("/NewRegistServlet")
 public class NewRegistServlet extends HttpServlet {
@@ -24,6 +25,7 @@ public class NewRegistServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
+			int number4=0;
 			// リクエストパラメータを取得する
 			req.setCharacterEncoding("UTF-8");
 			String name = req.getParameter("name");
@@ -31,8 +33,11 @@ public class NewRegistServlet extends HttpServlet {
 			String birthday = req.getParameter("birthday");
 			String secret = req.getParameter("secret");
 
-			// 登録処理を行う
+			// 登録処理
 			UsersDAO uDAO = new UsersDAO();
+
+			//4numberを取得する
+			number4=common.number4();
 
 			//beanにセット
 			Users u = new Users();
@@ -40,6 +45,7 @@ public class NewRegistServlet extends HttpServlet {
 			u.setPassword(password);
 			u.setBirthday(birthday);
 			u.setSecret(secret);
+			u.setNumber(number4);
 
 			uDAO.insert(u);
 
