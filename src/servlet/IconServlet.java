@@ -2,7 +2,14 @@ package servlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,8 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
-
-import dao.UsersDAO;
 
 @WebServlet("/IconServlet")
 @MultipartConfig
@@ -28,7 +33,58 @@ public class IconServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//name属性がfileのファイルをPartオブジェクトとして取得
+		String uploadPath = "c6/WebContent/upload"; // 画像を保存するディレクトリのパス
+        Part filePart = req.getPart("file"); // HTML フォームから送信されたファイル部品
+
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // ファイル名の取得
+        String filePath = uploadPath + File.separator + fileName; // 保存するファイルのパス
+
+        // 画像をディスクに保存
+        try (InputStream input = filePart.getInputStream()) {
+            Files.copy(input, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);//ファイルが既にある場合は上書き
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        Connection conn = null;
+      //セッションから名前を取得する
+      HttpSession session = req.getSession();
+      String name = (String) session.getAttribute("name");
+
+        try {
+            // データベースに接続
+            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/c6", "sa", "");
+
+            // データベースに画像のファイルパスを挿入するための SQL 文
+            String sql = "INSERT INTO users (icon) values (?)";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, filePath);
+
+            // SQL を実行
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (conn != null) {
+                // データベース接続をクローズ
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+
+     // リダイレクト
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/icon.jsp");
+		dispatcher.forward(req, res);
+    }
+}
+
+
+
+		/*name属性がfileのファイルをPartオブジェクトとして取得
 		Part part=req.getPart("file");
 		//ファイル名を取得
 		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
@@ -38,10 +94,10 @@ public class IconServlet extends HttpServlet {
 		System.out.println(path);
 		//書き込み
 		part.write(path+File.separator+filename);
-		req.setAttribute("filename", filename);
+		req.setAttribute("filename", filename);*/
 
 
-		//セッションから名前を取得する
+		/*セッションから名前を取得する
 		HttpSession session = req.getSession();
 		String name = (String) session.getAttribute("name");
 
@@ -56,9 +112,7 @@ public class IconServlet extends HttpServlet {
 		}
 
 		//doGet(req, res);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/icon.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
 
-	}
-
-}
+	}*/
