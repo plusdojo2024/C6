@@ -10,10 +10,11 @@ input {
 	height: 100px;
 }
 
-input {
+select {
 	margin: 30px;
 	width: 450px;
 	height: 100px;
+	font-size: 30px;
 }
 
 div {
