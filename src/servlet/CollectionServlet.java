@@ -20,12 +20,6 @@ public class CollectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
-		dispatcher.forward(req, res);
-
-	}
-
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
 			//セッションスコープからnameの値を取得する。
 			HttpSession session = req.getSession();
@@ -42,11 +36,16 @@ public class CollectionServlet extends HttpServlet {
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
 			dispatcher.forward(req, res);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
+			dispatcher.forward(req, res);
 	}
 
 }

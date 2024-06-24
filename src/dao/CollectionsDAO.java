@@ -24,7 +24,7 @@ public class CollectionsDAO {
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "SELECT DISTINCT items_id,label,name,memo  FROM Collections INNER JOIN Items ON Items_id = items.id WHERE Users_id = 0 ORDER BY items_id ASC";
+			String sql = "SELECT DISTINCT items_id,label,name,memo  FROM Collections INNER JOIN Items ON Items_id = items.id WHERE Users_id = ? ORDER BY items_id ASC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
