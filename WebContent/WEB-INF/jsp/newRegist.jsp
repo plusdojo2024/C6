@@ -50,7 +50,7 @@
             </select><br>
 
 			母親の旧姓は？<br>
-			<input type = "text"   name="secret"  required><br>
+			<input type="text" name="secret" required><br>
 			<input type = "submit" class="submitbutton" value="registration"><br>
 			<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 		</form>
