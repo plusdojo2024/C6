@@ -244,7 +244,7 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public void updateFavorite(int favorite, int hidden, int users_id) {
+	public void updateFavorite(int favorite, int hidden) {
 		Connection conn = null;
 		try {
 			// Connectionする
@@ -257,7 +257,7 @@ public class FriendsDAO {
 			// SQL文を完成させる
 			pStmt.setInt(1, hidden);
 			pStmt.setInt(2, favorite);
-			pStmt.setInt(3, users_id);
+
 			// SQL文を実行する
 			pStmt.executeUpdate();
 
