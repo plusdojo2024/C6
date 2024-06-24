@@ -1,33 +1,28 @@
- function toggleLocation() {
-        var checkbox = document.getElementById('motivation');
-        var formSection = document.getElementById('formSection');
-        if (checkbox.checked) {
-            formSection.classList.remove('hidden');
-        } else {
-            formSection.classList.add('hidden');
-        }
+ function toggleFormSection() {
+    var openRadio = document.getElementById("motivation1");
+    var formSection = document.getElementById("formSection");
+    if (openRadio.checked) {
+        formSection.classList.remove("hidden");
+    } else {
+        formSection.classList.add("hidden");
     }
+}
 
- HEAD
-    function changeDisplay() {
-        var checkbox = document.getElementById('motivation');
-        checkbox.checked = !checkbox.checked;
-        toggleLocation();
-    }
+function changeDisplay() {
+    var openRadio = document.getElementById("motivation1");
+    openRadio.checked = !openRadio.checked;
+    toggleFormSection();
+}
 
 (function() {
-	//クリックで動く
-	('.div-open').click(function() {
-		if ((this).hasClass('active')) {
-			(this).toggleClass('active');
-			(this).next('div').fadeOut();
-		} else {
-			(this).toggleClass('active');
-			(this).next('div').fadeIn();
-		}
-	});
-});
-f4fd5577a22f6c517c7d3910513b5a415bea4cb7
+    var radios = document.getElementsByName('motivation');
+    for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('change', toggleFormSection);
+    }
+})();
+
+
+
 
 /* 午前６時チェック */
 function checkTime() {

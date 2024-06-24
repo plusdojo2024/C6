@@ -28,6 +28,8 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
 
+			req.setCharacterEncoding("UTF-8");
+
 			// 6時チェック
 			if (req.getParameter("clock") != null) {
 			    UsersDAO.update6clock();
@@ -40,7 +42,6 @@ public class UserServlet extends HttpServlet {
 			String name = (String) session.getAttribute("name");
 
 			//リクエストパラメーターを取得する
-			req.setCharacterEncoding("UTF-8");
 			String motivation = req.getParameter("motivation");
 			String location = req.getParameter("location");
 			String start = req.getParameter("start");

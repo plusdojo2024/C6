@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <title>user</title>
@@ -27,7 +27,8 @@
 		<p>&lt;自動更新：　AM6:00&gt;</p>
 
         <p class="div-open active"></p>
-		<input type="checkbox" id="motivation"name="motivation" value="1" onchange="toggleLocation();">open
+		<input type="radio" id="motivation1"name="motivation" value="1" onchange="toggleLocation();">open
+
 		<div class="div-open" onclick="changeDisplay()"></div>
 
 		<div id="formSection" class="hidden">
@@ -82,10 +83,10 @@
             <option value="鹿児島県">鹿児島県</option>
             <option value="沖縄県">沖縄県</option>
         </select>
-              <input type="reset" id ="locationResetBtn">リセット
+        <input type = "reset" class = "submitbutton" value ="reset">
 
-                <br>
-                <br>
+        <br>
+        <br>
         <h2><img src="img/time.png" width="300" height="70"></h2>
 
         <input type="time" id="start" name="start" >
@@ -93,24 +94,27 @@
         <input type="time" id="finish" name="finish" >
 
 
-        <input type="reset" id="timeResetBtn">リセット
+        <input type = "reset" class = "submitbutton" value ="reset">
 
         <br>
         <br>
 
-        <h2><input type="text" id="remarks" name="remarks"><img src="img/remarks.png" width="500" height="90"></h2>
+        <h2><img src="img/remarks.png" width="500" height="90"></h2>
+        <input type="text" id="remarks" name="remarks">
 
-            <br>
-            <br>
-            </div>
-             <p class="nav-open active"></p>
-             <input type="checkbox" name="motivation" value="2">close
-             <p class="nav-open active"></p>
-             <input type="checkbox" name="motivation" value="3">now
-			<br>
-			<br>
-              <input type="submit" id="submit">registration
+        <br>
+        <br>
+        </div>
+        <p class="nav-open active"></p>
+        <input type="radio" name="motivation" value="2" onchange="toggleFormSection()">close
 
+        <p class="nav-open active"></p>
+        <input type="radio" name="motivation" value="3" onchange="toggleFormSection()">now
+
+		<br>
+		<br>
+        <input type = "submit" class = "submitbutton" value ="registration">
+        <input type="submit" id="clock">
     </form>
 
 </body>
@@ -118,5 +122,5 @@
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 <script src= "./js/user.js"></script>
 <script src= "./js/common.js"></script>
-<script src="./js/jquery3.7.1.min.js"></script>
+
 </html>

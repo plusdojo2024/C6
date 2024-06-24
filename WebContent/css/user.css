@@ -48,3 +48,20 @@ h2 {
     .hidden {
         display: none;
     }
+
+    HTML CSSResult Skip Results Iframe
+EDIT ON
+:root { font-size: 100px; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.motivation {
+  position: relative;
+  background: linear-gradient(90deg, #f19af3, #f099b5);
+  line-height: 0;
+  perspective: 400px;
+}
