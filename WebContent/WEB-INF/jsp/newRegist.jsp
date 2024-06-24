@@ -23,11 +23,14 @@
 	</ul>
 	<main>
 		<div><img src="img/signup.png" width="300px" height="200px" ></div>
+		  <% if (request.getAttribute("message") != null) { %>
+        <span class="label label-danger"><%= request.getAttribute("message") %></span>
+    <% } %>
 		<form  method="post" action="/c6/NewRegistServlet" onsubmit="return checkBirth()">
 			nickname<br>
 			<input type = "text"  name="name"><br>
 			password<br>
-			<input type = "password" ><br>
+			<input type = "password"  id="password"><br>
 			<input type = "password"  name="password" ><br>
 			birthday<br>
 			<select id="birthday" name="birthday" >
@@ -52,6 +55,6 @@
 			<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
 		</form>
 	</main>
-	<script src= "newRegist.js"></script>
+	<script src= "./js/newRegist.js"></script>
 </body>
 </html>
