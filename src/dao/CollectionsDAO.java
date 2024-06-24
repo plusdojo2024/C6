@@ -10,20 +10,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Collections;
+import model.Items;
 
 public class CollectionsDAO {
 
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public static List<Collections> selectGacha(int users_id) throws Exception {
+	public  List<Items> selectGacha(int users_id) throws Exception {
 		Connection conn = null;
-		List<Collections> cardList = new ArrayList<Collections>();
+		List<Items> cardList = new ArrayList<Items>();
 
 		try {
 			//Connctionする
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM Collections INNER JOIN Items ON Items_id = items.id WHERE Users_id = ? ORDER BY items_id ASC";
+			String sql = "SELECT DISTINCT items_id,label,name,memo  FROM Collections INNER JOIN Items ON Items_id = items.id WHERE Users_id = 0 ORDER BY items_id ASC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -33,7 +34,7 @@ public class CollectionsDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			while (rs.next()) {
-				Collections bean = new Collections();
+				Items bean = new Items();
 				bean.setLabel(rs.getString("label"));
 				bean.setName(rs.getString("name"));
 				bean.setMemo(rs.getString("memo"));

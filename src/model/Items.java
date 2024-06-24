@@ -16,6 +16,8 @@ public class Items implements Serializable {
 		this.name = name;
 		this.memo = memo;
 	}
+	public Items() {
+	}
 	public int getId() {
 		return id;
 	}
