@@ -484,6 +484,41 @@ public class UsersDAO {
 		return false;
 	}
 
+	// ニックネームの存在を確認
+    public boolean nicknameExists(String name) {
+        Connection conn = null;
+        boolean exists = false;
+        try {
+            // Connectionする
+            conn = BaseDAO.conn();
+
+            // SQL文を準備する
+            String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            // SQL文を完成させる
+            pStmt.setString(1, name);
+
+            // SQL文を実行し、結果表を取得する
+            ResultSet rs = pStmt.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                exists = true;
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            // データベースを切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        // 結果を返す
+        return exists;
+    }
+
 	// パスワード変更
 	public void updatePassword(String name, Users u) throws Exception {
 		Connection conn = null;
