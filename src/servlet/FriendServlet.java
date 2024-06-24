@@ -50,7 +50,7 @@ public class FriendServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		String name = (String) session.getAttribute("name");
+		int id = (int) session.getAttribute("id");
 
 		req.setCharacterEncoding("UTF-8");
 
@@ -62,7 +62,7 @@ public class FriendServlet extends HttpServlet {
 
 		f.setFavorite(favorite);
 
-		fDAO.updateFavorite(favorite, 0);
+		fDAO.updateFavorite(favorite, 0, id);
 
 		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
