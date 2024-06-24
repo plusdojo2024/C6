@@ -23,7 +23,13 @@
 		<li></li>
 	</ul>
 <main>
-<img src="/c6/img/gachaResult${Png}.png">
+<form action="/c6/CollectionsServlet" method="post" class="Collections">
+<c:forEach var="Items" items="${cardList}">
+<img src="/c6/img/gachaResult${Items.label}.png">
+${Items.name}
+${Items.memo}
+</c:forEach>
+</form>
 </main>
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
 <script src= "./js/collection.js"></script>

@@ -134,7 +134,7 @@ public class UsersDAO {
 		return cardList;
 	}
 
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
+	//新規登録
 	public boolean insert(Users card) {
 		Connection conn = null;
 		boolean result = false;
