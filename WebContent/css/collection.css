@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* ラベルだけ表示する */
+.label{
+	float: left;
+	width:230px;
+	height:300px;
+	outline:none;
+}
+.close{
+ display: none;
+}
+
+.closebt {
+	display: inline-block;
+	border-radius: 5%; /* 角丸       */
+	font-size: 30pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 8px 8px; /* 余白       */
+	background: #020430; /* 背景色     */
+	color: #ffffff; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
+	border: 2px solid #000066; /* 枠の指定 */
+}
+/* 文字を白色にする */
+input[type="button"] {
+	color: white;
+}
