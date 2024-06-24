@@ -1,0 +1,19 @@
+/*　スマホで文字の大きさ良い感じに　*/
+img {
+	width: 400px;
+	height: 400px;
+}
+
+input {
+	margin: 30px;
+	width: 450px;
+	height: 150px;
+}
+
+div {
+	font-size: 30px;
+}
+
+a {
+	font-size: 50px;
+}

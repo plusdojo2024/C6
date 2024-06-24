@@ -21,13 +21,13 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<div><img src="img/glass.png" width="200px" height="200px" ></div>
+	<div><img src="img/glass.png"></div>
 	<form id="login_form" method="post" action="/c6/LoginServlet" onsubmit="return checkSubmit()">
 		<main>
-			nickname<br>
+			<div>nickname</div>
 			<!-- ニックネームの文字数を仮に20文字に制限 -->
 			<input type = "text"  name = "name"  id="nickname"  maxlength="20" required><br>
-			password<br>
+			<div>password</div>
 		 	<input type = "password" name = "password"  id="password" required><br>
 			<input type = "submit" class="submitbutton" value="login" ><br>
 			<a href = "/c6/NewRegistServlet">初めてご利用の方</a><br>
