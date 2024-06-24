@@ -73,3 +73,13 @@ public class FriendServlet extends HttpServlet {
 		dispatcher.forward(req, res);
 	}
 }
+
+
+
+
+
+
+
+
+
+
