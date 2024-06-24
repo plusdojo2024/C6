@@ -27,12 +27,12 @@
         <span class="label label-danger"><%= request.getAttribute("message") %></span>
     <% } %>
 		<form  method="post" action="/c6/NewRegistServlet" onsubmit="return checkBirth()">
-			nickname<br>
+			<div>nickname</div>
 			<input type = "text"  name="name"><br>
-			password<br>
+			<div>password</div>
 			<input type = "password"  id="password"><br>
 			<input type = "password"  name="password" ><br>
-			birthday<br>
+			<div>birthday</div>
 			<select id="birthday" name="birthday" >
 			<option value="">-- 選択してください --</option>
             <option value="1">1</option>
@@ -49,7 +49,7 @@
             <option value="12">12</option>
             </select><br>
 
-			母親の旧姓は？<br>
+			<div>母親の旧姓は？</div>
 			<input type="text" name="secret" required><br>
 			<input type = "submit" class="submitbutton" value="registration"><br>
 			<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
