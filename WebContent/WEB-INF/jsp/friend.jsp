@@ -1,4 +1,5 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -58,7 +59,7 @@
 
 	<h1>friend list</h1>
 
-	<form action="/c6/FriendServlet" method="post" class="friend">
+	<form action="/c6/FriendServlet" method="post">
 		<table>
 			<c:forEach var="Friends" items="${cardList}">
 
@@ -68,7 +69,7 @@
 				</tr>
 				<tr>
 					<th>favorite</th>
-					<td><input type="checkbox" class="favorite" value="1"
+					<td><input type="checkbox" class="favorite" id="friends"
 						name="favorite"></td>
 				</tr>
 				<tr>
@@ -94,11 +95,13 @@
 					<th>誕生日</th>
 					<td>${Friends.birthday}</td>
 				</tr>
+				<tr>
+					<th><input type="submit" value="Update" name="Update"></th>
 			</c:forEach>
 		</table>
 	</form>
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp"%>
-<script src= "./js/common.js"></script>
+<script src="./js/common.js"></script>
 <script src="./js/jquery3.7.1.min.js"></script>
 </html>
