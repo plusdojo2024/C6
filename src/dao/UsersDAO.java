@@ -264,9 +264,7 @@ public class UsersDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//TODO 木村さん
-// SQL文を完成させる
-
-
+			// SQL文を完成させる
 
 			pStmt.setString(1, card.getLocation());
 			pStmt.setInt(2, card.getMotivation());
@@ -560,7 +558,7 @@ public class UsersDAO {
 	}
 
 	//ニックネームからidを取得する
-	public int selectId(String name){
+	public int selectId(String name) {
 		Connection conn = null;
 		int id = 0;
 		try {
@@ -603,7 +601,7 @@ public class UsersDAO {
 	public Users select1(Users book) {
 		Connection conn = null;
 
-		Users bean= new Users();
+		Users bean = new Users();
 
 		try {
 			//Connctionする
@@ -613,30 +611,25 @@ public class UsersDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 
-				pStmt.setString(1, book.getName());
+			pStmt.setString(1, book.getName());
 
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
 
+			// 結果表をコレクションにコピーする
 
-		// SQL文を実行し、結果表を取得する
-		ResultSet rs = pStmt.executeQuery();
+			if (rs.next()) {
 
-		// 結果表をコレクションにコピーする
+				bean.setName(rs.getString("name"));
+				bean.setBirthday(rs.getString("birthday"));
+				bean.setLocation(rs.getString("location"));
+				bean.setMotivation(rs.getInt("motivation"));
+				bean.setIcon(rs.getString("icon"));
+				bean.setStart(rs.getString("start"));
+				bean.setFinish(rs.getString("finish"));
+				bean.setRemarks(rs.getString("remarks"));
 
-
-		if (rs.next()) {
-
-			bean.setName(rs.getString("name"));
-			bean.setBirthday(rs.getString("birthday"));
-			bean.setLocation(rs.getString("location"));
-			bean.setMotivation(rs.getInt("motivation"));
-			bean.setIcon(rs.getString("icon"));
-			bean.setStart(rs.getString("start"));
-			bean.setFinish(rs.getString("finish"));
-			bean.setRemarks(rs.getString("remarks"));
-
-		}
-
-
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -672,7 +665,7 @@ public class UsersDAO {
 
 			// SQL文を完成させる
 			pStmt.setString(1, "unknown" + id);
-			pStmt.setInt(2,id);
+			pStmt.setInt(2, id);
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -726,44 +719,83 @@ public class UsersDAO {
 		}
 	}
 
+	// アイコン変更
+	public boolean updateIcon(String icon, String name) throws Exception {
+		Connection conn = null;
+		boolean result = false;
 
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
 
-		// アイコン変更
-		public boolean updateIcon(String icon, String name) throws Exception {
-			Connection conn = null;
-			boolean result = false;
+			// SQL文を準備する
+			String sql = "UPDATE Users SET icon=?,WHERE name=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			try {
-		//Connctionする
-				conn = BaseDAO.conn();
-
-		// SQL文を準備する
-				String sql = "UPDATE Users SET icon=?,WHERE name=?";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
-
-		// SQL文を完成させる
-				pStmt.setString(1, icon);
-				pStmt.setString(2, name);
-		// SQL文を実行する
-				if (pStmt.executeUpdate() == 1) {
-					result = true;
+			// SQL文を完成させる
+			pStmt.setString(1, icon);
+			pStmt.setString(2, name);
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} finally {
-		// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					} catch (SQLException e) {
-						e.printStackTrace();
 			}
 		}
+
+		// 結果を返す
+		return result;
 	}
 
-	// 結果を返す
-	return result;
-}}
+	//ニックネームから4ナンバーを取得する
+	public int select4number(String name){
+		Connection conn = null;
+		int number = 0;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
 
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, name);
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			//idを取得する
+			if (rs.next()) {
+				number = rs.getInt("number");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return number;
+	}
+}
