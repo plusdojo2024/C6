@@ -49,24 +49,30 @@ public class FriendServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//セッションからnameを取得する
 		HttpSession session = req.getSession();
 		String name = (String) session.getAttribute("name");
 
-		//チェックボックスの値を取得
 		req.setCharacterEncoding("UTF-8");
-		String favoriteParam = req.getParameter("favorite");
-		int favorite = (favoriteParam != null && favoriteParam.equals("on")) ? 1 : 0;
+		String friendsIdStr = req.getParameter("friends_id");
+        String favoriteStr = req.getParameter("favorite");
 
+		// DAOを使用してデータベース操作
+		UsersDAO uDAO = new UsersDAO();
 		FriendsDAO fDAO = new FriendsDAO();
 
-		Friends f = new Friends();
-		Users u=new Users();
+		//ログインしているユーザーのidを取得
+		int id = uDAO.selectId(name);
 
-		u.setName(name);
-		f.setFavorite(favorite);
+        int friendsId = Integer.parseInt(friendsIdStr);
+        int favorite = (favoriteStr != null) ? 1 : 0;
 
-		fDAO.updateFavorite(favorite, f);
+        // Friendsオブジェクトを作成
+        Friends friend = new Friends();
+        friend.setFavorite(favorite);
+
+        // DAOを呼び出してデータベースを更新
+        FriendsDAO dao = new FriendsDAO();
+        dao.updateFavorite(friendsId, friend);
 
 		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
