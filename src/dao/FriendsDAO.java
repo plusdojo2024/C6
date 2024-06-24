@@ -244,20 +244,20 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public void updateFavorite(int favorite, int hidden, int id) {
+	public void updateFavorite(int favorite, int hidden, int users_id) {
 		Connection conn = null;
 		try {
 			// Connectionする
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE id=?";
+			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE users_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 			pStmt.setInt(1, hidden);
 			pStmt.setInt(2, favorite);
-			pStmt.setInt(3, id);
+			pStmt.setInt(3, users_id);
 			// SQL文を実行する
 			pStmt.executeUpdate();
 

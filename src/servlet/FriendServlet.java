@@ -49,12 +49,16 @@ public class FriendServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		//セッションからIDを取得する
+
 		HttpSession session = req.getSession();
-		int id = (int) session.getAttribute("id");
+		String name = (String) session.getAttribute("name");
 
 		req.setCharacterEncoding("UTF-8");
 
-		int favorite = Integer.parseInt(req.getParameter("favorite"));
+		//チェックボックスの値を取得
+		String favoriteParam = req.getParameter("favorite");
+		int favorite = (favoriteParam != null && favoriteParam.equals("on")) ? 1 : 0;
 
 		FriendsDAO fDAO = new FriendsDAO();
 
@@ -62,7 +66,7 @@ public class FriendServlet extends HttpServlet {
 
 		f.setFavorite(favorite);
 
-		fDAO.updateFavorite(favorite, 0, id);
+		fDAO.updateFavorite(favorite, 0, 0);
 
 		// 一覧ページにフォワードする
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
