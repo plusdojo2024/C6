@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CollectionsDAO;
 import dao.UsersDAO;
-import model.Collections;
+import model.Items;
 
 @WebServlet("/CollectionServlet")
 public class CollectionServlet extends HttpServlet {
@@ -33,9 +34,9 @@ public class CollectionServlet extends HttpServlet {
 			//uDAOのselectIdからIDを取得
 			UsersDAO uDAO = new UsersDAO();
 			int users_id = uDAO.selectId(name);
-			Collections cDAO = new Collections();
+			CollectionsDAO cDAO = new CollectionsDAO();
 
-			List<Collections> cardList = cDAO.selectGacha(users_id);
+			List<Items> cardList = cDAO.selectGacha(users_id);
 
 			req.setAttribute("cardList", cardList);
 
