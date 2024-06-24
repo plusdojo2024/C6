@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +25,12 @@
 	<div><img src="img/number.png" width="500px" height="100px" ></div>
 	<form name="numberForm" method="post" action="/c6/NumberServlet"  onsubmit="return validateForm()">
 		<div>現在の4number</div>
-		<div><input type="text" name="subject" required></div>
+		<div><input type="text" name="subject" required value="${number}"></div>
 		<div>新しい4number</div>
 		<div><input type="text" name="newsubject" required></div>
-		
-			<input type="submit" class="submit" value="registration">registration</button>
-	
+
+			<input type="submit" class="submitbutton" value="registration">
+
 	</form>
 <script src= "./js/number.js"></script>
 </body>

@@ -17,6 +17,17 @@ public class NumberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		int number = 0;
+
+		//セッションから名前を取得する
+		HttpSession session = req.getSession();
+		//セッションスコープからニックネームチェックの値を取得する。
+		String name = (String) session.getAttribute("name");
+		//ニックネームからそのユーザーの4ナンバーを取得する
+		number = UsersDAO.select4number(name);
+		//JSPで表示するようにセット
+		req.setAttribute("number", number);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/number.jsp");
 		dispatcher.forward(req, res);
 
@@ -42,7 +53,7 @@ public class NumberServlet extends HttpServlet {
 
 			// ナンバー更新処理
 			//ナンバーとニックネームが一致するか
-			if (uDAO.checkNumber(name,subject)) {
+			if (uDAO.checkNumber(name, subject)) {
 				//ナンバーとニックネームが一致したら、新しいナンバーの更新処理を行う
 				uDAO.updateNumber(name, newsubject);
 				//その後マイページに遷移する
@@ -53,8 +64,6 @@ public class NumberServlet extends HttpServlet {
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/number.jsp");
 				dispatcher.forward(req, res);
 			}
-
-
 
 		} catch (Exception e) {
 			e.printStackTrace();

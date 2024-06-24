@@ -23,7 +23,7 @@ public class FriendsDAO {
 		try {
 			conn = BaseDAO.conn();
 
-			String sql = "select *from friends inner join users on users.id=friends.users_id where hidden= 0 AND friends_id = ?";
+			String sql = "select *from friends inner join users on users.id=friends.users_id where hidden= 0 AND friends_id = ? order by favorite desc";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setInt(1, id);
@@ -244,20 +244,20 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public void updateFavorite(int favorite,int hidden) {
+	public void updateFavorite(int favorite, int hidden, int id) {
 		Connection conn = null;
 		try {
-			//Connctionする
+			// Connectionする
 			conn = BaseDAO.conn();
 
 			// SQL文を準備する
-			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE name=?";
+			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setInt(1, favorite);
-			pStmt.setInt(2,hidden);
-
+			pStmt.setInt(1, hidden);
+			pStmt.setInt(2, favorite);
+			pStmt.setInt(3, id);
 			// SQL文を実行する
 			pStmt.executeUpdate();
 
