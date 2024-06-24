@@ -17,6 +17,15 @@ public class NumberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		int number=0;
+
+		//セッションから名前を取得する
+		HttpSession session = req.getSession();
+		//セッションスコープからニックネームチェックの値を取得する。
+		String name = (String) session.getAttribute("name");
+		number=UsersDAO.select4number(name);
+
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/number.jsp");
 		dispatcher.forward(req, res);
 

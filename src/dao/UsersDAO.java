@@ -759,7 +759,7 @@ public class UsersDAO {
 	}
 
 	//ニックネームから4ナンバーを取得する
-	public int select4number(String name){
+	public static int select4number(String name){
 		Connection conn = null;
 		int number = 0;
 		try {
