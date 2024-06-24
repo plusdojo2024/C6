@@ -250,6 +250,42 @@ public class UsersDAO {
 		return result;
 	}
 
+	  // ニックネームが既に存在するか確認
+    public boolean isNicknameTaken(String name) {
+        Connection conn = null;
+        boolean exists = false;
+        try {
+            // Connectionする
+            conn = BaseDAO.conn();
+
+            // SQL文を準備する
+            String sql = "SELECT COUNT(*) FROM Users WHERE name = ?";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            // SQL文を完成させる
+            pStmt.setString(1, name);
+
+            // SQL文を実行し、結果表を取得する
+            ResultSet rs = pStmt.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                exists = true;
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            // データベースを切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        // 結果を返す
+        return exists;
+    }
+
+
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
 	public void update(Users card) throws Exception {
 		Connection conn = null;
@@ -832,5 +868,10 @@ public class UsersDAO {
 		}
 		// 結果を返す
 		return number;
+	}
+
+	public boolean isNicknameTaken1(String name) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
 	}
 }
