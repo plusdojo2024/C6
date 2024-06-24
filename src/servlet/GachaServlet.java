@@ -13,15 +13,33 @@ import javax.servlet.http.HttpSession;
 import dao.CollectionsDAO;
 import dao.UsersDAO;
 
-
-
 @WebServlet("/GachaServlet")
 public class GachaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/gacha.jsp");
-		dispatcher.forward(req, res);
+		int motivation = 0;
+
+		//セッションスコープからnameの値を取得する。
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
+
+		//更新前だったら。ガチャ引けない
+		UsersDAO uDAO = new UsersDAO();
+		motivation = uDAO.selectMotivation(name);
+
+		if (0 != motivation) {
+			//ガチャ引ける
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/gacha.jsp");
+			dispatcher.forward(req, res);
+		}else {
+			//ガチャを引けない。ユーザー情報を更新させる
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
+			dispatcher.forward(req, res);
+
+		}
+
+
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -49,6 +67,8 @@ public class GachaServlet extends HttpServlet {
 
 			CollectionsDAO.insertGacha(users_id, c);
 
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
+			dispatcher.forward(req, res);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

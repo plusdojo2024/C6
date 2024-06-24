@@ -25,7 +25,7 @@
 	<form method="post" action="/c6/UserServlet" >
 		<h2><img src="img/status.png" width="500" height="90"></h2>
 		<p>&lt;自動更新：　AM6:00&gt;</p>
-
+		<p>&lt;Status登録後、ガチャが引けます&gt;</p>
         <p class="div-open active"></p>
 		<input type="radio" id="motivation1"name="motivation" value="1" onchange="toggleLocation();">open
 

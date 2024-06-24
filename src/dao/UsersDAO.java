@@ -874,4 +874,45 @@ public class UsersDAO {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
+
+	//ニックネームからモチベーションを取得する
+	public int selectMotivation(String name){
+		Connection conn = null;
+		int motivation = 0;
+		try {
+			//Connctionする
+			conn = BaseDAO.conn();
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM Users WHERE name =  ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, name);
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			//idを取得する
+			if (rs.next()) {
+				motivation = rs.getInt("motivation");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		// 結果を返す
+		return motivation;
+	}
 }
