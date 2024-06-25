@@ -24,9 +24,9 @@
 	</ul>
 	<div><img src="img/number.png" width="500px" height="100px" ></div>
 	<form name="numberForm" method="post" action="/c6/NumberServlet"  onsubmit="return validateForm()">
-		<div>現在の4number</div>
+		<p class="large-text">現在の4number</p>
 		<div><input type="text" name="subject" required value="${number}"></div>
-		<div>新しい4number</div>
+		<p class="large-text">新しい4number</p>
 		<div><input type="text" name="newsubject" required></div>
 
 			<input type="submit" class="submitbutton" value="registration">

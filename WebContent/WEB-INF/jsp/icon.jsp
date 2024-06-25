@@ -31,29 +31,6 @@
 	<h1>
 		<img src="/c6/img/icon.png" width="400" height="250"><br><br><br><br><br>
 	</h1>
-	<%
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/c6", "sa", "");
-
-            Statement stmt = conn.createStatement();
-            String sql = "SELECT icon FROM users";
-            ResultSet rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                String filePath = rs.getString("filepath");
-    %>
-                <p>画像のファイルパス: <%= filePath %></p>
-    <%
-            }
-
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    %>
 	<form method="post" action="/c6/IconServlet" enctype=multipart/form-data>
 		<div>
 			<label for="file">写真をアップロードしてください。</label><br><br>
