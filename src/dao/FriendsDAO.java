@@ -244,39 +244,38 @@ public class FriendsDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public void updateFavorite(int favorite, int hidden) {
-		Connection conn = null;
-		try {
-			// Connectionする
-			conn = BaseDAO.conn();
+	public void updateFavorite(int friendsId, Friends friend) {
+	    Connection conn = null;
+	    try {
+	        // Connectionする
+	        conn = BaseDAO.conn();
 
-			// SQL文を準備する
-			String sql = "UPDATE Friends SET hidden=?, favorite=? WHERE users_id=?";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+	        // SQL文を準備する
+	        String sql = "UPDATE Friends SET favorite=? WHERE friends_id=?";
+	        PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL文を完成させる
-			pStmt.setInt(1, hidden);
-			pStmt.setInt(2, favorite);
+	        // SQL文を完成させる
+	        pStmt.setInt(1, friend.getFavorite());
+	        pStmt.setInt(2, friendsId);
 
-			// SQL文を実行する
-			pStmt.executeUpdate();
+	        // SQL文を実行する
+	        pStmt.executeUpdate();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			// データベースを切断
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } catch (ClassNotFoundException e) {
+	        e.printStackTrace();
+	    } finally {
+	        // データベースを切断
+	        if (conn != null) {
+	            try {
+	                conn.close();
+	            } catch (SQLException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 	}
-
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
 	public boolean delete(int hidden) throws Exception {
 		Connection conn = null;
