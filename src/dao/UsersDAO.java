@@ -876,23 +876,25 @@ public class UsersDAO {
 		// 結果を返す
 		return motivation;
 	}
-}
 
 
 
 
-	/*public int selectIcon(String name) {
+			//アイコン
+	public void insertIcon(String name, String filePath) throws ClassNotFoundException {
+		Connection conn = null;
 		try {
-			//Connctionする
+			//Connctionす
 			conn = BaseDAO.conn();
 
 			// データベースに画像のファイルパスを挿入するための SQL 文
-			String sql = "INSERT INTO users (icon) values (?)";
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, filePath);
+			String sql = "UPDATE users set icon=? WHERE name = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, filePath);
+			pStmt.setString(2, name);
 
 			// SQL を実行
-			statement.executeUpdate();
+			pStmt.executeUpdate();
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -904,7 +906,9 @@ public class UsersDAO {
 				} catch (SQLException ex) {
 					ex.printStackTrace();
 				}
-			}*/
-
+			}
+		}
+	}
+	}
 
 

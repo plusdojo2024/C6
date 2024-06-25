@@ -6,10 +6,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import dao.UsersDAO;
 
 @WebServlet("/IconServlet")
 @MultipartConfig
@@ -46,39 +44,22 @@ public class IconServlet extends HttpServlet {
             ex.printStackTrace();
         }
 
-        Connection conn = null;
       //セッションから名前を取得する
       HttpSession session = req.getSession();
       String name = (String) session.getAttribute("name");
 
-        try {
-            // データベースに接続
-            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/c6", "sa", "");
+      UsersDAO uDAO = new UsersDAO();
+      try {
+		uDAO.insertIcon(name, filePath);
 
-            // データベースに画像のファイルパスを挿入するための SQL 文
-            String sql = "INSERT INTO users (icon) values (?)";
-            PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, filePath);
-
-            // SQL を実行
-            statement.executeUpdate();
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (conn != null) {
-                // データベース接続をクローズ
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
 
      // リダイレクト
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/icon.jsp");
 		dispatcher.forward(req, res);
+      } catch (ClassNotFoundException e) {
+  		// TODO 自動生成された catch ブロック
+  		e.printStackTrace();
+  	}
     }
 }
 
