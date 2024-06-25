@@ -21,18 +21,24 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<h1><img src="img/mypagelogo.png"  width="500" height="90"></h1>
+	<h1><img src="img/mypagelogo.png"  width="800" height="200"></h1>
 	<form method="post" action="/c6/UserServlet" >
-		<h2><img src="img/status.png" width="500" height="90"></h2>
-		<p>&lt;自動更新：　AM6:00&gt;</p>
-		<p>&lt;Status登録後、ガチャが引けます&gt;</p>
+		<h2><img src="img/status.png" width="1000" height="150"></h2>
+		<p class="automatic">&lt;自動更新：　AM6:00&gt;</p>
+		<p class="automatic">&lt;Status登録後、ガチャが引けます&gt;</p>
+		<div class="radio-group">
         <p class="div-open active"></p>
 		<input type="radio" id="motivation1"name="motivation" value="1" onchange="toggleLocation();">open
+		<p class="nav-open active"></p>
+        <input type="radio" name="motivation" value="2" onchange="toggleFormSection()">close
+
+        <p class="nav-open active"></p>
+        <input type="radio" name="motivation" value="3" onchange="toggleFormSection()">now
 
 		<div class="div-open" onclick="changeDisplay()"></div>
-
+        </div>
 		<div id="formSection" class="hidden">
-		<h2><img src="img/plase.png" width="500" height="90"></h2>
+		<h2><img src="img/plase.png" width="500" height="150"></h2>
         <select id="formlocation" name="location" >
             <option value="">-- 選択してください --</option>
             <option value="北海道">北海道</option>
@@ -87,7 +93,7 @@
 
         <br>
         <br>
-        <h2><img src="img/time.png" width="300" height="70"></h2>
+        <h2><img src="img/time.png" width="500" height="150"></h2>
 
         <input type="time" id="start" name="start" >
         ～
@@ -99,17 +105,13 @@
         <br>
         <br>
 
-        <h2><img src="img/remarks.png" width="500" height="90"></h2>
+        <h2 class="h22"><img src="img/remarks.png" width="1000" height="200"></h2>
         <input type="text" id="remarks" name="remarks">
 
         <br>
         <br>
         </div>
-        <p class="nav-open active"></p>
-        <input type="radio" name="motivation" value="2" onchange="toggleFormSection()">close
 
-        <p class="nav-open active"></p>
-        <input type="radio" name="motivation" value="3" onchange="toggleFormSection()">now
 
 		<br>
 		<br>
@@ -120,6 +122,7 @@
 </body>
 
 <%@ include file="/WEB-INF/jsp/common.jsp" %>
+
 <script src= "./js/user.js"></script>
 <script src= "./js/common.js"></script>
 <script src="./js/jquery3.7.1.min.js"></script>
