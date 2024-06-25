@@ -31,18 +31,6 @@
 	<h1>
 		<img src="/c6/img/icon.png" width="400" height="250"><br><br><br><br><br>
 	</h1>
-<%
-        String filePath = (String) session.getAttribute("filePath");
-        if (filePath != null && !filePath.isEmpty()) {
-    %>
-        <img src="<%= filePath %>" alt="Uploaded Image">
-    <%
-        } else {
-    %>
-        <p>No image uploaded or invalid file path.</p>
-    <%
-        }
-    %>
 	<form method="post" action="/c6/IconServlet" enctype=multipart/form-data>
 		<div>
 			<label for="file">写真をアップロードしてください。</label><br><br>
@@ -52,6 +40,8 @@
 			<input type = "submit" class = "submitbutton" value ="registration">
 		</div>
 	</form>
-<script src= "./js/icon.js"></script>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/common.js"></script>
+<script src="./js/jquery3.7.1.min.js"></script>
 </body>
 </html>
