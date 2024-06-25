@@ -27,7 +27,7 @@
         <span class="label label-danger"><%= request.getAttribute("message") %></span>
     <% } %>
 		<form  method="post" action="/c6/NewRegistServlet" onsubmit="return checkBirth()">
-			<div>nickname</div>
+			<div class="nick">nickname</div>
 			<input type = "text"  name="name"><br>
 			<div>password</div>
 			<input type = "password"  id="password"><br>

@@ -24,7 +24,7 @@
 	</ul>
 	<main>
 		<form method="post" action="/c6/HiddenServlet">
-			<h1>hidden</h1>
+			<div><img src="img/hiddenList.png"></div>
 		<table>
 			<c:forEach var="hiddenList" items="${hiddenList}">
 				<tr>
