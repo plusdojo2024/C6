@@ -11,10 +11,36 @@ input {
 	font-size: 50px;
 }
 
+img {
+     width: 200px; /* 画像のサイズを小さく設定 */
+     height: 200px; /* 画像のサイズを小さく設定 */
+
+    }
 div {
 	font-size: 50px;
 }
 
 a {
-	font-size: 50px;
+        color: white;
+        text-decoration: none;
+        font-size: 40px;
+        text-decoration: underline;
+    }
+a:hover {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+.spinningImage{
+    transform-origin: center bottom;
+    animation: yurayura 2s linear infinite;
+}
+
+@keyframes yurayura {
+  0% , 100%{
+      transform: rotate(10deg);
+  }
+  50%{
+      transform: rotate(-10deg);
+  }
 }
