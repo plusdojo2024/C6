@@ -73,7 +73,7 @@ public class FriendServlet extends HttpServlet {
 			fDAO.updateFavorite(id,favoriteId);
 		} else {
 
-			fDAO.updateFavorite(id,favoriteId);
+			fDAO.updateFavorite(id,1);
 			}
 
 		//自分のステータスを表示させる

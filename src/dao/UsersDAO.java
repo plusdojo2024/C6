@@ -881,7 +881,7 @@ public class UsersDAO {
 
 
 			//アイコン
-	public void insertIcon(String name, String filePath) throws ClassNotFoundException {
+	public void updateIcon(String name, String filePath) throws ClassNotFoundException {
 		Connection conn = null;
 		try {
 			//Connctionす
