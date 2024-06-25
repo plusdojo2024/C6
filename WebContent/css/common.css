@@ -59,10 +59,15 @@ input {
 }
 
 /* 開く・閉じるアニメーション */
-#wrapper, #nav {
-    transition: transform 0.3s;
+#wrapper {
+	position: absolute;
+    top: 0px;
+    right: 300px;
+	transition: transform 0.3s;
 }
-
+#nav{
+	transition: transform 0.3s;
+}
 /* ===== ヘッダーにボタンを配置 ===== */
 .header {
     padding: 16px 0;
