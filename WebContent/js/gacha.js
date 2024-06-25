@@ -7,14 +7,33 @@ function start() {
 }
 
 function next() {
-	//20までの数字をランダム生成(20という数字は仮設定)
-	const randomIndex = Math.floor(Math.random() * 20) + 1;
-	//結果を表示
-	const result = `/c6/img/gachaResult${randomIndex}.png`;
-	document.getElementById("after").src = result;
+	//水お茶の確率がそれぞれ40％、その他20％
+	const probability = [0, 19, 19, 20, 20];
+	const randomIndex = Math.floor(Math.random() * probability.length);
 
-	//数字を入力し、サーブレットに送信
-	document.getElementById("gachaRandom").value = randomIndex
-	 document.getElementById("gachaSubmit").click();
+	//水お茶以外だった場合、再び抽選し、出力
+	if (probability[randomIndex] < 18) {
+		const randomNum = Math.floor(Math.random() * 20) + 1;
+		const result = `/c6/img/gachaResult${randomNum}.png`;
+		document.getElementById("after").src = result;
+		setTimeout(end, 2000);
 
+		//サーブレットに送信する
+		function end() {
+			document.getElementById("gachaRandom").value = randomNum;
+			document.getElementById("gachaSubmit").click();
+		}
+	//水お茶の場合、出力
+	} else {
+		const Index = probability[randomIndex];
+		const result = `/c6/img/gachaResult${Index}.png`;
+		document.getElementById("after").src = result;
+		setTimeout(end, 2000);
+
+		//サーブレットに送信する
+		function end() {
+			document.getElementById("gachaRandom").value = Index;
+			document.getElementById("gachaSubmit").click();
+		}
+	}
 }
