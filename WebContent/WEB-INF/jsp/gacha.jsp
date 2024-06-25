@@ -23,13 +23,15 @@
 		<li></li>
 	</ul>
 <main>
-<form id="gachaform" method="post" action="/c6/GachaServlet">
-<div><img src ="/c6/img/gachatop.gif" class ="gachamain" id="main"></div>
+
+<form id="gachaform" method="post" action="/c6/GachaServlet" >
+<img src ="/c6/img/gachatop.gif" class ="gachamain" id="main">
 <input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();"><br>
 <input type = "hidden" id="gachaRandom"  name="gachaRandom"><br>
 <input type = "submit" id="gachaSubmit" style="display:none;"><!-- cssでhiddenにする -->
-<div><img src ="/c6/img/gachaResult.png" class ="gachaAfter" id="after"></div>
+<img src ="/c6/img/gachaResult.png"  alt="結果が表示されます" class ="gachaAfter" id="after">
 </form>
+
 </main>
 
 <%@ include file="/WEB-INF/jsp/common.jsp" %>

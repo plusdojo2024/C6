@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.FriendsDAO;
 import dao.UsersDAO;
-import model.Friends;
 import model.Users;
 
 @WebServlet("/FriendServlet")
@@ -49,34 +48,55 @@ public class FriendServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		try {
+		//セッションからnameを取得する
 		HttpSession session = req.getSession();
 		String name = (String) session.getAttribute("name");
 
+		//チェックボックスの値を取得
 		req.setCharacterEncoding("UTF-8");
-		String friendsIdStr = req.getParameter("friends_id");
-        String favoriteStr = req.getParameter("favorite");
+		String favoriteName=req.getParameter("name");
+		String submit=req.getParameter("submit");
 
-		// DAOを使用してデータベース操作
-		UsersDAO uDAO = new UsersDAO();
 		FriendsDAO fDAO = new FriendsDAO();
+		UsersDAO uDAO = new UsersDAO();
 
 		//ログインしているユーザーのidを取得
 		int id = uDAO.selectId(name);
+		//処理を行いたいユーザーのidを取得
+		int favoriteId = uDAO.selectId(favoriteName);
 
-        int friendsId = Integer.parseInt(friendsIdStr);
-        int favorite = (favoriteStr != null) ? 1 : 0;
+		Users u=new Users();
 
-        // Friendsオブジェクトを作成
-        Friends friend = new Friends();
-        friend.setFavorite(favorite);
 
-        // DAOを呼び出してデータベースを更新
-        FriendsDAO dao = new FriendsDAO();
-        dao.updateFavorite(friendsId, friend);
+		if ("favorite".equals(submit)) {
+			fDAO.updateFavorite(id,favoriteId);
+		}
 
-		// 一覧ページにフォワードする
+		//自分のステータスを表示させる
+		u.setName(name);
+		Users bookList = uDAO.select1(u);
+
+		req.setAttribute("bookList", bookList);
+
+		List<Users> cardList = fDAO.selectFriends(id);
+
+		req.setAttribute("cardList", cardList);
+
+
+		//フレンド一覧を表示させる
+
+		List<Users> cardList1 = fDAO.selectFriends(id);
+
+		req.setAttribute("cardList", cardList1);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/friend.jsp");
 		dispatcher.forward(req, res);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
 

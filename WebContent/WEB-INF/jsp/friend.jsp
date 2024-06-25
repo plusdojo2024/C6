@@ -67,10 +67,14 @@
 					<th>icon</th>
 					<td>${Friends.icon}</td>
 				</tr>
+								<tr>
+					<td><input type="hidden" name="name"
+						value="${Friends.name}"></td>
+				</tr>
 				<tr>
 					<th>favorite</th>
-					<td><input type="checkbox" class="favorite" id="friends"
-						name="favorite"></td>
+					<td><input type="submit" class="favorite"
+						name="favorite" value="favorite"></td>
 				</tr>
 				<tr>
 					<th>hidden</th>
