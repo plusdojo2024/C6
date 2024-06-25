@@ -13,7 +13,9 @@ div{
 submit{
 	color:#ffffff;
 }
-
+p {
+	malgin-botom: 40px;
+}
 .submit {
 	display: inline-block;
 	border-radius: 5%; /* 角丸       */
@@ -34,3 +36,4 @@ submit{
 	color: #000066; /* 背景色     */
 	background: #ffffff; /* 文字色     */
 }
+
