@@ -59,7 +59,7 @@
 
 	<h1>friend list</h1>
 
-	<form action="/c6/FriendServlet" method="post" name="favorite">
+	<form action="/c6/FriendServlet" method="post">
 		<table>
 			<c:forEach var="Friends" items="${cardList}">
 
@@ -67,9 +67,13 @@
 					<th>icon</th>
 					<td>${Friends.icon}</td>
 				</tr>
+								<tr>
+					<td><input type="hidden" name="name"
+						value="${Friends.name}"></td>
+				</tr>
 				<tr>
 					<th>favorite</th>
-					<td><input type="checkbox" class="favorite" id="friends"
+					<td><input type="submit" class="favorite"
 						name="favorite" value="favorite"></td>
 				</tr>
 				<tr>
@@ -94,10 +98,6 @@
 				<tr>
 					<th>誕生日</th>
 					<td>${Friends.birthday}</td>
-				</tr>
-				<tr>
-					<td><input type="hidden" name="name"
-						value="${Friends.name}"></td>
 				</tr>
 				<tr>
 					<th><input type="submit" value="Update" name="Update"></th>
