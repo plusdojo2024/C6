@@ -28,7 +28,7 @@
 		<input type="image" value="sound" onclick="location.href='http://localhost:8080/c6/SoundServlet'"src="/c6/img/set_sound.png"><br>
 		<input type="image" value="favorite" onclick="location.href='http://localhost:8080/c6/HiddenServlet'"src="/c6/img/set_hiddenlist.png"><br>
 		<input type="image" value="accountdeletion" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_accountdeletion.png"><br>
-		<input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_logout.png">
+		<input type="image" value="logout" onclick="location.href='http://localhost:8080/c6/LogoutServlet'"src="/c6/img/set_logout.png">
 	</main>
 </body>
 </html>

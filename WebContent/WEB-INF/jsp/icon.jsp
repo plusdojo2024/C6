@@ -40,6 +40,8 @@
 			<input type = "submit" class = "submitbutton" value ="registration">
 		</div>
 	</form>
-<script src= "./js/icon.js"></script>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/common.js"></script>
+<script src="./js/jquery3.7.1.min.js"></script>
 </body>
 </html>

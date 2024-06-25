@@ -30,7 +30,7 @@
         <li><input type="image" value="sound" onclick="location.href='http://localhost:8080/c6/SoundServlet'"src="/c6/img/set_sound.png" width = "1400" height = "300"></li>
         <li><input type="image" value="favorite" onclick="location.href='http://localhost:8080/c6/HiddenServlet'"src="/c6/img/set_hiddenlist.png" width = "1100" height = "300"></li>
         <li><input type="image" value="accountdeletion" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_accountdeletion.png" width = "1100" height = "300"></li>
-		<li><input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/DeleteServlet'"src="/c6/img/set_logout.png" width = "1400" height = "300"></li>
+		<li><input type="image" value="delete" onclick="location.href='http://localhost:8080/c6/LogoutServlet'"src="/c6/img/set_logout.png" width = "1400" height = "300"></li>
 
     </ul>
 </nav>
