@@ -50,7 +50,8 @@ public class IconServlet extends HttpServlet {
 
       UsersDAO uDAO = new UsersDAO();
       try {
-		uDAO.insertIcon(name, filePath);
+		uDAO.updateIcon(name, "/c6/upload/"+fileName);
+
 
 
      // リダイレクト

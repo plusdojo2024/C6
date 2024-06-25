@@ -28,8 +28,8 @@
 		<table>
 			<c:forEach var="hiddenList" items="${hiddenList}">
 				<tr>
-					<!--  <td><input type= "image" src="${hiddenList.icon}"></td>-->
-					<td><input type= "image" src="/c6/upload/sugawara.png"></td>
+					<td><input type= "image" src="${hiddenList.icon}"></td>
+					<!-- <td><input type= "image" src="/c6/upload/sugawara.png"></td>-->
 					<td>${hiddenList.name}</td>
 					<td><input type = "hidden"  name="name" src="${hiddenList.name}"></td>
 					<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
