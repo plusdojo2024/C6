@@ -21,7 +21,7 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<div><img src="img/glass.png"></div>
+	<div><img src="img/glass.png" class="spinningImage"></div>
     <form id="login_form" method="post" action="/c6/LoginServlet" onsubmit="return checkSubmit()">
         <main>
             <div>nickname</div>
@@ -30,7 +30,9 @@
             <div>password</div>
             <input type="password" name="password" id="password" required><br>
             <input type="submit" class="submitbutton" value="login"><br>
-            <a href="/c6/NewRegistServlet">初めてご利用の方</a><br>
+            <br>
+            <a href  ="/c6/NewRegistServlet">初めてご利用の方</a><br>
+            <br>
             <a href="/c6/SecretServlet">パスワードをお忘れの方</a>
             <c:if test="${not empty message}">
                 <p style="color: red;">${message}</p>
