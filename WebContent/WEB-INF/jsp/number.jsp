@@ -8,6 +8,7 @@
 <title>番号管理</title>
 <link rel="stylesheet" href="/c6/css/common.css">
 <link rel="stylesheet" href="/c6/css/set.css">
+<link rel="stylesheet" href="/c6/css/number.css">
 </head>
 <body>
 	<ul class="circles">
@@ -24,9 +25,9 @@
 	</ul>
 	<div><img src="img/number.png" width="500px" height="100px" ></div>
 	<form name="numberForm" method="post" action="/c6/NumberServlet"  onsubmit="return validateForm()">
-		<p >現在の4number</p>
+		<div>現在の4number</div>
 		<div><input type="text" name="subject" required value="${number}"></div>
-		<p >新しい4number</p>
+		<div>新しい4number</div>
 		<div><input type="text" name="newsubject" required></div>
 
 			<input type="submit" class="submitbutton" value="registration">

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>secret</title>
 <link rel="stylesheet" href="/c6/css/common.css">
-<link rel="stylesheet" href="/c6/css/newsecret.css">
+<link rel="stylesheet" href="/c6/css/secret.css">
 </head>
 <body>
 	<ul class="circles">
@@ -25,9 +25,9 @@
 	<div><img src="img/sercretquestion.png" width="400px" height="200px" ></div>
 	<span class="label label-danger">${message}</span>
 	<form  method="post" action="/c6/SecretServlet">
-		nickname<br>
+		<div>nickname</div>
 		<input type = "text"  name="name"><br>
-		母親の旧姓は？<br>
+		<div>母親の旧姓は？</div>
 		<input type = "text"  name="secret" required><br>
 		<input type = "submit" class="submitbutton" value="registration" ><br>
 		<a href = "/c6/LoginServlet">ログイン画面に戻る</a>
