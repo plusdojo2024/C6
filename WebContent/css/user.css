@@ -6,34 +6,52 @@ html {
 
 h1 {
 	text-align: left;
-
 }
 
 h2 {
 	text-align: left;
-
 }
+
 .h22 {
 	margin-left: 40px;
 }
-.automatic{
+
+.automatic {
 	font-size: 40px;
 	text-align: right;
 	margin-bottom: 30px;
-
 }
 
 .transparent-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
+
 .transparent-button img {
-    width: 20px;
-    height: 20px;
+	width: 20px;
+	height: 20px;
 }
 
+input[type=radio] {
+	display: none; /* ラジオボタンを非表示にする */
+}
 
+.label {
+	display: block; /* ブロックレベル要素化する */
+	float: left; /* 要素の左寄せ・回り込を指定する */
+	margin: 5px; /* ボックス外側の余白を指定する */
+	width: 100px; /* ボックスの横幅を指定する */
+	height: 45px; /* ボックスの高さを指定する */
+	padding-left: 5px; /* ボックス内左側の余白を指定する */
+	padding-right: 5px; /* ボックス内御右側の余白を指定する */
+	color: white; /* フォントの色を指定 */
+	text-align: center; /* テキストのセンタリングを指定する */
+	line-height: 45px; /* 行の高さを指定する */
+	cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+	border: 2px solid #006DD9; /* ボックスの境界線を実線で指定する */
+	border-radius: 5px; /* 角丸を指定する */
+}
 
 .submitbutton {
 	display: inline-block;
@@ -48,8 +66,20 @@ h2 {
 	transition: .3s; /* なめらか変化 */
 	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
 	border: 2px solid #000066; /* 枠の指定 */
-    margin-left: 50px;
+	margin-left: 50px;
+}
 
+input[type=radio] {
+	display: none; /* ラジオボタンを非表示にする */
+}
+
+input[type="radio"]:checked+label {
+	background: #31A9EE; /* マウス選択時の背景色を指定する */
+	color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.label:hover {
+	background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
 }
 
 .submitbutton:hover {
@@ -58,57 +88,54 @@ h2 {
 	background: #ffffff; /* 文字色     */
 }
 
-    .hidden {
-        display: none;
-    }
+.hidden {
+	display: none;
+}
 
-    HTML CSSResult Skip Results Iframe
+HTML CSSResult Skip Results Iframe
 EDIT ON
-:root { font-size: 100px; }
-
-
+:root {
+	font-size: 100px;
+}
 
 .motivation {
-  position: relative;
-  background: linear-gradient(90deg, #f19af3, #f099b5);
-  line-height: 0;
-  perspective: 400px;
-
+	position: relative;
+	background: linear-gradient(90deg, #f19af3, #f099b5);
+	line-height: 0;
+	perspective: 400px;
 }
 
 #remarks {
-    width: 500px; /* テキストボックスの幅を300pxに設定 */
-    height: 70px; /* テキストボックスの高さを50pxに設定 */
-    font-size: 16px; /* フォントサイズを16pxに設定 */
-    padding: 10px; /* 内側の余白を10pxに設定 */
+	width: 500px; /* テキストボックスの幅を300pxに設定 */
+	height: 70px; /* テキストボックスの高さを50pxに設定 */
+	font-size: 16px; /* フォントサイズを16pxに設定 */
+	padding: 10px; /* 内側の余白を10pxに設定 */
 }
 
 #formlocation {
-    width: 200px; /* セレクトボックスの幅を300pxに設定 */
-    height: 100px; /* セレクトボックスの高さを50pxに設定 */
-    font-size: 16px; /* フォントサイズを16pxに設定 */
-    padding: 10px; /* 内側の余白を10pxに設定 */
+	width: 200px; /* セレクトボックスの幅を300pxに設定 */
+	height: 100px; /* セレクトボックスの高さを50pxに設定 */
+	font-size: 16px; /* フォントサイズを16pxに設定 */
+	padding: 10px; /* 内側の余白を10pxに設定 */
 }
 
 #start {
-    width: 100px; /* セレクトボックスの幅を300pxに設定 */
-    height: 30px; /* セレクトボックスの高さを50pxに設定 */
-    font-size: 16px; /* フォントサイズを16pxに設定 */
-    padding: 10px; /* 内側の余白を10pxに設定 */
+	width: 100px; /* セレクトボックスの幅を300pxに設定 */
+	height: 30px; /* セレクトボックスの高さを50pxに設定 */
+	font-size: 16px; /* フォントサイズを16pxに設定 */
+	padding: 10px; /* 内側の余白を10pxに設定 */
 }
 
-
 #finish {
-    width: 100px; /* セレクトボックスの幅を300pxに設定 */
-    height: 30px; /* セレクトボックスの高さを50pxに設定 */
-    font-size: 16px; /* フォントサイズを16pxに設定 */
-    padding: 10px; /* 内側の余白を10pxに設定 */
+	width: 100px; /* セレクトボックスの幅を300pxに設定 */
+	height: 30px; /* セレクトボックスの高さを50pxに設定 */
+	font-size: 16px; /* フォントサイズを16pxに設定 */
+	padding: 10px; /* 内側の余白を10pxに設定 */
 }
 
 .radio-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* ラジオボタンとラベルの間のスペース */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px; /* ラジオボタンとラベルの間のスペース */
 }
-
