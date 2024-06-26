@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
@@ -20,9 +21,12 @@ public class LogoutServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//doGet(req, res);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-		dispatcher.forward(req, res);
+		// セッションスコープを破棄する
+		HttpSession session = req.getSession();
+		session.invalidate();
+
+		// ログインページにリダイレクトする
+		res.sendRedirect("/c6/LoginServlet");
 
 	}
 
