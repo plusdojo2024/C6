@@ -29,7 +29,6 @@
 			<c:forEach var="hiddenList" items="${hiddenList}">
 				<tr>
 					<td><input type= "image" src="${hiddenList.icon}"></td>
-					<!-- <td><input type= "image" src="/c6/upload/sugawara.png"></td>-->
 					<td>${hiddenList.name}</td>
 					<td><input type = "hidden"  name="name" src="${hiddenList.name}"></td>
 					<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
@@ -41,4 +40,5 @@
 	</main>
 <script src= "./js/common.js"></script>
 </body>
+<%@ include file="/WEB-INF/jsp/common.jsp"%>
 </html>
