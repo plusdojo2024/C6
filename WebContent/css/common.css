@@ -46,9 +46,9 @@ input {
 /* ドロワーナビゲーションの必須スタイル */
 #nav {
     position: fixed;
-    right: -350px;
+    right: -200px;
     top: 0;
-    width: 270px;
+    width:160px;
     height: 100%;
 }
 
@@ -80,12 +80,12 @@ header .container {
     flex: 1 1 auto;
 }
 .hamburger {
-    flex: 0 0 0px;
-    align-self: center;
-    margin-left: 16px;
-    text-align: center;
-    color: #fff;
-    width : 10%;
+
+
+
+
+
+    width : 1%;
 }
 
 /* ===== 装飾的なCSS ===== */
