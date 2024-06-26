@@ -251,7 +251,7 @@ public class FriendsDAO {
 	        conn = BaseDAO.conn();
 
 	        // SQL文を準備する
-	        String sql = "UPDATE Friends SET favorite=1 WHERE users_id=? AND friends_id=?";
+	        String sql = "UPDATE Friends SET favorite=1 WHERE friends_id=? AND users_id=?";
 	        PreparedStatement pStmt = conn.prepareStatement(sql);
 
 	        // SQL文を完成させる

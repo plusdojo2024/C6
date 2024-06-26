@@ -55,8 +55,8 @@ public class FriendServlet extends HttpServlet {
 
 		//チェックボックスの値を取得
 		req.setCharacterEncoding("UTF-8");
-		String favoriteName=req.getParameter("name");
-		String checkbox=req.getParameter("checkbox");
+		String favoriteName=req.getParameter("friendName");
+		//String checkbox=req.getParameter("favorite");
 
 		FriendsDAO fDAO = new FriendsDAO();
 		UsersDAO uDAO = new UsersDAO();
@@ -69,12 +69,8 @@ public class FriendServlet extends HttpServlet {
 		Users u=new Users();
 
 
-		if ("favorite".equals(checkbox)) {
-			fDAO.updateFavorite(id,favoriteId);
-		} else {
 
-			fDAO.updateFavorite(id,1);
-			}
+			fDAO.updateFavorite(id,favoriteId);
 
 		//自分のステータスを表示させる
 		u.setName(name);

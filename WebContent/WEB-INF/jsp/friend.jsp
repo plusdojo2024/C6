@@ -59,10 +59,11 @@
 
 	<h1>friend list</h1>
 
-	<form action="/c6/FriendServlet" method="post" name="favorite">
-		<table>
-			<c:forEach var="Friends" items="${cardList}">
 
+
+		<c:forEach var="Friends" items="${cardList}">
+			<form action="/c6/FriendServlet" method="post">
+			<table>
 				<tr>
 					<th>icon</th>
 					<td>${Friends.icon}</td>
@@ -70,7 +71,7 @@
 				<tr>
 					<th>favorite</th>
 					<td><input type="checkbox" class="favorite" id="friends"
-						name="favorite" value="favorite"></td>
+						name="favorite"></td>
 				</tr>
 				<tr>
 					<th>hidden</th>
@@ -80,6 +81,8 @@
 				<tr>
 					<th>nick name</th>
 					<td>${Friends.name }</td>
+					<td><input type="hidden" name="friendName" src="${Friends.name}">
+					</td>
 				</tr>
 				<tr>
 					<th>飲みベ</th>
@@ -96,14 +99,14 @@
 					<td>${Friends.birthday}</td>
 				</tr>
 				<tr>
-					<td><input type="hidden" name="name"
-						value="${Friends.name}"></td>
-				</tr>
-				<tr>
-					<th><input type="submit" value="Update" name="Update"></th>
-			</c:forEach>
-		</table>
-	</form>
+					<th><input type="submit" value="Update" name="Update">
+					</th>
+
+			</table>
+</form>
+		</c:forEach>
+
+
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp"%>
 <script src="./js/common.js"></script>
