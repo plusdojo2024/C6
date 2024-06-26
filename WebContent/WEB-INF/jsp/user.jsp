@@ -28,12 +28,12 @@
 		<p class="automatic">&lt;Status登録後、ガチャが引けます&gt;</p>
 		<div class="radio-group">
         <p class="div-open active"></p>
-		<input type="radio" id="motivation1"name="motivation" value="1" onchange="toggleLocation();">open
+		<input type="radio" id="motivation1"name="motivation" value="1" onchange="toggleLocation();"  required>open
 		<p class="nav-open active"></p>
-        <input type="radio" name="motivation" value="2" onchange="toggleFormSection()">close
+        <input type="radio" name="motivation" value="2" onchange="toggleFormSection()" required>close
 
         <p class="nav-open active"></p>
-        <input type="radio" name="motivation" value="3" onchange="toggleFormSection()">now
+        <input type="radio" name="motivation" value="3" onchange="toggleFormSection()" required>now
 
 		<div class="div-open" onclick="changeDisplay()"></div>
         </div>
