@@ -1,1 +1,28 @@
 @charset "UTF-8";
+
+.gachamain {
+	position: absolute;
+	height: 700px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+}
+
+.gachaAfter {
+	max-width:200px;
+	position: absolute;
+	top: 800px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+}
+
+.submitbutton {
+	max-width:400px;
+	position: absolute;
+	top: 700px;
+	right: 450px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+}

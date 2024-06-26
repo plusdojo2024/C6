@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.CollectionsDAO;
 import dao.UsersDAO;
+import model.Items;
 
 @WebServlet("/GachaServlet")
 public class GachaServlet extends HttpServlet {
@@ -64,6 +66,12 @@ public class GachaServlet extends HttpServlet {
 			model.Collections c = new model.Collections();
 			c.setUsers_id(users_id);
 			c.setItems_id(Items_id);
+
+			//ここからコレクション
+			CollectionsDAO cDAO = new CollectionsDAO();
+			List<Items> cardList = cDAO.selectGacha(users_id);
+			req.setAttribute("cardList", cardList);
+			//ここまでコレクション
 
 			CollectionsDAO.insertGacha(users_id, c);
 

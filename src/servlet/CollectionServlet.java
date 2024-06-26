@@ -44,8 +44,24 @@ public class CollectionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		try {
+			//セッションスコープからnameの値を取得する。
+			HttpSession session = req.getSession();
+			String name = (String) session.getAttribute("name");
+
+			//uDAOのselectIdからIDを取得
+			UsersDAO uDAO = new UsersDAO();
+			int users_id = uDAO.selectId(name);
+			CollectionsDAO cDAO = new CollectionsDAO();
+
+			List<Items> cardList = cDAO.selectGacha(users_id);
+
+			req.setAttribute("cardList", cardList);
+
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/collection.jsp");
 			dispatcher.forward(req, res);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }
