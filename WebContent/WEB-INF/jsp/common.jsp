@@ -17,7 +17,7 @@
 
         </div>
         <div class="hamburger" id="open_nav">
-            <img src="img/hamberger.png" alt="ハンバーガーの写真">
+            <img src="img/hamberger.png" class="smallHamburger" alt="ハンバーガーの写真">
         </div>
     </div><!-- /.container -->
     </header>

@@ -81,13 +81,19 @@ header .container {
 }
 .hamburger {
 
-
+text-align:right;
 
 
 
     width : 1%;
 }
 
+
+.smallHamburger{
+	 width : 100px;
+	 height:100px;
+
+}
 /* ===== 装飾的なCSS ===== */
 
 /* メニュー */
