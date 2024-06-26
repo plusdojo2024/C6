@@ -28,4 +28,5 @@
 <script src= "delete.js"></script>
 <script src= "./js/common.js"></script>
 </body>
+<%@ include file="/WEB-INF/jsp/common.jsp"%>
 </html>
