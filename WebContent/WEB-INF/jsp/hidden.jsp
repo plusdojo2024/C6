@@ -23,20 +23,20 @@
 		<li></li>
 	</ul>
 	<main>
-		<form method="post" action="/c6/HiddenServlet">
-			<div><img src="img/hiddenList.png"></div>
-		<table>
-			<c:forEach var="hiddenList" items="${hiddenList}">
-				<tr>
-					<td><input type= "image" src="${hiddenList.icon}"></td>
-					<td>${hiddenList.name}</td>
-					<td><input type = "hidden"  name="name" src="${hiddenList.name}"></td>
-					<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
-					<td><input type = "submit" class="submitbutton" name="submit" value="delete"></td>
-				</tr>
-			</c:forEach>
-		</table>
-		</form>
+		<div><img src="img/hiddenList.png"></div>
+		<c:forEach var="hiddenList" items="${hiddenList}">
+			<form method="post" action="/c6/HiddenServlet">
+				<table>
+					<tr>
+						<td><input type= "image" src="${hiddenList.icon}"></td>
+						<td>${hiddenList.name}</td>
+						<td><input type = "hidden"  name="name" value="${hiddenList.name}"></td>
+						<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
+						<td><input type = "submit" class="submitbutton" name="submit" value="delete"></td>
+					</tr>
+				</table>
+			</form>
+		</c:forEach>
 	</main>
 <script src= "./js/common.js"></script>
 </body>
