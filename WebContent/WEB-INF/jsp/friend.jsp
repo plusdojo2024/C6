@@ -70,18 +70,22 @@
 				</tr>
 				<tr>
 					<th>favorite</th>
-					<td><input type="checkbox" class="favorite" id="friends"
-						name="favorite"></td>
+					<td><input type="checkbox" class="favorite" id="friends" value="yes"
+						name="favorite">
+						<c:if test="${e.checkbox}">checked</c:if>
+						</td>
 				</tr>
 				<tr>
 					<th>hidden</th>
-					<td><input type="image" src="/c6/img/hidden.png" width="40"
-						height="30">
+					<td><input type="image" src="/c6/img/hidden.png" width="40"height="30">
+
+					</td>
 				</tr>
 				<tr>
 					<th>nick name</th>
 					<td>${Friends.name }</td>
-					<td><input type="hidden" name="friendName" src="${Friends.name}">
+					<td><input type="hidden" name="friendName" value="${Friends.name}" >
+
 					</td>
 				</tr>
 				<tr>
