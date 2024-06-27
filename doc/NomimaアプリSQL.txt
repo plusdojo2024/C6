@@ -33,7 +33,7 @@ timestamp TIMESTAMP,
 PRIMARY KEY(id));
 
 /* Usersテーブル挿入データ（サンプル）*/
-INSERT INTO Users VALUES (NULL,'木村',1002,3333,'木村',10,'東京',1,kimura.png,17:00,21:00,'これは、架空のデータです。',NULL);
+INSERT INTO Users VALUES (NULL,'小川',1002,3333,'小川',10,'東京',1,ogawa.png,17:00,21:00,'これは、架空のデータです。',NULL);
 INSERT INTO Users VALUES (NULL,'片山',1111,1234,'片山',06,'沖縄',2,katayama.png,00:00,00:00,'これは、架空のデータです。',NULL);
 INSERT INTO Users VALUES (NULL,'菅原',3333,3456,'菅原',09,'神奈川',3,sugawara.png,17:00,21:00,'これは、架空のデータです。',NULL);
 INSERT INTO Users VALUES (NULL,'寺島',4444,4567,'寺島',05,'大阪',3,terashima.png,17:00,21:00,'これは、架空のデータです。',NULL);
