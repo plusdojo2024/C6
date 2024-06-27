@@ -34,8 +34,9 @@ h2 {
 }
 
 input[type=radio] {
-	/*display: none; /* ラジオボタンを非表示にする */
-	visibility: hidden;
+	width:1px;
+	height:1px;
+	opacity:0;
 }
 
 .label {

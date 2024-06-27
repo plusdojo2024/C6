@@ -55,10 +55,10 @@
 			<td>${bookList.birthday}月生まれ</td>
 			<td>${bookList.location}</td>
 			<td>${bookList.start}</td>
-			<td>時</td>
+			<td></td>
 			<td>～</td>
 			<td>${bookList.finish}</td>
-			<td>時</td>
+			<td></td>
 			<td>${bookList.remarks}</td>
 		</tr>
 	</table>
@@ -77,7 +77,7 @@
 						<td>
 						<c:choose>
 								<c:when test="${Friends.motivation==0}">
-									<div><input type="image" src="/c6/img/ComingSoon.png" class="outline img_coming"></div>
+									<div><input type="image" src="/c6/img/ComingSoon.png" class="outline img_motivation"></div>
 								</c:when>
 								<c:when test="${Friends.motivation==1}">
 									<div><input type="image" src="/c6/img/open.png" class="outline img_motivation" ></div>
@@ -97,8 +97,8 @@
 					<tr>
 						<td colspan="2">${Friends.birthday}月生まれ</td>
 						<td>${Friends.start}</td>
-						<td>時～</td>
-						<td>${Friends.finish}時</td>
+						<td>～</td>
+						<td>${Friends.finish}</td>
 					</tr>
 				</table>
 				<br>
