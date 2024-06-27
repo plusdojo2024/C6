@@ -37,16 +37,16 @@
 			<td>
 			<c:choose>
 					<c:when test="${bookList.motivation==0}">
-					更新前
+						<div><input type="image" src="/c6/img/ComingSoon.png" class="outline img_coming"></div>
 					</c:when>
 					<c:when test="${bookList.motivation==1}">
-					<div><input type="image" src="/c6/img/open.png" class="outline img_motivation"></div>
+						<div><input type="image" src="/c6/img/open.png" class="outline img_motivation"></div>
 					</c:when>
 					<c:when test="${bookList.motivation==2}">
-					<div><input type="image" src="/c6/img/close.png" class="outline img_motivation"></div>
+						<div><input type="image" src="/c6/img/close.png" class="outline img_motivation"></div>
 					</c:when>
 					<c:otherwise>
-					now
+						<div><input type="image" src="/c6/img/now.png" class="outline img_motivation"></div>
 					</c:otherwise>
 				</c:choose>
 			</td>
@@ -77,7 +77,7 @@
 						<td>
 						<c:choose>
 								<c:when test="${Friends.motivation==0}">
-									更新前
+									<div><input type="image" src="/c6/img/ComingSoon.png" class="outline img_coming"></div>
 								</c:when>
 								<c:when test="${Friends.motivation==1}">
 									<div><input type="image" src="/c6/img/open.png" class="outline img_motivation" ></div>
@@ -86,7 +86,7 @@
 									<div><input type="image" src="/c6/img/close.png" class="outline img_motivation" ></div>
 								</c:when>
 								<c:otherwise>
-									now
+									<div><input type="image" src="/c6/img/now.png" class="outline img_motivation"></div>
 								</c:otherwise>
 							</c:choose>
 						</td>
