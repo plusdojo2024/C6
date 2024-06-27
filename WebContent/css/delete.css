@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin: 0;
+      padding-bottom: 200px;
+}
+.container {
+      text-align: center;
+}
+.submit {
+	margin-top: 20px;
+	display: inline-block;
+	border-radius: 5%; /* 角丸       */
+	font-size: 80pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 8px 8px; /* 余白       */
+	background: #020430; /* 背景色     */
+	color: #ffffff; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
+	border: 2px solid #000066; /* 枠の指定 */
+	margin-left: 50px;
+}

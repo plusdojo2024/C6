@@ -26,7 +26,9 @@
 	<form method="post" action="/c6/LogoutServlet">
 		<input type = "submit" class = "submitbutton" value ="logout" onclick="return confirm('本当にログアウトしますか？');">
 	</form>
-<script src= "logout.js"></script>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
+<script src= "./js/logout.js"></script>
 <script src= "./js/common.js"></script>
+<script src="./js/jquery3.7.1.min.js"></script>
 </body>
 </html>

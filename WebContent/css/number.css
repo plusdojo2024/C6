@@ -1,17 +1,22 @@
 @charset "UTF-8";
 
 input{
-	 color:#ffffff;
-	 background-color: #020430;
-	 outline:solid 2px #FFFFFF;
+	color:#ffffff;
+	background-color: #020430;
+	outline:solid 2px #FFFFFF;
+	margin: 30px;
+	width: 450px;
+	height: 100px;
+	font-size: 50px;
 }
 div{
 	text-align:center;
-
+font-size: 50px;
 }
 
 submit{
 	color:#ffffff;
+
 }
 
 .submit {
