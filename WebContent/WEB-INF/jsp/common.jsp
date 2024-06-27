@@ -39,10 +39,10 @@
 
 <table class="footericon">
   <tr>
-      	<td><li><a href = "/c6/UserServlet"><img src="img/myicon.png" alt="マイページ" width="300" height="400"></a></li></td>
-      	<td><li><a href = "/c6/FriendServlet"><img src="img/friendicon.png" alt="フレンド" width="300" height="270"></a></li></td>
-  		<td><li><a href = "/c6/GachaServlet"><img src="img/gachaicon.png" alt="ガチャ" width="300" height="270"></a></li></td>
-  		<td><li><a href = "/c6/CollectionServlet"><img src="img/collectionicon.png" alt="コレクション" width="300" height="270"></a></li></td>
+      	<td><li><a href = "/c6/UserServlet"><img src="img/myicon.png" alt="マイページ" width="250" height="250"></a></li></td>
+      	<td><li><a href = "/c6/FriendServlet"><img src="img/friendicon.png" alt="フレンド" width="250" height="250"></a></li></td>
+  		<td><li><a href = "/c6/GachaServlet"><img src="img/gachaicon.png" alt="ガチャ" width="250" height="250"></a></li></td>
+  		<td><li><a href = "/c6/CollectionServlet"><img src="img/collectionicon.png" alt="コレクション" width="250" height="250"></a></li></td>
   </tr>
 </table>
 <script src="./js/jquery-3.7.1.min.js"></script>

@@ -22,7 +22,7 @@
 		<li></li>
 		<li></li>
 	</ul>
-<main>
+<main class = gachaposition>
 
 <form id="gachaform" method="post" action="/c6/GachaServlet" >
 <img src ="/c6/img/gachatop.gif" class ="gachamain" id="main">
