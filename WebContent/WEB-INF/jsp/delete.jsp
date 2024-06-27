@@ -21,12 +21,16 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<img src="/c6/img/deletion.png" width="650" height="250">
+	<div class="container">
+	<img src="/c6/img/deletion.png" width="900" height="250">
 	<form method="post" action="/c6/DeleteServlet">
-		<input type = "submit" class = "submitbutton" value ="deletion" onclick="return confirm('本当に削除しますか？');">
+		<input type = "submit" class = "submit" value ="deletion" onclick="return confirm('本当に削除しますか？');">
 	</form>
+	 </div>
+<%@ include file="/WEB-INF/jsp/common.jsp"%>
 <script src= "delete.js"></script>
 <script src= "./js/common.js"></script>
+<script src="./js/jquery-3.7.1.min.js"></script>
 </body>
-<%@ include file="/WEB-INF/jsp/common.jsp"%>
+
 </html>

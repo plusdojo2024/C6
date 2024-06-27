@@ -5,8 +5,7 @@ html {
 	color: white;
 	padding: 20px;
 	text-align: center;
-	border-color: #fff;
-
+	border-color: #fff
 }
 
 @media ( max-width : 767px) {
@@ -89,10 +88,14 @@ text-align:right;
 }
 
 
-.smallHamburger{
-	 width : 150px;
-	 height:150px;
+
+
+/* ボタンの隣との余白を狭くする */
+.header button {
+    margin-left: 8px; /* 左側の余白を8pxに設定 */
+    margin-right: 8px; /* 右側の余白を8pxに設定 */
 }
+
 /* ===== 装飾的なCSS ===== */
 
 /* メニュー */
