@@ -33,6 +33,9 @@
 			<input type="submit" class="submitbutton" value="registration">
 
 	</form>
+<%@ include file="/WEB-INF/jsp/common.jsp" %>
 <script src= "./js/number.js"></script>
+<script src= "./js/common.js"></script>
+<script src="./js/jquery-3.7.1.min.js"></script>
 </body>
 </html>
