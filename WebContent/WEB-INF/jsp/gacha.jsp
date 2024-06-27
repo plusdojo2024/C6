@@ -25,11 +25,13 @@
 <main class = gachaposition>
 
 <form id="gachaform" method="post" action="/c6/GachaServlet" >
-<img src ="/c6/img/gachatop.gif" class ="gachamain" id="main"  >
+<img src ="/c6/img/gachatoptop.gif" class ="gachamain" id="main"  >
+<div class="gacha">
 <input type = "button"  id="gacha"  class = "submitbutton" value = "ガチャを引く" onClick="start();"><br>
 <input type = "hidden" id="gachaRandom"  name="gachaRandom"><br>
 <input type = "submit" id="gachaSubmit" style="display:none;"><!-- cssでhiddenにする -->
 <img src ="/c6/img/gachaResult.png"  alt="結果が表示されます" class ="gachaAfter" id="after">
+</div>
 </form>
 
 </main>

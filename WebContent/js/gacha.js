@@ -1,7 +1,7 @@
 'use strict'
 
 function start() {
-	main.src = "/c6/img/gachaspread.gif";
+	main.src = "/c6/img/gachaspread1.gif";
 	document.getElementById("gacha").innerHTML = "ガチャを引く";
 	setTimeout(next, 3000);
 }
