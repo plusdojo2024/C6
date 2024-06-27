@@ -1,19 +1,38 @@
 @charset "UTF-8";
 
-table{
+table {
 	margin: 0 auto 0 auto;
 	display: flex;
 	justify-content: center;
 }
 
-.favorite{
+td{
+		font-size: 40px;
+
+}
+
+.favorite {
 	-webkit-appearance: none;
-	font-size: 22px;
+	font-size: 40px;
 	color: #D2D2D2;
 }
-.favorite:before{
-	content:"★";
+
+.favorite:before {
+	content: "★";
 }
-.favorite:checked{
+
+.favorite:checked {
 	color: #F8C601;
+}
+/*　スマホで文字の大きさ良い感じに　*/
+.img_icon {
+	width: 100px;
+	height: 100px;
+}
+.img_motivation {
+	width: 120px;
+	height: 100px;
+}
+.outline {
+	outline: none;
 }
