@@ -1,13 +1,22 @@
 /*　スマホで文字の大きさ良い感じに　*/
+table {
+	margin: 0 auto 0 300px;
+	display: flex;
+	justify-content: center;
+}
+
 img {
 	width: 500px;
 	height: 300px;
 }
-
+.img_icon {
+	width: 100px;
+	height: 100px;
+}
 input {
 	margin: 30px;
-	width: 400px;
-	height: 150px;
+	width: 350px;
+	height: 120px;
 	font-size: 50px;
 }
 

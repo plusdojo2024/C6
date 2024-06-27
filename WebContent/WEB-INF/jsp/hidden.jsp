@@ -28,7 +28,7 @@
 			<form method="post" action="/c6/HiddenServlet">
 				<table>
 					<tr>
-						<td><input type= "image" src="${hiddenList.icon}"></td>
+						<td><input type= "image" src="${hiddenList.icon}" class="img_icon"></td>
 						<td>${hiddenList.name}</td>
 						<td><input type = "hidden"  name="name" value="${hiddenList.name}"></td>
 						<td><input type = "submit"  class="submitbutton" name="submit" value="cansellation"></td>
