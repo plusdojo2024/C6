@@ -29,7 +29,10 @@
 		<input type="range" id="volume" min="0" max="100" step="10"><br>
 		<input type = "submit" id="volume" class = "submitbutton" value ="registration">
 	</form>
+	<%@ include file="/WEB-INF/jsp/common.jsp" %>
+
 	<script src= "set.js"></script>
 	<script src= "./js/common.js"></script>
+	<script src="./js/jquery3.7.1.min.js"></script>
 </body>
 </html>
