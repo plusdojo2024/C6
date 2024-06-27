@@ -1,8 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +9,6 @@
 <link rel="stylesheet" href="/c6/css/common.css">
 <link rel="stylesheet" href="/c6/css/friend.css">
 </head>
-
 <body>
 	<ul class="circles">
 		<li></li>
@@ -25,27 +22,37 @@
 		<li></li>
 		<li></li>
 	</ul>
-
 	<div>
 		<img src="/c6/img/friend.png" width="500" height="100"> <a
 			href="/c6/FriendAddServlet"><img src="img/friendAddicon.png"
 			width="70" height="70"></a>
 	</div>
-
 	<div>
 		<img src="/c6/img/mystatus.png" width="500" height="100">
 	</div>
-
-
-
-
 	<table>
-
 		<tr>
-			<td>${bookList.icon}</td>
+			<td><input type= "image" src="${bookList.icon}" class="img_icon"></td>
 			<td>${bookList.name}</td>
-			<td>${bookList.motivation}</td>
-			<td>${bookList.birthday}</td>
+			<td>
+			<c:choose>
+					<c:when test="${bookList.motivation==0}">
+					更新前
+					</c:when>
+					<c:when test="${bookList.motivation==1}">
+					<div><input type="image" src="/c6/img/open.png" class="outline img_motivation"></div>
+					</c:when>
+					<c:when test="${bookList.motivation==2}">
+					<div><input type="image" src="/c6/img/close.png" class="outline img_motivation"></div>
+					</c:when>
+					<c:otherwise>
+					now
+					</c:otherwise>
+				</c:choose>
+			</td>
+		</tr>
+		<tr>
+			<td>${bookList.birthday}月生まれ</td>
 			<td>${bookList.location}</td>
 			<td>${bookList.start}</td>
 			<td>時</td>
@@ -54,63 +61,49 @@
 			<td>時</td>
 			<td>${bookList.remarks}</td>
 		</tr>
-
 	</table>
-
-	<h1>friend list</h1>
-
-
-
+	<div>
+		<img src="/c6/img/friendList.png" width="500" height="100">
+	</div>
 		<c:forEach var="Friends" items="${cardList}">
 			<form action="/c6/FriendServlet" method="post">
-			<table>
-				<tr>
-					<th>icon</th>
-					<td>${Friends.icon}</td>
-				</tr>
-				<tr>
-					<th>favorite</th>
-					<td><input type="checkbox" class="favorite" id="friends" value="yes"
-						name="favorite">
-						<c:if test="${e.checkbox}">checked</c:if>
+				<table>
+					<tr>
+						<td><input type= "image" src="${Friends.icon}" class="img_icon"></td>
+						<td><input type="checkbox" class="favorite outline" id="friends" name="favorite"></td>
+						<td><input type="image" src="/c6/img/hidden.png" class="outline" width="40"  height="30">
+						<td>${Friends.name }</td>
+						<td><input type="hidden" name="friendName" src="${Friends.name}"></td>
+						<td>
+						<c:choose>
+								<c:when test="${Friends.motivation==0}">
+									更新前
+								</c:when>
+								<c:when test="${Friends.motivation==1}">
+									<div><input type="image" src="/c6/img/open.png" class="outline img_motivation" ></div>
+								</c:when>
+								<c:when test="${Friends.motivation==2}">
+									<div><input type="image" src="/c6/img/close.png" class="outline img_motivation" ></div>
+								</c:when>
+								<c:otherwise>
+									now
+								</c:otherwise>
+							</c:choose>
 						</td>
-				</tr>
-				<tr>
-					<th>hidden</th>
-					<td><input type="image" src="/c6/img/hidden.png" width="40"height="30">
-
-					</td>
-				</tr>
-				<tr>
-					<th>nick name</th>
-					<td>${Friends.name }</td>
-					<td><input type="hidden" name="friendName" value="${Friends.name}" >
-
-					</td>
-				</tr>
-				<tr>
-					<th>飲みベ</th>
-					<td>${Friends.motivation }</td>
-				</tr>
-				<tr>
-					<th>時間</th>
-					<td>${Friends.start}</td>
-					<td>～</td>
-					<td>${Friends.finish}</td>
-				</tr>
-				<tr>
-					<th>誕生日</th>
-					<td>${Friends.birthday}</td>
-				</tr>
-				<tr>
-					<th><input type="submit" value="Update" name="Update">
-					</th>
-
-			</table>
-</form>
+						<td rowspan="2">
+							<input type="submit" value="Update" name="Update" class="submitbutton">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">${Friends.birthday}月生まれ</td>
+						<td>${Friends.start}</td>
+						<td>時～</td>
+						<td>${Friends.finish}時</td>
+					</tr>
+				</table>
+				<br>
+			</form>
 		</c:forEach>
-
-
 </body>
 <%@ include file="/WEB-INF/jsp/common.jsp"%>
 <script src="./js/common.js"></script>
