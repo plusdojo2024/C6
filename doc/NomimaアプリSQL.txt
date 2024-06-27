@@ -1,6 +1,6 @@
 /* Friendsテーブルを作成する */
 CREATE TABLE Friends(
-id INTEGER AUTO_INCREMENT(1)
+id INTEGER AUTO_INCREMENT(1),
 users_id INTEGER NOT NULL,
 friends_id INTEGER NOT NULL,
 hidden INTEGER NOT NULL,
@@ -8,10 +8,12 @@ favorite INTEGER NOT NULL,
 PRIMARY KEY(id));
 
 /* Friendsテーブル挿入データ（サンプル）*/
-INSERT INTO Friends VALUES (null,1,2,0,0);
+INSERT INTO Friends VALUES (null,1,2,1,0);
 INSERT INTO Friends VALUES (null,2,1,0,0);
 INSERT INTO Friends VALUES (null,1,3,0,0);
 INSERT INTO Friends VALUES (null,3,1,0,0);
+INSERT INTO Friends VALUES (null,1,4,0,0);
+INSERT INTO Friends VALUES (null,4,1,0,0);
 
 /* Usersテーブルを作成する */
 CREATE TABLE Users(
@@ -31,11 +33,10 @@ timestamp TIMESTAMP,
 PRIMARY KEY(id));
 
 /* Usersテーブル挿入データ（サンプル）*/
-INSERT INTO Users VALUES (NULL,'木村',1002,3333,'木村',10,'東京',0,NULL,NULL,NULL,'これは、架空のデータです。',NULL);
-INSERT INTO Users VALUES (NULL,'片山',1111,1234,'片山',01,'沖縄',0,NULL,NULL,NULL,'これは、架空のデータです。',NULL);
-INSERT INTO Users VALUES (NULL,'小川',2222,2345,'小川',12,'埼玉',0,NULL,NULL,NULL,'これは、架空のデータです。',NULL);
-INSERT INTO Users VALUES (NULL,'菅原',3333,3456,'菅原',02,'神奈川',0,NULL,NULL,NULL,'これは、架空のデータです。',NULL);
-INSERT INTO Users VALUES (NULL,'寺島',4444,4567,'寺島',03,'大阪',0,NULL,NULL,NULL,'これは、架空のデータです。',NULL);
+INSERT INTO Users VALUES (NULL,'木村',1002,3333,'木村',10,'東京',1,kimura.png,17:00,21:00,'これは、架空のデータです。',NULL);
+INSERT INTO Users VALUES (NULL,'片山',1111,1234,'片山',06,'沖縄',2,katayama.png,00:00,00:00,'これは、架空のデータです。',NULL);
+INSERT INTO Users VALUES (NULL,'菅原',3333,3456,'菅原',09,'神奈川',3,sugawara.png,17:00,21:00,'これは、架空のデータです。',NULL);
+INSERT INTO Users VALUES (NULL,'寺島',4444,4567,'寺島',05,'大阪',3,terashima.png,17:00,21:00,'これは、架空のデータです。',NULL);
 
 /* Collectionsテーブルを作成する */
 CREATE TABLE Collections(
